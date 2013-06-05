@@ -1,3 +1,6 @@
 _i3-base
-========
-Hello Test
+=======================
+Contributors: Mo
+
+Description
+-----------
