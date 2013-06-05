@@ -1,0 +1,685 @@
+/*   
+Theme Name: _i3-base
+Theme URI: http://moscouch.com
+Description: A respnsive grid based HTML5 and CSS3 starter-theme.
+Author: Mo
+Author URI: http://moscouch.com
+Version: 1.0
+*/
+
+/* ==========================================================================
+   TABLE OF CONTENTS
+   ==========================================================================
+
+	$HELPER - clearfix, floating, 
+	$COMPONENTS - buttons, labels, badges, alerts, panels, breadcrumbs
+	$DEFAULTS - body, typo, images, forms
+	
+	$HEADER - site name, logo,
+	$NAVIGATION - top-nav, main-nav, side-nav, sub-nav, foot-nav
+	$MAIN - articles, pages
+	$SIDEBAR - widgets
+	$FOOTER - Copyright
+
+   ==========================================================================
+   COLOR PALETTE
+   ==========================================================================
+	
+	#333333 - Normal text
+	- Light gray text
+	- Link color
+	- Link hover color
+	
+*/
+
+/* ==========================================================================
+   $HELPER
+   ========================================================================== */
+   
+/* Apply a natural box layout model to all elements: http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+   
+.float-left { 
+	float: left; 
+}
+
+.float-right { 
+	float: right; 
+}
+
+.clearfix:before,
+.clearfix:after { 
+	content: " "; 
+	display: table;  
+}  
+
+.clearfix:after { 
+	clear: both; 
+}  
+
+.clearfix { 
+	zoom: 1; 
+}  
+
+.text-left {
+  text-align: left!IMPORTANT; 
+}
+
+.text-right {
+  text-align: right!IMPORTANT; 
+}
+
+.text-center {
+  text-align: center!IMPORTANT;
+}
+
+.text-justify {
+  text-align: justify!IMPORTANT;
+}
+
+.hide {
+  display: none!IMPORTANT; 
+}
+
+/* ==========================================================================
+   $DEFAULTS
+   ========================================================================== */
+   
+html {
+	
+}
+
+html,
+body { 
+	font-size: 14px;
+	font-family: ;
+	font-size: 100%;
+	line-height: 1.618; /* golden ratio of 1.61803399 see http://www.pearsonified.com/typography/ */
+	margin: 0;	
+}
+   
+body, 
+select, 
+input, 
+textarea {
+	color: #333333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+blockquote,
+.panel {
+	margin-bottom: 1.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {}
+
+h1 {}
+
+h2 {}
+
+h3 {}
+
+h4 {}
+
+h5 {}
+
+h6 {}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {}
+
+.subheader {}
+
+a,
+a:link,
+a:visited {
+	color: #03f;
+}
+
+a:active {}
+
+a:hover,
+a:focus {
+	color: #69f;
+}
+
+p {}
+
+.lead {
+	font-size: ;
+	line-height: ;
+}
+
+ul,
+ol,
+dl {}
+
+ul li ul,
+ul li ol,
+ol li ul,
+ol li ol {}
+
+
+
+hr {
+	border: solid #dddddd;
+	border-width: 1px 0 0;
+	clear: both;
+	margin: 1.25em 0 1.1875em;
+	height: 0; 
+}
+
+mark {
+	background-color: #fcd700; 
+	color: #000; 
+}
+
+/* Blockquote */
+blockquote {
+	padding: 0.5625em 1.25em 0 1.1875em;
+	border-left: 1px solid #dddddd; 
+}
+
+blockquote cite {
+	display: block;
+	font-size: 0.8em;
+	color: #555555; 
+}
+
+blockquote cite:before {
+	content: "\2014 \0020"; /* font awesome content? */
+}
+
+blockquote cite a,
+blockquote cite a:visited {
+
+}
+
+blockquote,
+blockquote p { 
+}
+
+/* Custom text-selection colors (remove any text shadows: http://twitter.com/miketaylr/status/12228805301) */
+::-moz-selection{
+	background: #fcd700; 
+	color: #fff; 
+	text-shadow: none;
+}
+::selection {
+	background: #fcd700; 
+	color: #fff; 
+	text-shadow: none;
+} 
+
+/* Images
+   ========================================================================== */
+ 
+img {}
+
+a img {
+	border: 0;
+}
+
+a img:hover {}
+
+/**
+ * Example HTML:
+ *
+ * <div class="thumbnail">
+ *		<img src="#">
+ * </div>
+ *
+ * or
+ *
+ * <a class="thumbnail" href="#">
+ *		<img src="#">
+ * </a>
+ */
+.thumbnail {
+	background: #ffffff;
+	border: 1px solid #DDDDDD;
+    display: inline-block;
+    padding: 4px;
+    max-width:100%;
+}
+
+.thumbnail > img {
+    display: block;
+    max-width: 100%;
+}
+
+a.thumbnail:hover {
+	border: 1px solid #2BA6CB;
+}
+
+/* Forms
+   ========================================================================== */
+   
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {}
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="date"]:hover,
+input[type="datetime"]:hover,
+input[type="datetime-local"]:hover,
+input[type="month"]:hover,
+input[type="week"]:hover,
+input[type="email"]:hover,
+input[type="number"]:hover,
+input[type="search"]:hover,
+input[type="tel"]:hover,
+input[type="time"]:hover,
+input[type="url"]:hover,
+textarea:hover {}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus {}
+
+input[type="text"][disabled],
+input[type="password"][disabled],
+input[type="date"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="month"][disabled],
+input[type="week"][disabled],
+input[type="email"][disabled],
+input[type="number"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="time"][disabled],
+input[type="url"][disabled],
+textarea[disabled] {}
+
+/* Mozilla dosen't style place holders by default */
+input:-moz-placeholder { color:#a9a9a9; }
+textarea:-moz-placeholder { color:#a9a9a9; }
+
+/* ==========================================================================
+   $COMPONENTS
+   ========================================================================== */
+
+/* Buttons
+   ========================================================================== */
+/**
+ * Example HTML:
+ *
+ * <a href="#" class="button">
+ *		<!-- content -->
+ * </a>
+ */
+ 
+/* Labels
+   ========================================================================== */  
+/**
+ * Example HTML:
+ *
+ * <span class="label">
+ *		<!-- content -->
+ * </span>
+ */
+.label {
+	display: inline-block;
+	background: #69a6cc;
+	font-weight: bold;
+	font-size: 0.8em;
+	padding: 0.2em 0.4em;
+	white-space: nowrap;
+	color: #ffffff;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+ 
+/* Badges
+   ========================================================================== */ 
+/**
+ * Example HTML:
+ *
+ * <span class="badge">
+ *		<!-- content -->
+ * </span>
+ */
+.badge {
+	background: #69a6cc;
+	font-weight: bold;
+	font-size: 0.8em;
+	line-height: 1em;
+	padding: 0.2em 0.4em;
+	white-space: nowrap;
+	-webkit-border-radius: 500px;
+	-moz-border-radius: 500px;
+	border-radius: 500px;
+	color: #ffffff;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	vertical-align: middle;
+}
+
+/* Colors for Labels and Badges
+   ========================================================================== */ 
+.muted-btn {
+	background: #EEEEEE;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: #D6D6D6;
+	cursor: default;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
+}
+.muted-btn:active {
+	-webkit-box-shadow: none; /* WebKit */
+	-moz-box-shadow: none; /* Firefox */
+	box-shadow: none; /* Standard */
+	color: #D6D6D6;
+}
+a.muted-btn:hover {
+	background: #EEEEEE;
+	color: #D6D6D6;
+}
+
+.light-btn {
+	background: #999999;
+}
+a.light-btn:hover {
+	background: #898989;
+}
+
+.grey-btn {
+	background: #666666;
+}
+a.grey-btn:hover {
+	background: #5c5c5c;
+}
+
+.dark-btn {
+	background: #333333;
+}
+a.dark-btn:hover {
+	background: #2e2e2e;
+}
+
+.yellow-btn {
+    background: #ff9933;
+}
+a.yellow-btn:hover {
+    background: #e5892e;
+}
+
+.red-btn {
+    background: #bd2c00;
+}
+a.red-btn:hover {
+    background: #aa2800;
+}
+
+.green-btn {
+    background: #6cc644;
+}
+a.green-btn:hover {
+    background: #61b23d;
+}
+
+.blue-btn {
+    background: #4183c4;
+}
+a.blue-btn:hover {
+    background: #3a76b0;
+}
+   
+/* Alerts
+   ========================================================================== */
+/**
+ * Example HTML:
+ *
+ * <div class="alert">
+ *		<!-- content -->
+ *		<a href="#" class="close"><i class="icon-remove"></i></a>
+ * </div>
+ */
+.alert-box {
+    border: 1px solid #DCDCDC;
+	display: block;
+	margin-bottom: 1.25em;
+	position: relative;
+	padding: 1em 2em 1em 1em;
+	background: #ffffff; 
+	color: #555555;
+	line-height: normal;
+}
+
+.alert-box .close {
+	font-weight: bold;
+	position: absolute;
+	top: 0.4em;
+	right: 0;
+	padding: 0.5em;
+	color: inherit;
+	opacity: 0.5; 
+}
+
+.alert-box .close:hover,
+.alert-box .close:focus {
+	opacity: 1; 
+}
+
+/* Alerts and Panels
+   ========================================================================== */
+.alert-box > :first-child,
+.panel > :first-child {
+    margin-top: 0; 
+}
+
+.alert-box > :last-child,
+.panel > :last-child {
+    margin-bottom: 0; 
+}  
+
+.alert-box h1,
+.panel h1,
+.alert-box h2,
+.panel h2,
+.alert-box h3,
+.panel h3,
+.alert-box h4,
+.panel h4,
+.alert-box h5,
+.panel h5,
+.alert-box h6,
+.panel h6 {
+	color: inherit;
+}
+   
+/* Panels
+   ========================================================================== */
+/**
+ * Example HTML:
+ *
+ * <div class="panel">
+ *		<!-- content -->
+ * </div>
+ */
+.panel {
+	border: 1px solid #DCDCDC;
+	padding: 1em;
+	background: #ffffff; 
+	color: #555555; 
+}
+
+/* Colors for Alerts and Panels
+   ========================================================================== */
+.muted-box {
+	border: 1px solid #EEEEEE!IMPORTANT;
+	color: #BBBBBB!IMPORTANT;
+}
+
+.light-grey-box {
+    background: #F7F7F7!IMPORTANT;
+    border: 1px solid #DCDCDC!IMPORTANT;
+}
+
+.grey-box {
+    background: #DCDCDC!IMPORTANT;
+    border: 1px solid #BBBBBB!IMPORTANT;
+}
+
+.dark-box {
+    background: #757575!IMPORTANT;
+    border: 1px solid #555555!IMPORTANT;
+	color: #ffffff!IMPORTANT;
+}
+
+.yellow-box {
+    background: #FCF8E3!IMPORTANT;
+    border: 1px solid #FBEED5!IMPORTANT;
+    color: #C09853;
+}
+
+.red-box {
+    background: #F2DEDE!IMPORTANT;
+    border: 1px solid #EED3D7!IMPORTANT;
+    color: #B94A48;
+}
+
+.green-box {
+    background: #DFF0D8!IMPORTANT;
+    border: 1px solid #D6E9C6!IMPORTANT;
+    color: #468847;
+}
+
+.blue-box {
+    background: #D9EDF7!IMPORTANT;
+    border: 1px solid #BCE8F1!IMPORTANT;
+    color: #3A87AD!IMPORTANT;
+} 
+
+/* Breadcrumb
+   ========================================================================== */   
+   
+/* Pricing tables
+   ========================================================================== */
+/**
+ * Example HTML:
+ *
+ * <ul class="pricing-table">
+ *		<li class="title"> ... </li>
+ *		<li class="price"> ... </li>
+ *		<li class="description"> ... </li>
+ *		<li class="bullet-item"> ... </li>
+ *		<li class="bullet-item"> ... </li>
+ *			...
+ *		<li class="pt-button"><a class="button" href="#"> ... </a></li>
+ * </ul>
+ */
+ 
+.pricing-table {
+	border: solid 1px #dddddd;
+	list-style: none;
+}
+
+.pricing-table li {
+	background: #ffffff;
+	padding: 1em;
+	text-align: center;
+}
+
+.pricing-table .title {
+	background: #dddddd;
+	font-weight: bold;
+}
+
+.pricing-table .price {
+	background: #eeeeee;
+	font-size: 130%; 
+}
+
+.pricing-table .description {
+	color: #777777;
+	font-size: 0.8em;
+	line-height: 1.4;
+	border-bottom: dotted 1px #dddddd; 
+}
+
+.pricing-table .bullet-item {
+	font-size: 0.9em;
+	border-bottom: dotted 1px #dddddd; 
+}
+
+.pricing-table .pt-button {
+	background-color: whitesmoke;
+}
+
+/* ==========================================================================
+   $HEADER
+   ========================================================================== */
+   
+/* ==========================================================================
+   $NAVIGATION
+   ========================================================================== */
+   
+/* top-nav
+   ========================================================================== */
+  
+
+/* enable sticky top-nav */  
+.sticky-nav {
+	top: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	z-index: 1030;
+	-webkit-box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+	box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.5); 
+}
+
+/* ==========================================================================
+   $MAIN
+   ========================================================================== */
+   
+/* ==========================================================================
+   $SIDEBAR
+   ========================================================================== */
+   
+/* ==========================================================================
+   $FOOTER
+   ========================================================================== */

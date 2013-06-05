@@ -1,0 +1,104 @@
+/* ==========================================================================
+   THE GRID SYSTEM
+   ========================================================================== */
+   
+/**
+ * A 12 column responsive grid-system.
+ *
+ * Example HTML:
+ *
+ * <div class="row">
+ *     <div class="grid eight"></div>
+ *     <div class="grid four"></div>
+ * </div>
+ *
+ * Add the class .inner to .grid classes to get some left and right padding.
+ */
+
+.row {
+	margin: 0 auto;
+    max-width: 62.5em; /* 1000px */
+    width: 100%;
+}
+
+.row:after {
+    clear: both;
+}
+
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+
+.inner {
+	padding-left: 0.9375em;
+    padding-right: 0.9375em;
+	border: 1px solid #dddddd; /* just temp */
+}
+
+@media only screen {
+
+	.grid {
+		float: none; /* On small screens dont float the grid. */
+	}
+
+}
+
+
+/* Styles for screens that are atleast 768px wide
+   ========================================================================== */
+@media only screen and (min-width: 48em) {
+
+	.grid {
+		float: left;
+	}
+
+	.twelve {
+		width: 100%;
+	}
+
+	.eleven {
+		width: 91.66667%;
+	}
+
+	.ten {
+		width: 83.33333%;
+	}
+
+	.nine {
+		width: 75%;
+	}
+
+	.eight {
+		width: 66.66667%;
+	}
+
+	.seven {
+		width: 58.33333%;
+	}
+
+	.six {
+		width: 50%;
+	}
+
+	.five {
+		width: 41.66667%;
+	}
+
+	.four {
+		width: 33.33333%;
+	}
+
+	.three {
+		width: 25%;
+	}
+
+	.two {
+		width: 16.66667%;
+	}
+
+	.one {
+		width: 8.33333%;
+	}
+	
+} /* end Media for 768px */
