@@ -1,3 +1,5 @@
+<?php wp_header(); ?>
+
 	<div id="site-content" class="primary" role="main">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

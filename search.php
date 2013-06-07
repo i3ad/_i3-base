@@ -2,6 +2,10 @@
 
 	<div id="site-content" class="primary" role="main">
 
+		<header class="entry-header search-header">
+			<h3 class="entry-title search-title"><?php printf( __( 'Search Results for: %s', 'twentytwelve' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
+		</header><!-- /search-header -->
+
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 			<article <?php post_class('hentry') ?> id="post-<?php the_ID(); ?>" role="article">
@@ -22,7 +26,7 @@
 				</header><!-- /entry-header -->
 
 				<div class="entry-content">
-					<?php the_content(); ?>
+					<?php the_excerpt(); ?>
 				</div><!-- /entry-content -->
 
 				<footer class="entry-footer">

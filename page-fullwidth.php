@@ -2,7 +2,7 @@
 /*
 Template Name: Fullwidth Page
 */
-?>
+wp_header(); ?>
 
 	<div id="site-content" class="primary" role="main">
 

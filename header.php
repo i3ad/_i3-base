@@ -36,13 +36,13 @@
 
 	<?php wp_head(); ?>
 	<!-- end of wordpress head -->
-	
+
 </head>
 
 <body <?php body_class(); ?>>
 
 	<?php $top_nav = array(
-		'theme_location'  => '',
+		'theme_location'  => 'top_nav',
 		'menu'            => '',
 		'container'       => 'nav',		// wrap <ul> in <nav> container
 		'container_class' => 'site-nav',
@@ -59,11 +59,13 @@
 			<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
+
+		<?php get_search_form(); ?>
 	
 	</header><!-- /site-header -->
 
 	<?php $main_nav = array(
-		'theme_location'  => '',
+		'theme_location'  => 'main_nav',
 		'menu'            => '',
 		'container'       => 'nav',		// wrap <ul> in <nav> container
 		'container_class' => 'site-nav',

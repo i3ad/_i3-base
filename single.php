@@ -7,7 +7,7 @@
 			<article <?php post_class('hentry') ?> id="post-<?php the_ID(); ?>" role="article">
 
 				<header class="entry-header">
-					<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+					<h3 class="entry-title"><?php the_title(); ?></h3>
 
 					<p class="entry-meta head-meta">
 						<time class="updated" datetime="<?php get_the_time(); ?>" pubdate><?php the_time(); ?></time>
@@ -37,7 +37,7 @@
 
 		<?php endwhile; ?>
 
-			<?php #post_pagination(); ?>
+			<?php #post_navigation(); ?>
 			<!-- or -->
 			<?php echo paginate_links( array(
 			    'current'	=> max(1, get_query_var('paged')),
@@ -45,6 +45,8 @@
 			    'base' 		=> get_pagenum_link(1) . '%_%',  
 			    'format' 	=> '?page=%#%'
 			) ); // http://wordpress.stackexchange.com/questions/52405/paginate-links-adds-empty-href-to-first-page-and-previous-link ?>
+
+			<?php //comments_template(); // uncomment if you want to use them ?><!-- /comments-template --> 
 
 		<?php else : ?>
 

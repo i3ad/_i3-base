@@ -1,9 +1,16 @@
 <?php
+	// Register navigation-menus, top-nav, main-nav, foot-nav
+	register_nav_menus( array(
+		'top_nav'	=> 'Top Navigation Menu',
+		'main_nav'	=> 'Main Navigation Menu',
+		'foot_nav'	=> 'Footer Navigation Menu'
+	));
+
 	// Register default sidebar
     register_sidebar(array(
     	'id' 			=> 'sidebar-1',
     	'name' 			=> __('Sidebar 1', 'bonestheme'),
-    	'description' 	=> __('The first (primary) sidebar.', 'bonestheme'),
+    	'description' 	=> __('The first (default) sidebar.', 'bonestheme'),
     	'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
     	'after_widget' 	=> '</div>',
     	'before_title' 	=> '<h4 class="widgettitle">',
@@ -91,7 +98,7 @@
 		echo '<div class="author-info">';
 		echo '	<h4>'.$author = get_the_author().'</h4>';
 		echo '	<p>'.the_author_meta( 'description' ).'</p>';
-		echo '	<a class="author-link" href="'.echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ).'" rel="author">';
+		//echo '	<a class="author-link" href="'.esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ).'" rel="author">';
 		printf( __( 'View all posts by ', 'twentytwelve' ), get_the_author());
 		echo '	</a></div><!-- /author-info -->';
 	}

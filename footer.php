@@ -3,7 +3,7 @@
 		<?php get_sidebar( 'footer' ); ?>
 
 		<?php $foot_nav = array(
-			'theme_location'  => '',
+			'theme_location'  => 'foot_nav',
 			'menu'            => '',
 			'container'       => 'nav',		// wrap <ul> in <nav> container
 			'container_class' => 'site-nav',
