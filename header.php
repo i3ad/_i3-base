@@ -10,28 +10,28 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 
 	<!-- Import main stylesheets -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>/inc/css/style.css" />
-	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>/inc/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/css/font-awesome.min.css" />
 
 	<!-- Icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) -->
-	<link rel="apple-touch-icon" href="<?php echo get_stylesheet_uri(); ?>/inc/img/apple-icon-touch.png">
-	<link rel="icon" href="<?php echo get_stylesheet_uri(); ?>/inc/img/favicon.png">
+	<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/apple-icon-touch.png">
+	<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon.png">
 	<!--[if IE]>
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_uri(); ?>/inc/img/favicon.ico">
+		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon.ico">
 	<![endif]-->
 	<!-- Set favicon for IE10 -->
 	<meta name="msapplication-TileColor" content="#f01d4f">
-	<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_uri(); ?>/inc/img/win8-tile-icon.png">
+	<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/win8-tile-icon.png">
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<!-- Import scripts -->
-	<!-- <script src="<?php #echo get_stylesheet_uri(); ?>/inc/js/modernizr-2.6.2.dev.js"></script> -->
-	<!-- <script src="<?php #echo get_stylesheet_uri(); ?>/inc/js/functions.js"></script> -->
+	<!-- <script src="<?php # echo get_stylesheet_directory_uri(); ?>/inc/js/modernizr-2.6.2.dev.js"></script> -->
+	<!-- <script src="<?php # echo get_stylesheet_directory_uri(); ?>/inc/js/functions.js"></script> -->
 
 	<?php // Loads HTML5 Shiv JavaScript file to add support for HTML5 elements in older IE versions. ?>
 	<!--[if lt IE 9]>
-		<script src="<?php #echo get_stylesheet_uri(); ?>/inc/js/html5.js"></script>
+		<script src="<?php # echo get_stylesheet_directory_uri(); ?>/inc/js/html5.js"></script>
 	<![endif]-->
 
 	<?php wp_head(); ?>
@@ -71,6 +71,7 @@
 		'container_class' => 'site-nav',
 		'container_id'    => 'main-nav',
 		'menu_class'      => '', 		// remove the class "menu"
+		'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
 		'items_wrap'      => '<ul role="navigation">%3$s</ul>',
 	); 
 	wp_nav_menu( $main_nav ); ?><!-- /main-nav -->

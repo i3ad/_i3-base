@@ -1,4 +1,4 @@
-<?php wp_header(); ?>
+<?php get_header(); ?>
 
 	<div id="site-content" class="primary" role="main">
 
@@ -57,6 +57,8 @@
 	</div><!-- /site-content -->
 
 <?php get_sidebar(); ?>
+
+<?php get_footer(); ?>
 		
-<?php wp_footer(); ?>
+
 

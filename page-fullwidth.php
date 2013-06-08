@@ -2,7 +2,7 @@
 /*
 Template Name: Fullwidth Page
 */
-wp_header(); ?>
+get_header(); ?>
 
 	<div id="site-content" class="primary" role="main">
 
@@ -30,4 +30,4 @@ wp_header(); ?>
 
 	</div><!-- /site-content -->
 		
-<?php wp_footer(); ?>
+<?php get_footer(); ?>

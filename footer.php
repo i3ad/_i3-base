@@ -20,6 +20,8 @@
 
 	<!-- Import scripts -->
 	<!-- <script src="<?php #echo get_stylesheet_uri(); ?>/inc/js/functions.js"></script> -->
-		
+
+ <?php wp_footer(); ?> 
+
 </body>
 </html>

@@ -37,5 +37,4 @@ get_header(); ?>
 
 <?php get_sidebar(); ?>
 		
-<?php wp_footer(); ?>
-
+<?php get_footer(); ?>
