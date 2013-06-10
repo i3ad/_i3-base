@@ -11,6 +11,7 @@
 			'menu_class'      => '', 		// remove the class "menu"
 			'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
 			'items_wrap'      => '<ul role="navigation">%3$s</ul>',
+			'depth'           => 1
 		); 
 		wp_nav_menu( $foot_nav ); ?><!-- /foot-nav -->
 

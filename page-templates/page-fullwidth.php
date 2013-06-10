@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Fullwidth Page
+Template Name: Fullwidth Template
 */
 get_header(); ?>
 

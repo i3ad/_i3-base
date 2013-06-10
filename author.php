@@ -2,9 +2,28 @@
 
 	<div id="site-content" class="primary" role="main">
 
-		<header class="entry-header search-header">
-			<h3 class="entry-title search-title"><?php printf( __( 'Search Results for: "%s"', '_i3-base' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
-		</header><!-- /search-header -->
+		<?php
+			/* Queue the first post, that way we know
+			 * what author we're dealing with (if that is the case).
+			 *
+			 * We reset this later so we can run the loop
+			 * properly with a call to rewind_posts().
+			 */
+		the_post(); ?>
+
+		<div class="author-info">
+			<header class="entry-header author-header">
+				<h3 class="entry-title author-title"><?php printf( __( 'Author Archives: %s', '_i3-base' ), '<span>' . get_the_author() . '</span>' ); ?></h3>
+			</header><!-- /author-header -->
+			<p><?php the_author_meta( 'description' ); ?></p>
+		</div><!-- /author-info -->	
+
+		<?php
+			/* Since we called the_post() above, we need to
+			 * rewind the loop back to the beginning that way
+			 * we can run the loop properly, in full.
+			 */
+		rewind_posts(); ?>
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -26,11 +45,13 @@
 				</header><!-- /entry-header -->
 
 				<div class="entry-content">
-					<?php the_excerpt(); ?>
+					<?php the_content(__('… Read more &raquo;', '_i3-base')); ?>
 				</div><!-- /entry-content -->
 
 				<footer class="entry-footer">
 					<p class="entry-meta foot-meta">
+						
+
 						<?php the_tags( __('Tags: ', '_i3-base'), ', ', ''); ?>
 						<?php edit_post_link(); ?>
 					</p>
@@ -38,7 +59,7 @@
 
 			</article><!-- /post-<?php the_ID(); ?>  -->
 
-		<?php endwhile; ?>
+		<?php endwhile; ?> 
 
 			<?php page_navigation(); ?>
 
@@ -53,4 +74,3 @@
 <?php get_sidebar(); ?>
 		
 <?php get_footer(); ?>
-

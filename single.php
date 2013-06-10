@@ -10,13 +10,13 @@
 					<h3 class="entry-title"><?php the_title(); ?></h3>
 
 					<p class="entry-meta head-meta">
-						<time class="updated" datetime="<?php get_the_time(); ?>" pubdate><?php the_time(); ?></time>
+						<time class="updated" datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i:s'); ?><?php the_time('T'); //This renders "YYYY-MM-DD hh:mm:ssTZD" ?>" pubdate><?php the_time(get_option('date_format')); //Date-format set in admin interface ?></time>
 						<?php __('Categories: '); the_category(', '); ?>
-						<?php if ( comments_open() ) : ?>
-							<span class="comments-link">
-								<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'twentytwelve' ) . '</span>', __( '1 Reply', 'twentytwelve' ), __( '% Replies', 'twentytwelve' ) ); ?>
-							</span>
-						<?php endif; // comments_open() ?>
+						<?php if ( comments_open() ) : 
+							echo '<span class="comments-links">';
+							comments_popup_link( __('No comments yet', '_i3-base'), __('1 comment', '_i3-base'), __('% comments', '_i3-base'), 'comments-link', __('Comments are off for this post', '_i3-base') );
+							echo '</span>';
+						endif; // comments_open() ?>
 					</p><!-- /head-meta -->
 
 				</header><!-- /entry-header -->
@@ -27,8 +27,15 @@
 
 				<footer class="entry-footer">
 					<p class="entry-meta foot-meta">
-						<?php author_info(); ?>
-						<?php the_tags( __('Tags: '), ', ', ''); ?>
+						<div class="author-info">
+							<h4><?php the_author_meta( 'display_name' );//Display authors name as set in profile ?></h4>
+							<p><?php the_author_meta( 'description' ); ?></p>
+							<a class="author-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+								<?php echo __('View all posts by ','_i3-base'), the_author_meta( 'display_name' ); ?>
+							</a>
+						</div><!-- /author-info -->	
+
+						<?php the_tags( __('Tags: ', '_i3-base'), ', ', ''); ?>
 						<?php edit_post_link(); ?>
 					</p>
 				</footer><!-- /entry-footer -->
@@ -37,16 +44,9 @@
 
 		<?php endwhile; ?>
 
-			<?php #post_navigation(); ?>
-			<!-- or -->
-			<?php echo paginate_links( array(
-			    'current'	=> max(1, get_query_var('paged')),
-			    'total' 	=> $wp_query->max_num_pages,
-			    'base' 		=> get_pagenum_link(1) . '%_%',  
-			    'format' 	=> '?page=%#%'
-			) ); // http://wordpress.stackexchange.com/questions/52405/paginate-links-adds-empty-href-to-first-page-and-previous-link ?>
+			<?php single_post_navigation(); ?><!-- /single-post-navigation --> 
 
-			<?php //comments_template(); // uncomment if you want to use them ?><!-- /comments-template --> 
+			<?php comments_template(); // uncomment if you want to use them ?><!-- /comments-template --> 
 
 		<?php else : ?>
 

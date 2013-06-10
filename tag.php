@@ -2,9 +2,30 @@
 
 	<div id="site-content" class="primary" role="main">
 
-		<header class="entry-header search-header">
-			<h3 class="entry-title search-title"><?php printf( __( 'Search Results for: "%s"', '_i3-base' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
-		</header><!-- /search-header -->
+		<?php
+			/* Queue the first post, that way we know
+			 * what category we're dealing with (if that is the case).
+			 *
+			 * We reset this later so we can run the loop
+			 * properly with a call to rewind_posts().
+			 */
+		the_post(); ?>
+
+		<header class="entry-header tag-header">
+			<h3 class="entry-title tag-title">
+				<?php printf( __( 'Tag Archives: %s', '_i3-base' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
+			</h3>
+			<?php if ( category_description() ) : // Show an optional tag description ?>
+				<div class="entry-description tag-description"><?php echo tag_description(); ?></div>
+			<?php endif; ?>
+		</header><!-- /tag-header -->
+
+		<?php
+			/* Since we called the_post() above, we need to
+			 * rewind the loop back to the beginning that way
+			 * we can run the loop properly, in full.
+			 */
+		rewind_posts(); ?>
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -26,11 +47,19 @@
 				</header><!-- /entry-header -->
 
 				<div class="entry-content">
-					<?php the_excerpt(); ?>
+					<?php the_content(__('… Read more &raquo;', '_i3-base')); ?>
 				</div><!-- /entry-content -->
 
 				<footer class="entry-footer">
 					<p class="entry-meta foot-meta">
+						<div class="author-info">
+							<h4><?php the_author_meta( 'display_name' );//Display authors name as set in profile ?></h4>
+							<p><?php the_author_meta( 'description' ); ?></p>
+							<a class="author-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+								<?php echo __('View all posts by ','_i3-base'), the_author_meta( 'display_name' ); ?>
+							</a>
+						</div><!-- /author-info -->	
+
 						<?php the_tags( __('Tags: ', '_i3-base'), ', ', ''); ?>
 						<?php edit_post_link(); ?>
 					</p>
@@ -38,7 +67,7 @@
 
 			</article><!-- /post-<?php the_ID(); ?>  -->
 
-		<?php endwhile; ?>
+		<?php endwhile; ?> 
 
 			<?php page_navigation(); ?>
 
@@ -53,4 +82,3 @@
 <?php get_sidebar(); ?>
 		
 <?php get_footer(); ?>
-
