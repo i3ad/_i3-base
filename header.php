@@ -12,7 +12,6 @@
 
 	<!-- Import main stylesheets -->
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/css/font-awesome.min.css" />
 
 	<!-- Icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) -->
 	<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/apple-icon-touch.png">
@@ -26,10 +25,6 @@
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-	<!-- Import scripts -->
-	<!-- <script src="<?php echo get_stylesheet_directory_uri(); ?>/inc/js/modernizr-2.6.2.dev.js"></script> -->
-	<!-- <script src="<?php echo get_stylesheet_directory_uri(); ?>/inc/js/functions.js"></script> -->
-
 	<?php // Loads HTML5 Shiv JavaScript file to add support for HTML5 elements in older IE versions. ?>
 	<!--[if lt IE 9]>
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/inc/js/html5.js"></script>
@@ -37,6 +32,18 @@
 
 	<?php wp_head(); ?>
 	<!-- end of wordpress head -->
+
+	<!-- Connect theme-customizer -->
+	<?php
+		$content_text_color = get_option('content_text_color');
+		$content_link_color = get_option('content_link_color');
+		$content_link_hover_color = get_option('content_link_hover_color');
+	?>
+	<style>
+		body, select, input, textarea { color:  <?php echo $content_text_color; ?>; }
+		a, a:link, a:visited { color:  <?php echo $content_link_color; ?>; }
+		a:hover, a:active, a:focus { color:  <?php echo $content_link_hover_color; ?>; }
+	</style>
 
 </head>
 
@@ -63,8 +70,14 @@
 	<header id="site-header" role="header">
 
 		<hgroup>
-			<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+			<?php if ( get_theme_mod( 'custom_logo' ) ) : ?>
+				<div class="site-logo">
+			        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); echo " - "; echo esc_attr( get_bloginfo( 'description', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'custom_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+			    </div>
+			<?php else : ?>
+				<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+			<?php endif; ?>
 		</hgroup>
 
 		<?php get_search_form(); ?>

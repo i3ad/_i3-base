@@ -97,7 +97,7 @@ body,
 select, 
 input, 
 textarea {
-	color: #333333;
+	color: #333333; /* can be overridden by the theme-customizer */
 }
 
 h1,
@@ -145,8 +145,8 @@ h6 small {}
 a,
 a:link,
 a:visited {
-	color: #03f;
-}
+	color: #03f; /* can be overridden by the theme-customizer */
+} 
 
 a:active {}
 

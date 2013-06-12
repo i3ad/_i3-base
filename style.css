@@ -3,7 +3,7 @@ Theme Name: _i3-base
 Theme URI: http://moscouch.com
 Author: Mo
 Author URI: http://moscouch.com
-Description: A respnsive grid based HTML5 and CSS3 starter-theme.
+Description: A responsive, grid based, HTML5 and CSS3, starter-theme.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,8 +14,5 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-/* Import base stylesheets (FontAwesome is linked in header)
+/* Stylesheets (reset, grid and base stylesheet located in "/inc/css/" )
 --------------------------------------------- */
-@import "inc/css/reset.css";
-@import "inc/css/grid.css";
-@import "inc/css/base.css";

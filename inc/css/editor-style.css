@@ -1,0 +1,21 @@
+/*
+EDITOR STYLES
+
+Style like this:
+body#tinymce.wp-editor { 
+    font-family: Arial, Helvetica, sans-serif; 
+    margin: 10px; 
+}
+
+body#tinymce.wp-editor a {
+    color: #4CA6CF;
+}
+
+OR
+
+Import the theme stylesheet
+@import url( 'style.css' );
+
+Add overwrites as needed so that the content of the editor field is attractive and not broken
+body { padding: 0; background: #fff; } 
+/*
