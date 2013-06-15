@@ -13,7 +13,7 @@
 
 		<header class="entry-header author-header">
 			<h3 class="entry-title author-title"><?php printf( __( 'Author Archives: %s', '_i3-base' ), '<span>' . get_the_author() . '</span>' ); ?></h3>
-			<?php if ( the_author_meta() ) : // Show an optional author description ?> WORKING??
+			<?php if ( the_author_meta( 'description' ) ) : // Show an optional author description ?> WORKING??
 				<p class="entry-description author-description"><?php the_author_meta( 'description' ); ?></p>
 			<?php endif; ?>
 		</header><!-- /author-header -->
@@ -65,7 +65,7 @@
 
 		<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'loop', 'none' ); ?>
 
 		<?php endif; ?>
 

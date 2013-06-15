@@ -1,13 +1,3 @@
-<?php get_header(); ?>
-
-	<div id="site-content" class="primary" role="main">
-
-		<header class="entry-header search-header">
-			<h3 class="entry-title search-title"><?php printf( __( 'Search Results for: "%s"', '_i3-base' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
-		</header><!-- /search-header -->
-
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
 			<article <?php post_class('hentry') ?> id="post-<?php the_ID(); ?>" role="article">
 
 				<header class="entry-header">
@@ -26,31 +16,17 @@
 				</header><!-- /entry-header -->
 
 				<div class="entry-content">
-					<?php the_excerpt(); ?>
+					<?php the_content(__('… Read more &raquo;', '_i3-base')); ?>
 				</div><!-- /entry-content -->
 
 				<footer class="entry-footer">
 					<p class="entry-meta foot-meta">
+						
+						<?php get_template_part( 'author', 'info' ); ?>	
+
 						<?php the_tags( __('Tags: ', '_i3-base'), ', ', ''); ?>
 						<?php edit_post_link(); ?>
 					</p>
 				</footer><!-- /entry-footer -->
 
 			</article><!-- /post-<?php the_ID(); ?>  -->
-
-		<?php endwhile; ?>
-
-			<?php page_navigation(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'loop', 'none' ); ?>
-
-		<?php endif; ?>
-
-	</div><!-- /site-content -->
-
-<?php get_sidebar(); ?>
-		
-<?php get_footer(); ?>
-

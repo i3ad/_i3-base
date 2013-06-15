@@ -9,11 +9,11 @@ get_header(); ?>
 			<article class="404 not-found" id="page-404-error" role="article">
 
 				<header class="entry-header">
-					<h3 class="entry-title"><?php _e('Error 404 - Page Not Found','html5reset'); ?></h3>
+					<h3 class="entry-title"><?php _e('Error 404 - Page Not Found','_i3-base'); ?></h3>
 				</header><!-- /entry-header -->
 
 				<div class="entry-content">
-					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'twentytwelve' ); ?></p>
+					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', '_i3-base' ); ?></p>
 				
 					<?php get_search_form(); ?>
 

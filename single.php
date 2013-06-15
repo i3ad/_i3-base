@@ -27,13 +27,8 @@
 
 				<footer class="entry-footer">
 					<p class="entry-meta foot-meta">
-						<div class="author-info">
-							<h4><?php the_author_meta( 'display_name' );//Display authors name as set in profile ?></h4>
-							<p><?php the_author_meta( 'description' ); ?></p>
-							<a class="author-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-								<?php echo __('View all posts by ','_i3-base'), the_author_meta( 'display_name' ); ?>
-							</a>
-						</div><!-- /author-info -->	
+
+						<?php get_template_part( 'author', 'info' ); ?>
 
 						<?php the_tags( __('Tags: ', '_i3-base'), ', ', ''); ?>
 						<?php edit_post_link(); ?>
@@ -50,7 +45,7 @@
 
 		<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'loop', 'none' ); ?>
 
 		<?php endif; ?>
 
