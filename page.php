@@ -15,9 +15,7 @@
 				</div><!-- /entry-content -->
 
 				<footer class="entry-footer">
-					<p class="entry-meta foot-meta">
-						<?php edit_post_link(); ?>
-					</p>
+					<?php edit_post_link(); ?>
 				</footer><!-- /entry-footer -->
 
 			</article><!-- /post-<?php the_ID(); ?>  -->

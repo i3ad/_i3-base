@@ -11,13 +11,13 @@
 			 */
 		the_post(); ?>
 
-		<div class="author-info">
-			<header class="entry-header author-header">
-				<h3 class="entry-title author-title"><?php printf( __( 'Author Archives: %s', '_i3-base' ), '<span>' . get_the_author() . '</span>' ); ?></h3>
-			</header><!-- /author-header -->
-			<p><?php the_author_meta( 'description' ); ?></p>
-		</div><!-- /author-info -->	
-
+		<header class="entry-header author-header">
+			<h3 class="entry-title author-title"><?php printf( __( 'Author Archives: %s', '_i3-base' ), '<span>' . get_the_author() . '</span>' ); ?></h3>
+			<?php if ( the_author_meta() ) : // Show an optional author description ?> WORKING??
+				<p class="entry-description author-description"><?php the_author_meta( 'description' ); ?></p>
+			<?php endif; ?>
+		</header><!-- /author-header -->
+			
 		<?php
 			/* Since we called the_post() above, we need to
 			 * rewind the loop back to the beginning that way

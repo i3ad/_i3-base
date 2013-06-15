@@ -167,6 +167,8 @@
 		echo '</div>';
 	}
 
+
+
     function page_navigation() {
 	    global $wp_rewrite, $wp_query;
 	    $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
