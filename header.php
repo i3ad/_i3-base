@@ -49,15 +49,15 @@
 
 <body <?php body_class(); ?>>
 
-	<div id="top-nav-container" class="clearfix">
+	<div id="top-nav-container" class="row">
 
-		<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' )); echo ' - '; echo esc_attr( get_bloginfo( 'description', 'display' )); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<h1 id="site-title" class="float-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' )); echo ' - '; echo esc_attr( get_bloginfo( 'description', 'display' )); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
 		<?php $top_nav = array(
 			'theme_location'  => 'top_nav',
 			'menu'            => '',
 			'container'       => 'nav',		// wrap <ul> in <nav> container
-			'container_class' => 'site-nav',
+			'container_class' => 'site-nav float-right',
 			'container_id'    => 'top-nav',
 			'menu_class'      => '', 		// remove the class "menu"
 			'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
@@ -67,7 +67,7 @@
 
 	</div><!-- /top-nav-container -->
 
-	<header id="site-header" role="header">
+	<header id="site-header" class="row" role="header">
 
 		<hgroup>
 			<?php if ( get_theme_mod( 'custom_logo' ) ) : ?>
@@ -88,10 +88,12 @@
 		'theme_location'  => 'main_nav',
 		'menu'            => '',
 		'container'       => 'nav',		// wrap <ul> in <nav> container
-		'container_class' => 'site-nav',
+		'container_class' => 'site-nav row',
 		'container_id'    => 'main-nav',
 		'menu_class'      => '', 		// remove the class "menu"
 		'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
 		'items_wrap'      => '<ul role="navigation">%3$s</ul>'
 	); 
 	wp_nav_menu( $main_nav ); ?><!-- /main-nav -->
+
+	<div id="content-container" class="row">

@@ -15,18 +15,15 @@
 
 				</header><!-- /entry-header -->
 
-				<div class="entry-content">
+				<div class="entry-content clearfix">
 					<?php the_content(__('… Read more &raquo;', '_i3-base')); ?>
+                    <?php edit_post_link(); ?>
 				</div><!-- /entry-content -->
 
-				<footer class="entry-footer">
-					<div class="entry-meta foot-meta">
-						
+				<footer class="entry-footer entry-meta">						
 						<?php get_template_part( 'author', 'info' ); ?>	
 
 						<?php the_tags( __('Tags: ', '_i3-base'), ', ', ''); ?>
-						<?php edit_post_link(); ?>
-					</div>
 				</footer><!-- /entry-footer -->
 
 			</article><!-- /post-<?php the_ID(); ?>  -->

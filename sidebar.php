@@ -1,4 +1,4 @@
-	<div id="sidebar" class="widget-area" role="complementary">
+	<div id="sidebar" class="widget-area grid three" role="complementary">
 
 		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 

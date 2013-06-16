@@ -134,6 +134,22 @@
     }
     add_action('customize_register', 'custom_site_logo');
 
+/* Add to top link
+   ========================================================================== */
+    function to_top_link( $wp_customize ) {
+        
+        $wp_customize->add_setting( 'to_top', array(
+            'default' => 0,
+        ) );
+
+        $wp_customize->add_control( 'to_top', array(
+            'label'     => __( 'Show to top link', '_i3-base' ),
+            'type'      => 'checkbox',
+            'section'   => 'nav',
+        ) );
+    }
+    add_action('customize_register', 'to_top_link');
+
 /* ==========================================================================
    $REGISTER NAV MENUS
    ========================================================================== */
