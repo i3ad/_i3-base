@@ -2,35 +2,58 @@
 
 	<div id="site-content" class="primary" role="main">
 
-		<?php
-			/* Queue the first post, that way we know
-			 * what archiv we're dealing with (if that is the case).
-			 *
-			 * We reset this later so we can run the loop
-			 * properly with a call to rewind_posts().
-			 */
-		the_post(); ?>
+			<?php if (is_category()) { ?>
+				<header class="entry-header category-header">
+					<h3 class="entry-title category-title">
+						<span><?php _e("Posts Categorized:", "_i3-base"); ?></span> <?php single_cat_title(); ?>
+					</h3>
+					<?php if ( category_description() ) : // Show an optional category description ?>
+						<p class="entry-description category-description"><?php echo category_description(); ?></p>
+					<?php endif; ?>
+				</header><!-- /category-header -->
 
-		<header class="entry-header archive-header">
-			<h3 class="entry-title archive-title"><?php
-					if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', '_i3-base' ), '<span>' . get_the_date() . '</span>' );
-					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', '_i3-base' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', '_i3-base' ) ) . '</span>' );
-					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', '_i3-base' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', '_i3-base' ) ) . '</span>' );
-					else :
-						_e( 'Archives', '_i3-base' );
-					endif;
-				?></h3>
-		</header><!-- /archive-header -->
+			<?php } elseif (is_tag()) { ?>
+				<header class="entry-header tag-header">
+					<h3 class="entry-title tag-title">
+						<span><?php _e("Posts Tagged:", "_i3-base"); ?></span> <?php single_tag_title(); ?>
+					</h3>
+					<?php if ( tag_description() ) : // Show an optional tag description ?>
+						<p class="entry-description tag-description"><?php echo tag_description(); ?></p>
+					<?php endif; ?>
+				</header><!-- /tag-header -->
 
-		<?php
-			/* Since we called the_post() above, we need to
-			 * rewind the loop back to the beginning that way
-			 * we can run the loop properly, in full.
-			 */
-		rewind_posts(); ?>
+			<?php } elseif (is_author()) { global $post; $author_id = $post->post_author; ?>
+				<header class="entry-header author-header">
+					<h3 class="entry-title author-title">
+						<span><?php _e("Posts By:", "_i3-base"); ?></span> <?php the_author_meta('display_name', $author_id); ?>
+					</h3>
+					<?php $authordesc = get_the_author_meta( 'description' ); if ( ! empty ( $authordesc ) ) { // Show an optional author description ?>
+						<p class="entry-description author-description"><?php the_author_meta( 'description' ); ?></p>
+					<?php } ?>
+				</header><!-- /author-header -->
+
+			<?php } elseif (is_day()) { ?>
+				<header class="entry-header archive-header">
+					<h3 class="entry-title archive-title">
+						<span><?php _e("Daily Archives:", "_i3-base"); ?></span> <?php the_time('l, F j, Y'); ?>
+					</h3>
+				</header><!-- /archive-header -->
+
+			<?php } elseif (is_month()) { ?>
+				<header class="entry-header archive-header">
+					<h3 class="entry-title archive-title">
+						<span><?php _e("Monthly Archives:", "_i3-base"); ?></span> <?php the_time('F Y'); ?>
+					</h3>
+				</header><!-- /archive-header -->
+
+			<?php } elseif (is_year()) { ?>
+				<header class="entry-header archive-header">
+					<h3 class="entry-title archive-title">
+						<span><?php _e("Yearly Archives:", "_i3-base"); ?></span> <?php the_time('Y'); ?>
+					</h3>
+				</header><!-- /archive-header -->
+			<?php } ?>
+
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

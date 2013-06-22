@@ -5,7 +5,7 @@
 
 					<div class="entry-meta head-meta">
 						<time class="updated" datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i:s'); ?><?php the_time('T'); //This renders "YYYY-MM-DD hh:mm:ssTZD" ?>" pubdate><?php the_time(get_option('date_format')); //Date-format set in admin interface ?></time>
-						<?php __('Categories: ', '_i3-base'); the_category(', '); ?>
+						<?php _e('Categories: ', '_i3-base'); the_category(', '); ?>
 						<?php if ( comments_open() ) : 
 							echo '<span class="comments-links">';
 							comments_popup_link( __('No comments yet', '_i3-base'), __('1 comment', '_i3-base'), __('% comments', '_i3-base'), 'comments-link', __('Comments are off for this post', '_i3-base') );

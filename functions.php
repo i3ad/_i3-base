@@ -13,6 +13,57 @@
 */
 
 /* ==========================================================================
+   $INCLUDE FILES
+   ========================================================================== */
+    require_once('inc/cpt-custom_type.php'); // you can disable this if you like
+
+/* ==========================================================================
+   $RELATED CONTENT
+   ========================================================================== */
+// http://pippinsplugins.com/write-a-better-related-posts-plugin-for-custom-taxonomies/
+// use like "echo related_content();" on normal loops
+// and "echo related_content( 'taxonomy-name' );" on custom loops
+
+    function related_content($taxonomy = '') {
+     
+        global $post;
+        if($taxonomy == '') { $taxonomy = 'post_tag'; }
+         
+        $tags = wp_get_post_terms($post->ID, $taxonomy);
+         
+            if ($tags) {
+                $args = array(
+                    'post_type' => get_post_type($post->ID),
+                    'post__not_in' => array( get_the_ID() ),
+                    'posts_per_page' => 4,
+                    'tax_query' => array('relation' => 'OR' ),
+                );
+
+                foreach ( $tags as $tag ) {
+                    $args['tax_query'][] = array(
+                        'taxonomy' => $taxonomy,
+                        'terms' => $tag->term_id,
+                        'field' => 'id',
+                        'operator' => 'IN',
+                    );
+                }
+
+                $related = get_posts($args);
+                if( $related ) {
+                    $temp_post = $post;
+                    $content .= '<h4>' .  __('Related Content', '_i3-base') . '</h4><ul class="related-posts-box">';
+                        foreach($related as $post) : setup_postdata($post);
+                                $content .= '<li><a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a></li>';
+                                    
+                        endforeach;
+                    $content .= '</ul>';
+                    $post = $temp_post;
+                }
+            }
+            return $content;
+    }
+
+/* ==========================================================================
    $ENQUEUE STYLES AND SCRIPTS
    ========================================================================== */
 
