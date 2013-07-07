@@ -23,7 +23,7 @@ function product_post_type() {
 		'label'               => __( 'cpt-product', '_i3-base' ), // is that OK here ?
 		'description'         => __( 'Product information pages', '_i3-base' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'thumbnail', ),
+		'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
 		'taxonomies'          => array( 'product-cat', 'product-tag' ),
 		'hierarchical'        => false,
 		'public'              => true,
@@ -129,5 +129,59 @@ function product_tag_tax()  {
 add_action( 'init', 'product_tag_tax', 0 );
 
 }
+
+/////////////////////////////////////////////////////////////////////////
+// Add admin-row for featured images
+/////////////////////////////////////////////////////////////////////////
+
+// Dummy up theme support.
+//add_theme_support( 'post-thumbnails' );
+
+add_image_size( 'product-list-thumb', 100, 100, true ); // 100 pixels wide by 100 pixels tall, hard crop mode
+
+// GET FEATURED IMAGE  
+function ST4_get_featured_image($post_ID) {  
+    $post_thumbnail_id = get_post_thumbnail_id($post_ID);  
+    if ($post_thumbnail_id) {  
+        $post_thumbnail_img = wp_get_attachment_image_src($post_thumbnail_id, 'product-list-thumb');  
+        return $post_thumbnail_img[0];  
+    }  
+}  
+
+// ADD NEW COLUMN  
+function ST4_columns_head($defaults) { 
+	$defaults['product_id'] = __( 'ID', '_i3-base' ); 
+    $defaults['product_image'] = __( 'Product Image', '_i3-base' );  
+
+    return $defaults;  
+}  
+  
+// SHOW THE FEATURED IMAGE  
+function ST4_columns_content($column_name, $post_ID) {  
+    if ($column_name == 'product_image') {  
+        $post_product_image = ST4_get_featured_image($post_ID);
+
+        echo '<a href="post.php?post=' . $post_ID . '&action=edit">'; 
+
+        if ($post_product_image) {  
+            // HAS A FEATURED IMAGE  
+            echo '<img src="' . $post_product_image . '" />';  
+        }  
+        else {  
+            // NO FEATURED IMAGE, SHOW THE DEFAULT ONE  
+            echo '<img src="' . get_stylesheet_directory_uri() . '/inc/img/no-thumb_100x100.jpg" />'; 
+        } 
+
+        echo '</a>'; 
+        
+    }  
+    if ($column_name == 'product_id') { 
+    	 the_ID();
+    }
+}   
+
+add_filter('manage_cpt-product_posts_columns', 'ST4_columns_head');  
+add_action('manage_cpt-product_posts_custom_column', 'ST4_columns_content', 10, 2); 
+
 
 ;?>

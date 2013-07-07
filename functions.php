@@ -35,7 +35,7 @@
                 $args = array(
                     'post_type' => get_post_type($post->ID),
                     'post__not_in' => array( get_the_ID() ),
-                    'posts_per_page' => 4,
+                    'posts_per_page' => 4, // change number of items
                     'tax_query' => array('relation' => 'OR' ),
                 );
 
@@ -196,7 +196,7 @@
         $wp_customize->add_control( 'to_top', array(
             'label'     => __( 'Show to top link', '_i3-base' ),
             'type'      => 'checkbox',
-            'section'   => 'nav',
+            'section'   => 'nav',    // Add this option to the default "Navigation" section
         ) );
     }
     add_action('customize_register', 'to_top_link');
