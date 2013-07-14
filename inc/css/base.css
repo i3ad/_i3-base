@@ -252,7 +252,7 @@ a img:hover {}
 	border: 1px solid #DDDDDD;
     display: inline-block;
     padding: 4px;
-    max-width:100%;
+    max-width: 100%;
 }
 
 .thumbnail > img {
@@ -340,10 +340,140 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 /**
  * Example HTML:
  *
- * <a href="#" class="button">
+ * <a href="#" class="btn">
+ *		<!-- content -->
+ * </a>
+ *
+ * or
+ *
+ * <a href="#" class="btn radius dark-blue small">
  *		<!-- content -->
  * </a>
  */
+.btn {
+	font-weight: bold;
+	background: #69a6cc;
+	border: 1px solid;
+	border-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.35);
+	color: #ffffff;
+	display: inline-block;
+	text-align: center;
+	padding: 0.5em 1.2em;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3); /* Add white inset shadow, WebKit */
+    -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3); /* Add white inset shadow, Firefox */
+	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3); /* Add white inset shadow, Standart */
+}
+
+.btn:hover {
+	background: #5e95b7;
+	color: #ffffff;
+}
+
+.btn:focus {
+	color: #ffffff;
+}
+
+.btn:active { /* Add inset shadow at press-in */
+	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.15); /* WebKit */
+	-moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.15); /* Firefox */
+	box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.15); /* Standard */	
+}
+
+/* Dropdown Buttons
+   ========================================================================== */  
+/**
+ * Example HTML:
+ *
+ * <div class="dropdown-btn">
+ *      <a href="#" class="button"><!-- content --> <i class="icon-caret-down"></i></a>
+ *      <ul>
+ *          <li><a href="#"><!-- content --></a></li>
+ *          <li><a href="#"><!-- content --></a></li>
+ *          <li class="sep"><a href="#"><!-- content --></a></li>
+ +     </ul>
+ *  </div>
+ */
+.dropdown-btn {
+	display: inline-block;
+}
+
+.dropdown-btn ul {
+	margin: 0;
+	list-style-type: none;
+	position: relative;
+	background: #F7F7F7;
+	border: 1px solid #DCDCDC;
+    /* Maybe add shadow ? */
+}
+
+.dropdown-btn li a {
+	display: block;
+	padding: 0.5em 1em;
+	font-size: 80%;
+	color: #555555;
+}
+
+.dropdown-btn li a:hover {
+	background: #e3f4f9;
+}
+
+.dropdown-btn li.sep { /* Seperator */
+    border-top: 1px solid #DCDCDC; 
+}
+
+/* Buttons Groups
+   ========================================================================== */  
+/**
+ * Example HTML:
+ *
+ *  <ul class="button-group radius">
+ *      <li><a href="#" class="button"><!-- content --></a></li>
+ *      <li><a href="#" class="button"><!-- content --></a></li>
+ *      <li><a href="#" class="button"><!-- content --></a></li>
+ *  </ul>
+ */
+ul.button-group {
+	list-style-type: none;
+	line-height: normal;
+}
+
+ul.button-group:before, ul.button-group:after {
+    content: " ";
+    display: table;
+}
+
+ul.button-group:after {
+    clear: both;
+}
+
+ul.button-group li {
+	float: left;
+	display: block;
+}
+
+ul.button-group a {
+	border-right: 0;
+}
+
+ul.button-group li:last-child a {
+	border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+ul.button-group .radius {
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+ul.button-group.radius li:first-child a {
+	-webkit-border-radius: 3px 0px 0px 3px;
+    border-radius: 3px 0px 0px 3px;
+}
+
+ul.button-group.radius li:last-child a {
+	-webkit-border-radius: 0px 3px 3px 0px;
+    border-radius: 0px 3px 3px 0px;
+}
  
 /* Labels
    ========================================================================== */  
