@@ -5,7 +5,7 @@
 		<?php get_sidebar( 'footer' ); ?>
         
         <a href="#" id="to-top" class="float-right" <?php echo ( get_theme_mod( 'to_top' ) ) ? "" : "style='display:none;'" ?>>
-            <?php _e('to top', '_i3-base'); ?>
+            <?php _e('to top', '_i3-base'); ?> <i class="icon-long-arrow-up"></i>
         </a>
 
 		<?php $foot_nav = array(
@@ -15,7 +15,7 @@
 			'container_class' => 'site-nav float-right',
 			'container_id'    => 'foot-nav',
 			'menu_class'      => '', 		// remove the class "menu"
-			'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
+			'fallback_cb'     => '', 		// dont fallback on "wp_page_menu", insstead display nothing
 			'items_wrap'      => '<ul role="navigation">%3$s</ul>',
 			'depth'           => 1
 		); 

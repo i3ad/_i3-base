@@ -11,21 +11,21 @@
 				return;
 			// If we get this far, we have widgets. Let do this.
 		?>
-		<div id="footer-widgets">
+		<div id="footer-widgets" class="row">
 			<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-				<div id="first" class="widget-area" role="complementary">
+				<div id="first" class="widget-area <?php i3_footer_sidebar_class(); ?>" role="complementary">
 					<?php dynamic_sidebar( 'footer-1' ); ?>
 				</div><!-- /first .widget-area -->
 			<?php endif; ?>
 
 			<?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-				<div id="second" class="widget-area" role="complementary">
+				<div id="second" class="widget-area <?php i3_footer_sidebar_class(); ?>" role="complementary">
 					<?php dynamic_sidebar( 'footer-2' ); ?>
 				</div><!-- /second .widget-area -->
 			<?php endif; ?>
 
 			<?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-				<div id="third" class="widget-area" role="complementary">
+				<div id="third" class="widget-area <?php i3_footer_sidebar_class(); ?>" role="complementary">
 					<?php dynamic_sidebar( 'footer-3' ); ?>
 				</div><!-- /third .widget-area -->
 			<?php endif; ?>

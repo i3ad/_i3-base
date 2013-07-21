@@ -12,6 +12,9 @@
 
 	<!-- Import main stylesheets -->
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
+	<!--[if IE 7]>
+  		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/font-awesome/css/font-awesome-ie7.min.css">
+	<![endif]-->
 
 	<!-- Icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) -->
 	<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/apple-icon-touch.png">

@@ -73,7 +73,7 @@
         wp_register_style( 'reset', get_stylesheet_directory_uri() . '/inc/css/reset.css', array(), '1.0', 'all' );
         wp_register_style( 'base', get_stylesheet_directory_uri() . '/inc/css/base.css', array(), '1.0', 'all' );
         wp_register_style( 'grid', get_stylesheet_directory_uri() . '/inc/css/grid.css', array(), '1.0', 'all' );
-        wp_register_style( 'fontawesome', get_stylesheet_directory_uri() . '/inc/css/font-awesome.min.css', array(), '1.0', 'all' );
+        wp_register_style( 'fontawesome', get_stylesheet_directory_uri() . '/inc/font-awesome/css/font-awesome.min.css', array(), '1.0', 'all' );
         
         wp_enqueue_style( 'reset' );
         wp_enqueue_style( 'base' );
@@ -261,6 +261,38 @@
     	'after_title' 	=> '</h4>',
     ));
 
+/* Make the Footer-Sidebar dynamic
+   ========================================================================== */
+    function i3_footer_sidebar_class() {
+        $count = 0;
+
+        if ( is_active_sidebar( 'footer-1' ) )
+            $count++;
+
+        if ( is_active_sidebar( 'footer-2' ) )
+            $count++;
+
+        if ( is_active_sidebar( 'footer-3' ) )
+            $count++;
+
+        $class = '';
+
+        switch ( $count ) {
+            case '1':
+                $class = 'grid twelve';
+                break;
+            case '2':
+                $class = 'grid six';
+                break;
+            case '3':
+                $class = 'grid four';
+                break;
+        }
+
+        if ( $class )
+            echo $class; // no need do display "class="" here, its in the footer-sidebar
+    }
+
 /* ==========================================================================
    $POST / PAGE NAVIGATION
    ========================================================================== */
@@ -323,5 +355,7 @@
 /* Remove WP meta generator
    ========================================================================== */
     remove_action('wp_head', 'wp_generator');
+
+
 
 ?>
