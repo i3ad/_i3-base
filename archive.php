@@ -22,6 +22,27 @@
 					<?php endif; ?>
 				</header><!-- /tag-header -->
 
+			<?php } elseif (taxonomy_exists($wp_query->query_vars['taxonomy'])) { ?>
+					<header class="entry-header tax-header">
+						<h3 class="entry-title tax-title">
+							<?php if (is_term($wp_query->query_vars['term'])) { ?>
+								<span><?php _e("Taxonomy Term:", "_i3-base"); ?></span> <?php echo $wp_query->query_vars['taxonomy']; ?> - <?php echo $wp_query->query_vars['term']; ?>
+							<?php } else { ?>
+								<span><?php _e("Taxonomy:", "_i3-base"); ?></span> <?php echo $wp_query->query_vars['taxonomy']; ?>
+							<?php } ?>
+						</h3>
+						<?php $termDiscription = term_description( '', get_query_var( 'taxonomy' ) ); if($termDiscription != '') : ?>
+							<p class="entry-description tax-description"><?php echo $termDiscription; ?></p>
+						<?php endif; ?>
+					</header><!-- /tax-header -->
+
+			<?php } elseif ($post->post_type !== 'post') { ?>
+				<header class="entry-header type-header">
+					<h3 class="entry-title type-title">
+						<span><?php _e("Post-Type:", "_i3-base"); ?></span> <?php echo $post->post_type; ?>
+					</h3>
+				</header><!-- /type-header -->
+
 			<?php } elseif (is_author()) { global $post; $author_id = $post->post_author; ?>
 				<header class="entry-header author-header">
 					<h3 class="entry-title author-title">
