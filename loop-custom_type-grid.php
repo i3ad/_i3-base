@@ -17,6 +17,76 @@
 
 				<div class="entry-content clearfix">
 					<?php the_content(__('… Read more &raquo;', '_i3-base')); ?>
+
+
+<div class="alert-box">
+<strong>Warning!</strong>
+Your content goes here
+<span class="close" href="#">
+<i class="icon-remove"></i>
+</span>
+</div>
+
+<div class="dropdown-btn">
+<button type="button" class="btn">
+Dropdown Button
+<i class="icon-caret-down"></i>
+</button>
+
+<ul>
+<li><a href="#">First</a></li>
+<li><a href="#">Second Second Second Second Second</a></li>
+<li class="sep"><a href="#">Last</a></li>
+</ul>
+</div>
+
+
+<div class="tabbed clearfix">
+	<!-- The tabs -->
+	<ul class="tabs">
+	<li class="t1"><a class="t1 tab" title="<?php _e('Tab 1'); ?>"><?php _e('Tab 1'); ?></a></li>
+	<li class="t2"><a class="t2 tab" title="<?php _e('Tab 2'); ?>"><?php _e('Tab 2'); ?></a></li>
+	<li class="t3"><a class="t3 tab" title="<?php _e('Tab 3'); ?>"><?php _e('Tab 3'); ?></a></li>
+	<li class="t4"><a class="t4 tab" title="<?php _e('Tab 4'); ?>"><?php _e('Tab 4'); ?></a></li>
+	</ul>
+
+	<!-- tab 1 -->
+	<div class="t1">
+	<!-- Put what you want in here.  For the sake of this tutorial, we'll make a list.  -->
+	<ul>
+		<li>List item</li>
+		<li>List item</li>
+		<li>List item</li>
+		<li>List item</li>
+		<li>List item</li>
+	</ul>
+	</div>
+
+	<!-- tab 2 -->
+	<div class="t2">
+	<!-- Or, we could put a paragraph -->
+		<p>This is a paragraph about the jQuery tabs tutorial.</p>
+	</div>
+
+	<!-- tab 3 -->
+	<div class="t3">
+	<!-- Or, we could add a div -->
+		<div>Something needs to go in here!</div>
+	</div>
+
+	<!-- tab 4 -->
+	<div class="t4">
+	<!-- Why not put a few images in here? -->
+		<p>
+			<img src="image.gif" alt="Sample" />
+			<img src="image.gif" alt="Sample" />
+			<img src="image.gif" alt="Sample" />
+		</p>
+	</div>
+
+</div><!-- tabbed -->
+
+
                     <?php edit_post_link(); ?>
 				</div><!-- /entry-content -->
 

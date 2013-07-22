@@ -23,6 +23,8 @@
 	
 */
 
+
+
 /* ==========================================================================
    $HELPER
    ========================================================================== */
@@ -374,11 +376,14 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 	color: #ffffff;
 }
 
-.btn:active { /* Add inset shadow at press-in */
+.btn:active,
+.btn.pressed { /* Add inset shadow at press-in */
 	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.15); /* WebKit */
 	-moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.15); /* Firefox */
 	box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.15); /* Standard */	
 }
+
+
 
 /* Dropdown Buttons
    ========================================================================== */  
@@ -396,15 +401,20 @@ textarea:-moz-placeholder { color:#a9a9a9; }
  */
 .dropdown-btn {
 	display: inline-block;
+	position: relative;
 }
 
 .dropdown-btn ul {
+	display: none;
 	margin: 0;
 	list-style-type: none;
-	position: relative;
 	background: #F7F7F7;
 	border: 1px solid #DCDCDC;
-    /* Maybe add shadow ? */
+	z-index: 999;
+	position: absolute;
+	width: auto;
+    -webkit-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-btn li a {
@@ -617,6 +627,7 @@ a.blue-btn:hover {
 	padding: 0.5em;
 	color: inherit;
 	opacity: 0.5; 
+	cursor: pointer;
 }
 
 .alert-box .close:hover,
@@ -626,6 +637,15 @@ a.blue-btn:hover {
 
 /* Alerts and Panels
    ========================================================================== */
+/**
+ * Example HTML:
+ *
+ * <div class="alert-box">
+ *		<!-- content -->
+ *		<span class="close" href="#"><i class="icon-remove"></i></span>
+ * </div>
+ */
+
 .alert-box > :first-child,
 .panel > :first-child {
     margin-top: 0; 
@@ -716,6 +736,91 @@ a.blue-btn:hover {
 
 /* Breadcrumb
    ========================================================================== */   
+
+
+/* Tabs
+   ========================================================================== */ 
+/**
+ * Example HTML:
+ *
+ * <div class="tabbed clearfix">
+ *
+ *	<!-- The tabs -->
+ *	<ul class="tabs">
+ *		<li class="t1"><a class="t1 tab" title="<?php _e('Tab 1'); ?>"><?php _e('Tab 1'); ?></a></li>
+ *		<li class="t2"><a class="t2 tab" title="<?php _e('Tab 2'); ?>"><?php _e('Tab 2'); ?></a></li>
+ *	</ul>
+ *
+ *	<!-- tab 1 -->
+ *	<div class="t1">
+ *		<!-- Put what you want in here. -->
+ *	</div>
+ *
+ *	<!-- tab 2 -->
+ *	<div class="t2">
+ *		<!-- Put what you want in here. -->
+ *	</div>
+ *
+ * </div>
+ */
+
+.tabbed {
+}
+
+/* List of tabs */.tabbed ul.tabs {
+	float: left;
+	display: inline;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.tabbed ul.tabs li {
+	list-style: none;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+.tabbed ul.tabs li a {
+	overflow: hidden;
+	display: block;
+	margin: 0 2px 0 0;
+	padding: 10px 12px;
+	cursor: pointer;
+}
+
+.tabbed ul.tabs li a:hover {
+}
+
+/* The current selected tab */
+.tabbed ul.tabs li a.tab-current {
+	text-decoration: underline;
+}
+
+/* The content shown when a tab is selected */
+.tabbed div {
+	float: left;
+	display: block;
+	width: 100%;
+}
+
+/* Set the CSS to make sure the other tabs' content isn't shown other than the first */
+.tabbed div.t2, .tabbed div.t3, .tabbed div.t4 {
+	display: none;
+}
+
+/* Content for inside your tabs' divs */
+.tabbed div ul {
+}
+
+.tabbed div p {
+}
+
+.tabbed div div {
+}
+
+
    
 /* Pricing tables
    ========================================================================== */
