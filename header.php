@@ -7,7 +7,7 @@
 	<meta name="title" content="<?php wp_title( '|', true, 'right' ); ?>">
 	<meta name="description" content="<?php bloginfo('description'); ?>" />
 
-	<!-- Custom title script (http://perishablepress.com/how-to-generate-perfect-wordpress-title-tags-without-a-plugin/) -->
+	<?php // Custom title script (http://perishablepress.com/how-to-generate-perfect-wordpress-title-tags-without-a-plugin/) ?>
 	<title><?php if (function_exists('is_tag') && is_tag()) { echo __('Tag Archive for &quot;', '_i3-base').$tag.'&quot; - '; } elseif (is_archive()) { wp_title(''); echo __(' Archive - ', '_i3-base'); } elseif (is_search()) { echo __('Search for &quot;', '_i3-base').wp_specialchars($s).'&quot; - '; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo ' - '; } elseif (is_404()) { echo __('Not Found - ', '_i3-base'); } if (is_home()) { bloginfo('name'); echo ' - '; bloginfo('description'); } else { bloginfo('name'); } ?></title>
 
 	<!-- Import main stylesheets -->

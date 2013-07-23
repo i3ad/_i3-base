@@ -48,7 +48,14 @@ $(document).ready(function(){
 });
 
 
+$(document).ready(function() {
+   
+    $('a#to-top').click(function(){
+        $('html, body').animate({scrollTop:0}, 'fast');
+        return false;
+    });
 
+});
 
 
 
@@ -56,37 +63,37 @@ $(document).ready(function(){
 // http://justintadlock.com/archives/2007/11/07/how-to-create-tabs-using-jquery
 // ==========================================================================
 $(document).ready(function() {
-// setting the tabs in the sidebar hide and show, setting the current tab
-    $('div.tabbed div').hide();
-    $('div.t1').show();
-    $('div.tabbed ul.tabs li.t1 a').addClass('tab-current');
+    // setting the tabs in the sidebar hide and show, setting the current tab
+        $('div.tabbed div').hide();
+        $('div.t1').show();
+        $('div.tabbed ul.tabs li.t1 a').addClass('tab-current');
 
-	// sidebar tabs
-	$('div.tabbed ul li a').click(function(){
-	    var thisClass = this.className.slice(0,2);
-	    $('div.tabbed div').hide();
-	    $('div.' + thisClass).show();
-	    $('div.tabbed ul.tabs li a').removeClass('tab-current');
-	    $(this).addClass('tab-current');
-	});
+    	// sidebar tabs
+    	$('div.tabbed ul li a').click(function(){
+            var thisClass = this.className.slice(0,2);
+        	$('div.tabbed div').hide();
+        	$('div.' + thisClass).show();
+        	$('div.tabbed ul.tabs li a').removeClass('tab-current');
+        	$(this).addClass('tab-current');
+        });
 });
 
 
 // Alert-Box
 // ==========================================================================
 $(document).ready(function() {
-  $('.alert-box .close').click(function() {
+  $('.alert-box .close').click(function(e) {
      $(this).parent('.alert-box').fadeOut('slow,function(){$(this).remove();}');
+     e.preventDefault();
   });
 });
 
 // Dropdown Button
 // ==========================================================================
 $(document).ready(function() {
-  $('.dropdown-btn .btn').click(function() {
-  	$(this).toggleClass('pressed');
-  	$(this).next('ul').toggle();
-    //$(this)('.dropdown-btn ul').toggle(); //here 
+  $('.dropdown-btn .btn').click(function(e) {
+  	$(this).toggleClass('pressed').next('ul').slideToggle('fast'); 
+    e.preventDefault();
   });
 });
 
