@@ -67,6 +67,22 @@
 			'items_wrap'      => '<ul role="navigation">%3$s</ul>'
 		); 
 		wp_nav_menu( $top_nav ); ?><!-- /top-nav -->
+		
+		<?php $mobile_nav = array(
+				'theme_location'  => 'mobile_nav',
+				'menu'            => '',
+				'container'       => 'nav',		// wrap <ul> in <nav> container
+				'container_class' => 'site-nav',
+				'container_id'    => 'mobile-nav',
+				'menu_class'      => '', 		// remove the class "menu"
+				'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
+				'items_wrap'      => '<ul role="navigation">%3$s</ul>'
+			); 
+		wp_nav_menu( $mobile_nav ); ?><!-- /mobile-nav -->
+		
+		<a href="#" id="toggle-mobile-nav" class="float-right">
+			<?php _e('Menu', '_i3-base'); ?>
+		</a>
 
 	</div><!-- /top-nav-container -->
 

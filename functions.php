@@ -94,6 +94,15 @@
         wp_enqueue_script( 'functions' );
     }
     add_action( 'wp_enqueue_scripts', 'theme_scripts' );
+	
+/* Enqueue Admin scripts
+   ========================================================================== */	
+	#function theme_admin_scripts() {
+#
+	#	wp_enqueue_script( 'jquery-ui-sortable' );
+	#	wp_enqueue_script( 'sneek-admin-scripts', get_template_directory_uri() . '/js/sneek-admin-scripts.js' );
+	#}
+	#add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
 
 /* ==========================================================================
    $THEME SUPPORT
@@ -211,7 +220,8 @@
 	register_nav_menus( array(
 		'top_nav'	=> __('Top Navigation Menu', '_i3-base'),
 		'main_nav'	=> __('Main Navigation Menu', '_i3-base'),
-		'foot_nav'	=> __('Footer Navigation Menu', '_i3-base')
+		'foot_nav'	=> __('Footer Navigation Menu', '_i3-base'),
+		'mobile_nav'=> __('Mobile Navigation Menu', '_i3-base')
 	));
 
 /* ==========================================================================
