@@ -27,10 +27,25 @@ Your content goes here
 </span>
 </div>
 
+
+<div class="popover">
+	<div class="popover-content">
+		<span class="arrow"><i class="icon-caret-down icon-large"></i></span>
+		
+		<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+		<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+	</div>
+
+<button type="button" class="btn">Pop</button>
+
+</div>
+
+
+
 <div class="dropdown-btn">
+
 <button type="button" class="btn">
-Dropdown Button
-<i class="icon-caret-down"></i>
+Dropdown Button <i class="icon-caret-down"></i>
 </button>
 
 <ul>
@@ -38,7 +53,29 @@ Dropdown Button
 <li><a href="#">Second Second Second Second Second</a></li>
 <li class="sep"><a href="#">Last</a></li>
 </ul>
+
 </div>
+<hr/>
+
+<button type="button" class="btn">Button</button>
+
+<button type="button" class="btn btn-grey">Button</button>
+
+<button type="button" class="btn btn-dark">Button</button>
+
+<button type="button" class="btn btn-light-blue">Button</button>
+
+<button type="button" class="btn btn-green">Button</button>
+
+<button type="button" class="btn btn-yellow">Button</button>
+
+<button type="button" class="btn btn-red">Button</button>
+
+<button type="button" class="btn btn-muted">Button</button>
+
+<button type="button" class="btn btn-link">Button</button>
+
+<hr/>
 
 
 <div class="tabbed clearfix">

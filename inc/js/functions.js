@@ -88,6 +88,18 @@ $(document).ready(function() {
   });
 });
 
+// Popover
+// ==========================================================================
+$(document).ready(function() {
+  $('.popover .btn').click(function(e) {
+  	$(this).toggleClass('pressed').prev('div.popover-content').fadeToggle('fast'); 
+	$('div.popover-content').click(function(e) {
+		$(this).fadeOut('fast').next('.btn').removeClass('pressed');
+	});
+    e.preventDefault();
+  });
+});
+
 // Dropdown Button
 // ==========================================================================
 $(document).ready(function() {

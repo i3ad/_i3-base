@@ -353,8 +353,7 @@ textarea:-moz-placeholder { color:#a9a9a9; }
  * </a>
  */
 .btn {
-	font-weight: bold;
-	background: #69a6cc;
+	background: #428BCA;
 	border: 1px solid;
 	border-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.35);
 	color: #ffffff;
@@ -368,22 +367,53 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 }
 
 .btn:hover {
-	background: #5e95b7;
-	color: #ffffff;
+	background: #357EBD;
 }
 
 .btn:focus {
-	color: #ffffff;
 }
 
 .btn:active,
 .btn.pressed { /* Add inset shadow at press-in */
-	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.15); /* WebKit */
-	-moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.15); /* Firefox */
-	box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.15); /* Standard */	
+	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* WebKit */
+	-moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* Firefox */
+	box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* Standard */	
 }
 
+/* Button Colors
+   ========================================================================== */ 
+.btn-grey {
+	background: #EEEEEE;
+}
 
+.btn-dark {
+	background: #474949;
+}
+
+.btn-light-blue {
+	background: #5BC0DE;
+}
+
+.btn-green {
+	background: #5CB85C;
+}
+
+.btn-yellow {
+	background: #F0AD4E;
+}
+
+.btn-red {
+	background: #D9534F;
+}
+
+.btn-muted {
+	opacity: 0.5;
+	cursor: default; 
+}
+
+.btn-link {
+	background: transparent;
+}
 
 /* Dropdown Buttons
    ========================================================================== */  
@@ -484,6 +514,54 @@ ul.button-group.radius li:last-child a {
 	-webkit-border-radius: 0px 3px 3px 0px;
     border-radius: 0px 3px 3px 0px;
 }
+
+/* Popover
+   ========================================================================== */  
+/**
+ * Example HTML:
+ *
+ * <div class="popover">
+ *      <div class="popover-content">
+ *      	<span class="arrow"><i class="icon-caret-down icon-large"></i></div>
+ *           
+ *          <p><!-- content --></p>
+ *     	</div>
+ *
+ *		<button type="button" class="btn">Popover Button</button>
+ *  </div>
+ */
+.popover {
+	position: relative;
+	display: inline-block;
+}
+
+.popover .arrow {
+	display: block;
+	width: 100%;
+	position: absolute;
+	bottom: -15px;
+	text-align: center;
+	color: #ffffff;
+	margin-left: -10px;
+}
+ 
+.popover-content {
+ 	background: #ffffff;
+	display: block;
+	z-index: 1010;
+	position: absolute;
+	padding: 10px;
+	bottom: 0;
+	left: 50%;
+	margin-left: -130px; /* half the width of the full element */
+	margin-bottom: 50px;
+	border: 1px solid #CCCCCC;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	width: 240px; /* 260px without padding */
+	display: none;
+}
+ 
+ 
  
 /* Labels
    ========================================================================== */  
@@ -635,24 +713,18 @@ a.blue-btn:hover {
 	opacity: 1; 
 }
 
-/* Alerts and Panels
+/* Alerts, Panels and Popovers
    ========================================================================== */
-/**
- * Example HTML:
- *
- * <div class="alert-box">
- *		<!-- content -->
- *		<span class="close" href="#"><i class="icon-remove"></i></span>
- * </div>
- */
 
 .alert-box > :first-child,
-.panel > :first-child {
+.panel > :first-child,
+.popover-content > :first-child {
     margin-top: 0; 
 }
 
 .alert-box > :last-child,
-.panel > :last-child {
+.panel > :last-child,
+.popover-content > :last-child {
     margin-bottom: 0; 
 }  
 
