@@ -4,27 +4,48 @@
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
-	<meta name="title" content="<?php wp_title( '|', true, 'right' ); ?>">
+	<meta name="title" content="<?php bloginfo('name'); ?>">
 	<meta name="description" content="<?php bloginfo('description'); ?>" />
 
 	<?php // Custom title script (http://perishablepress.com/how-to-generate-perfect-wordpress-title-tags-without-a-plugin/) ?>
 	<title><?php if (function_exists('is_tag') && is_tag()) { echo __('Tag Archive for &quot;', '_i3-base').$tag.'&quot; - '; } elseif (is_archive()) { wp_title(''); echo __(' Archive - ', '_i3-base'); } elseif (is_search()) { echo __('Search for &quot;', '_i3-base').wp_specialchars($s).'&quot; - '; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo ' - '; } elseif (is_404()) { echo __('Not Found - ', '_i3-base'); } if (is_home()) { bloginfo('name'); echo ' - '; bloginfo('description'); } else { bloginfo('name'); } ?></title>
 
-	<!-- Import main stylesheets -->
+	<?php // Import main stylesheets ?>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
-	<!--[if IE 7]>
+	<!--[if IE 8]>
   		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/font-awesome/css/font-awesome-ie7.min.css">
 	<![endif]-->
 
-	<!-- Icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) -->
-	<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/apple-icon-touch.png">
-	<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon.png">
-	<!--[if IE]>
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon.ico">
-	<![endif]-->
-	<!-- Set favicon for IE10 -->
-	<meta name="msapplication-TileColor" content="#f01d4f">
-	<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/win8-tile-icon.png">
+	<?php // Icons & favicons (http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
+	<?php if ( get_theme_mod( 'custom_favicon' ) ) : ?>
+
+		<link rel="apple-touch-icon" href="<?php echo get_theme_mod( 'custom_favicon' ); ?>">
+		<link rel="icon" href="<?php echo get_theme_mod( 'custom_favicon' ); ?>">
+		<!--[if IE]>
+			<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon.ico">
+		<![endif]-->
+		<!-- Set favicon for IE10 -->
+			<meta name="msapplication-TileColor" content="#f01d4f">
+			<meta name="msapplication-TileImage" content="<?php echo get_theme_mod( 'custom_favicon' ); ?>">
+
+		
+	<?php else : ?>
+
+		<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon.png">
+		<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon.png">
+		<!--[if IE]>
+			<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon.ico">
+		<![endif]-->
+		<!-- Set favicon for IE10 -->
+			<meta name="msapplication-TileColor" content="#f01d4f">
+			<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon.png">
+	<?php endif; ?>
+
+	
+	
+	
+	
+	
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
@@ -33,11 +54,11 @@
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/inc/js/html5.js"></script>
 	<![endif]-->
 
-	<?php wp_head(); ?>
-	<!-- end of wordpress head -->
+	<!-- START Includes -->
+		<?php wp_head(); ?>
+	<!-- END Includes -->
 
-	<!-- Connect theme-customizer -->
-	<?php
+	<?php // Connect Theme-Customizer
 		$content_text_color = get_option('content_text_color');
 		$content_link_color = get_option('content_link_color');
 		$content_link_hover_color = get_option('content_link_hover_color');
@@ -67,24 +88,30 @@
 			'items_wrap'      => '<ul role="navigation">%3$s</ul>'
 		); 
 		wp_nav_menu( $top_nav ); ?><!-- /top-nav -->
-		
-		<?php $mobile_nav = array(
-				'theme_location'  => 'mobile_nav',
-				'menu'            => '',
-				'container'       => 'nav',		// wrap <ul> in <nav> container
-				'container_class' => 'site-nav',
-				'container_id'    => 'mobile-nav',
-				'menu_class'      => '', 		// remove the class "menu"
-				'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
-				'items_wrap'      => '<ul role="navigation">%3$s</ul>'
-			); 
-		wp_nav_menu( $mobile_nav ); ?><!-- /mobile-nav -->
-		
-		<a href="#" id="toggle-mobile-nav" class="float-right">
-			<?php _e('Menu', '_i3-base'); ?>
+				
+		<a href="#" id="toggle-mobile-nav" class="float-right btn">
+			<?php _e('Navigation', '_i3-base'); ?>
 		</a>
 
 	</div><!-- /top-nav-container -->
+
+	<div id="mobile-nav-container">
+		<a href="#" class="close btn">
+			<?php _e('Close', '_i3-base'); ?>
+		</a>
+
+		<?php $mobile_nav = array(
+			'theme_location'  => 'mobile_nav',
+			'menu'            => '',
+			'container'       => 'nav',		// wrap <ul> in <nav> container
+			'container_class' => 'site-nav',
+			'container_id'    => 'mobile-nav',
+			'menu_class'      => '', 		// remove the class "menu"
+			'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
+			'items_wrap'      => '<ul role="navigation">%3$s</ul>'
+		); 
+		wp_nav_menu( $mobile_nav ); ?><!-- /mobile-nav -->
+	</div>
 
 	<header id="site-header" class="row" role="header">
 

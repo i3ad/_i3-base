@@ -86,6 +86,11 @@ html {
 
 }
 
+body { 
+	left: 0px; /* to make mobile nav working */
+	position: relative; /* to make mobile nav working */
+}
+
 html,
 body { 
 	font-size: 14px;
@@ -960,6 +965,17 @@ a.blue-btn:hover {
 
 .site-nav li {
     display: inline-block;
+}
+
+#mobile-nav-container {
+	background: grey;
+	position: fixed;
+	left: -100%;
+	top: 0px;
+	display: block;
+	width: 300px;
+	height: 100%;
+	z-index: 9000;
 }
    
 /* top-nav

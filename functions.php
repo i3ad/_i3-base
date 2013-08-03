@@ -196,6 +196,21 @@
     }
     add_action('customize_register', 'custom_site_logo');
 
+/* Add custom Favicon
+   ========================================================================== */
+    function custom_site_favicon( $wp_customize ) {
+        
+        $wp_customize->add_setting( 'custom_favicon' );
+
+        $wp_customize->add_control( 
+            new WP_Customize_Image_Control( $wp_customize, 'custom_favicon', array(
+                'label'    => __( 'Custom Favicon', '_i3-base' ),
+                'section'  => 'title_tagline',    // Add this option to the default "Site Title & Tagline" section
+                'settings' => 'custom_favicon',
+            ) ) );
+    }
+    add_action('customize_register', 'custom_site_favicon');
+
 /* Add to top link
    ========================================================================== */
     function to_top_link( $wp_customize ) {
