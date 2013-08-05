@@ -558,12 +558,39 @@ ul.button-group.radius li:last-child a {
 	padding: 10px;
 	bottom: 0;
 	left: 50%;
-	margin-left: -130px; /* half the width of the full element */
+	margin-left: -120px; /* half the width of the full element */
 	margin-bottom: 50px;
 	border: 1px solid #CCCCCC;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	width: 240px; /* 260px without padding */
 	display: none;
+}
+
+/* Popover bottom */
+.bottom .popover-content {
+	top: 0;
+	bottom: auto; /* set bottom to auto to override normal popover style */
+	margin-top: 50px;
+	margin-bottom: 0;
+}
+
+.popover.bottom .arrow {
+	top: -15px;
+	bottom: auto; /* set bottom to auto to override normal popover style */
+}
+
+/* Popover right (WIP)*/
+.right .popover-content {
+	bottom: auto; /* set bottom to auto to override normal popover style */
+	margin-left: 50px;
+	margin-bottom: 0;
+	left: 100%;
+	display: none;
+}
+
+.popover.right .arrow {
+	right: -15px;
+	bottom: auto;
 }
  
  

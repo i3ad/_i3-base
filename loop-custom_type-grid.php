@@ -40,6 +40,34 @@ Your content goes here
 
 </div>
 
+<hr/>
+
+<div class="popover bottom">
+	<div class="popover-content">
+		<span class="arrow"><i class="icon-caret-down icon-large icon-rotate-180"></i></span>
+		
+		<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+		<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+	</div>
+
+<button type="button" class="btn">Pop Bot</button>
+
+</div>
+
+<hr/>
+
+<div class="popover right">
+	<div class="popover-content">
+		<span class="arrow"><i class="icon-caret-down icon-large icon-rotate-180"></i></span>
+		
+		<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+		<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+	</div>
+
+<button type="button" class="btn">Pop Bot</button>
+
+</div>
+
 
 
 <div class="dropdown-btn">
