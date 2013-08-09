@@ -85,6 +85,30 @@ Dropdown Button <i class="icon-caret-down"></i>
 </div>
 <hr/>
 
+<dl class="toggle-box">
+  <dt class="toggle"><a href="#">Toggler <i class="icon-minus"></i></a></dt>
+  <dd class="content">This is the toggable content part.here u can insert everthing u want (nearly).</dd>
+</dl>
+
+
+<hr/>
+
+<dl class="accordion">
+
+	<dt><a href="#">Panel 1 <i class="icon-minus"></i></a></dt>
+	<dd>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</dd>
+
+	<dt><a href="#">Panel 2 <i class="icon-minus"></i></a></dt>
+	<dd>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</dd>
+
+	<dt><a href="#">Panel 3 <i class="icon-minus"></i></a></dt>
+	<dd>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</dd>
+
+</dl>
+
+
+<hr/>
+
 <button type="button" class="btn">Button</button>
 
 <button type="button" class="btn btn-grey">Button</button>

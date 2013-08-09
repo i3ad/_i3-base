@@ -15,7 +15,11 @@
 /* ==========================================================================
    $INCLUDE FILES
    ========================================================================== */
-    require_once('inc/cpt-custom_type.php'); // you can disable this if you like
+   // CPT Test
+   require_once('inc/cpt-custom_type.php'); // you can disable this if you like
+   
+   // Shortcodes
+   require_once('inc/shortcodes.php'); // Shortcode in here
 
 /* ==========================================================================
    $RELATED CONTENT
@@ -103,6 +107,29 @@
 	#	wp_enqueue_script( 'sneek-admin-scripts', get_template_directory_uri() . '/js/sneek-admin-scripts.js' );
 	#}
 	#add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
+	
+ 
+/* Add JavaScript files if IE version is lower than 9
+   ========================================================================== */
+	function ie_js_enhancements(){
+		echo '
+		<!-- media-queries.js -->
+		<!--[if lt IE 9]>
+			<script src="#"></script>
+		<![endif]-->
+		
+		<!-- html5.js -->
+		<!--[if lt IE 9]>
+			<script src="'.get_stylesheet_directory_uri().'/inc/js/html5.js"></script>
+		<![endif]-->
+		
+		<!-- FontAwesome for IE lower than 8 -->
+		<!--[if IE 8]>
+			<link rel="stylesheet" href="'.get_stylesheet_directory_uri().'/inc/font-awesome/css/font-awesome-ie7.min.css">
+		<![endif]-->
+		';
+	}
+	add_action( 'wp_head', 'ie_js_enhancements' );
 
 /* ==========================================================================
    $THEME SUPPORT
@@ -374,14 +401,16 @@
 
 /* Add editor styles
    ========================================================================== */
-    function my_theme_add_editor_styles() {
+    function i3_editor_styles() {
         add_editor_style( '/inc/css/editor-style.css' );
     }
-    add_action( 'init', 'my_theme_add_editor_styles' );
+    add_action( 'init', 'i3_editor_styles' );
 
 /* Remove WP meta generator
    ========================================================================== */
     remove_action('wp_head', 'wp_generator');
+	
+
 
 
 

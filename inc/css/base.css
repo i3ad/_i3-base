@@ -353,9 +353,9 @@ textarea:-moz-placeholder { color:#a9a9a9; }
  *
  * or
  *
- * <a href="#" class="btn radius dark-blue small">
+ * <button type="button" class="btn radius dark-blue small">
  *		<!-- content -->
- * </a>
+ * </button>
  */
 .btn {
 	background: #428BCA;
@@ -472,50 +472,50 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 /**
  * Example HTML:
  *
- *  <ul class="button-group radius">
- *      <li><a href="#" class="button"><!-- content --></a></li>
- *      <li><a href="#" class="button"><!-- content --></a></li>
- *      <li><a href="#" class="button"><!-- content --></a></li>
+ *  <ul class="btn-group radius">
+ *      <li><a href="#" class="btn"><!-- content --></a></li>
+ *      <li><a href="#" class="btn"><!-- content --></a></li>
+ *      <li><a href="#" class="btn"><!-- content --></a></li>
  *  </ul>
  */
-ul.button-group {
+ul.btn-group {
 	list-style-type: none;
 	line-height: normal;
 }
 
-ul.button-group:before, ul.button-group:after {
+ul.btn-group:before, ul.btn-group:after {
     content: " ";
     display: table;
 }
 
-ul.button-group:after {
+ul.btn-group:after {
     clear: both;
 }
 
-ul.button-group li {
+ul.btn-group li {
 	float: left;
 	display: block;
 }
 
-ul.button-group a {
+ul.btn-group a {
 	border-right: 0;
 }
 
-ul.button-group li:last-child a {
+ul.btn-group li:last-child a {
 	border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-ul.button-group .radius {
+ul.btn-group .radius {
 	-webkit-border-radius: 0px;
 	border-radius: 0px;
 }
 
-ul.button-group.radius li:first-child a {
+ul.btn-group.radius li:first-child a {
 	-webkit-border-radius: 3px 0px 0px 3px;
     border-radius: 3px 0px 0px 3px;
 }
 
-ul.button-group.radius li:last-child a {
+ul.btn-group.radius li:last-child a {
 	-webkit-border-radius: 0px 3px 3px 0px;
     border-radius: 0px 3px 3px 0px;
 }
@@ -527,7 +527,7 @@ ul.button-group.radius li:last-child a {
  *
  * <div class="popover">
  *      <div class="popover-content">
- *      	<span class="arrow"><i class="icon-caret-down icon-large"></i></div>
+ *      	<span class="arrow"><i class="icon-caret-down icon-large"></i></span>
  *           
  *          <p><!-- content --></p>
  *     	</div>

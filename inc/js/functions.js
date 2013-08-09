@@ -137,6 +137,30 @@ $(document).ready(function(){
     });
 });
 
+// Toggle-Box
+// ==========================================================================
+$(document).ready(function() {
+$('.toggle-box .content').hide();
+
+  $('.toggle-box .toggle').click(function(e) {
+  	$(this).toggleClass('toggle-current').next('.content').slideToggle('fast'); 
+	$(this).find('i').toggleClass("icon-plus icon-minus"); // find FontAwesome icon and change class on click
+    e.preventDefault();
+  });
+});
+
+// Accordion
+// ==========================================================================
+$(document).ready(function() {  
+$('.accordion dd').hide();
+    
+  $('.accordion dt a').click(function(e) {
+    $(this).toggleClass('toggle-current').next('dd').slideToggle('fast');
+	$(this).find('i').toggleClass("icon-plus icon-minus"); // find FontAwesome icon and change class on click
+    $(this).parent().next().slideToggle('fast');
+	e.preventDefault();
+  });
+});
 
 // Alert-Box
 // ==========================================================================

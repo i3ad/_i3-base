@@ -12,9 +12,6 @@
 
 	<?php // Import main stylesheets ?>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
-	<!--[if IE 8]>
-  		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/font-awesome/css/font-awesome-ie7.min.css">
-	<![endif]-->
 
 	<?php // Icons & favicons (http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
 	<?php if ( get_theme_mod( 'custom_favicon' ) ) : ?>
@@ -40,19 +37,8 @@
 			<meta name="msapplication-TileColor" content="#f01d4f">
 			<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri(); ?>/inc/img/favicon.png">
 	<?php endif; ?>
-
-	
-	
-	
-	
-	
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
-	<?php // Loads HTML5 Shiv JavaScript file to add support for HTML5 elements in older IE versions. ?>
-	<!--[if lt IE 9]>
-		<script src="<?php echo get_stylesheet_directory_uri(); ?>/inc/js/html5.js"></script>
-	<![endif]-->
 
 	<!-- START Includes -->
 		<?php wp_head(); ?>
