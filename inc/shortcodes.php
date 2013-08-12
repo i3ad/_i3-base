@@ -26,8 +26,9 @@ remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 99);
 add_filter( 'the_content', 'shortcode_unautop',100 );
 
+
 /* ==========================================================================
-   $LEAD
+   $LEAD Use: [lead]...[/lead]
    ========================================================================== */
 function lead_shortcode( $atts , $content = null ) {
 
@@ -41,13 +42,13 @@ add_shortcode( 'lead', 'lead_shortcode' );
    ========================================================================== */
 function hr_shortcode($atts, $content = null) {
 
-   return '<div class="hr"></div>';
+   return '<div class="hr clearfix"></div>';
 } 
 add_shortcode( 'hr', 'hr_shortcode' );
 
 function divider_shortcode($atts, $content = null) {
 
-   return '<div class="divider"></div>';
+   return '<div class="divider clearfix"></div>';
 }
 add_shortcode( 'divider', 'divider_shortcode' );
 
@@ -94,7 +95,7 @@ function buttongrpitm_shortcode( $atts , $content = null ) {
 	// Attributes
 	extract( shortcode_atts(
 		array(
-			'style' => '', //rounded or not ?!
+			'style' => '',
 			'link'	=> '',
 			'target'=> '',
 		), $atts )
@@ -155,7 +156,7 @@ function togglebox_shortcode( $atts , $content = null ) {
 	);
 
 	// Code
-	return '<dl class="toggle-box"><dt class="toggle"><a href="#">' . $text . ' <i class="icon-minus"></i></a></dt><dd class="content">' . $content . '</dd></dl>';
+	return '<dl class="toggle-box"><dt class="toggle"><span>' . $text . ' <i class="icon-minus"></i></span></dt><dd class="content">' . $content . '</dd></dl>';
 }
 add_shortcode( 'togglebox', 'togglebox_shortcode' );
 
@@ -210,8 +211,7 @@ function popover_shortcode( $atts , $content = null ) {
 	);
 
 	// Code
-	return '<div class="popover ' . $position . '"><div class="popover-content"><span class="arrow"><i class="icon-caret-down icon-large"></i></span>' . $content . '</div><button type="button" class="btn ' .$style. '">' . $text . '</button></div>';
-
+	return '<div class="popover ' . $position . '"><span class="popover-content"><span class="arrow"><i class="icon-caret-down icon-large"></i></span>' . $content . '</span><button type="button" class="btn ' .$style. '">' . $text . '</button></div>';
 }
 add_shortcode( 'popover', 'popover_shortcode' );
 	
@@ -231,7 +231,7 @@ function alert_shortcode( $atts , $content = null ) {
 	);
 	
 	// Code
-	return '<div class="alert-box ' .$style. '">' . $content . '<a href="#" class="close"><i class="icon-remove"></i></a></div>';
+	return '<div class="alert-box ' .$style. '">' . $content . '<span class="close"><i class="icon-remove"></i></span></div>';
 
 }
 add_shortcode( 'alert', 'alert_shortcode' );

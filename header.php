@@ -51,7 +51,7 @@
 	?>
 	<style>
 		body, select, input, textarea { color:  <?php echo $content_text_color; ?>; }
-		a, a:link, a:visited { color:  <?php echo $content_link_color; ?>; }
+		a, a:visited { color:  <?php echo $content_link_color; ?>; }
 		a:hover, a:active, a:focus { color:  <?php echo $content_link_hover_color; ?>; }
 	</style>
 

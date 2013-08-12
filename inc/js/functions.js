@@ -140,10 +140,10 @@ $(document).ready(function(){
 // Toggle-Box
 // ==========================================================================
 $(document).ready(function() {
-$('.toggle-box .content').hide();
+$('dl.toggle-box dd').hide();
 
-  $('.toggle-box .toggle').click(function(e) {
-  	$(this).toggleClass('toggle-current').next('.content').slideToggle('fast'); 
+  $('dl.toggle-box dt.toggle').click(function(e) {
+  	$(this).toggleClass('toggle-current').next('dd.content').slideToggle('fast'); 
 	$(this).find('i').toggleClass("icon-plus icon-minus"); // find FontAwesome icon and change class on click
     e.preventDefault();
   });
@@ -152,12 +152,17 @@ $('.toggle-box .content').hide();
 // Accordion
 // ==========================================================================
 $(document).ready(function() {  
-$('.accordion dd').hide();
+$('dl.accordion dd').hide();
+ 
+	$('dl.accordion').each(function () { // append class .last to last .toggle, and .content element
+		$(this).find('.toggle').last().addClass('last');
+		$(this).find('.content').last().addClass('last');
+	});
     
-  $('.accordion dt a').click(function(e) {
+  $('dl.accordion dt.toggle').click(function(e) {
     $(this).toggleClass('toggle-current').next('dd').slideToggle('fast');
 	$(this).find('i').toggleClass("icon-plus icon-minus"); // find FontAwesome icon and change class on click
-    $(this).parent().next().slideToggle('fast');
+    $(this).parent('dd').next('dd').slideToggle('fast');
 	e.preventDefault();
   });
 });
@@ -165,8 +170,8 @@ $('.accordion dd').hide();
 // Alert-Box
 // ==========================================================================
 $(document).ready(function() {
-  $('.alert-box .close').click(function(e) {
-     $(this).parent('.alert-box').fadeOut('slow,function(){$(this).remove();}');
+  $('div.alert-box span.close').click(function(e) {
+     $(this).parent('div.alert-box').fadeOut('slow,function(){$(this).remove();}');
      e.preventDefault();
   });
 });
@@ -174,9 +179,11 @@ $(document).ready(function() {
 // Popover
 // ==========================================================================
 $(document).ready(function() {
-  $('.popover .btn').click(function(e) {
-  	$(this).toggleClass('pressed').prev('div.popover-content').fadeToggle('fast'); 
-	$('div.popover-content').click(function(e) {
+$('div.popover .popover-content').hide();
+
+  $('div.popover .btn').click(function(e) {
+  	$(this).toggleClass('pressed').prev('.popover-content').fadeToggle('fast'); 
+	$('.popover-content').click(function(e) {
 		$(this).fadeOut('fast').next('.btn').removeClass('pressed');
 	});
     e.preventDefault();
@@ -186,7 +193,9 @@ $(document).ready(function() {
 // Dropdown Button
 // ==========================================================================
 $(document).ready(function() {
-  $('.dropdown-btn .btn').click(function(e) {
+$('div.dropdown-btn ul').hide();
+
+  $('div.dropdown-btn .btn').click(function(e) {
   	$(this).toggleClass('pressed').next('ul').slideToggle('fast'); 
     e.preventDefault();
   });

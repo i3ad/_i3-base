@@ -150,7 +150,6 @@ h6 small {}
 .subheader {}
 
 a,
-a:link,
 a:visited {
 	color: #03f; /* can be overridden by the theme-customizer */
 } 
@@ -357,7 +356,8 @@ textarea:-moz-placeholder { color:#a9a9a9; }
  *		<!-- content -->
  * </button>
  */
-.btn {
+.btn,
+a.btn {
 	background: #428BCA;
 	border: 1px solid;
 	border-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.35);
@@ -371,15 +371,19 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3); /* Add white inset shadow, Standart */
 }
 
-.btn:hover {
+.btn:hover,
+a.btn:hover {
 	background: #357EBD;
 }
 
-.btn:focus {
+.btn:focus,
+a.btn:focus {
 }
 
 .btn:active,
-.btn.pressed { /* Add inset shadow at press-in */
+.btn.pressed,
+a.btn:active,
+a.btn.pressed { /* Add inset shadow at press-in */
 	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* WebKit */
 	-moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* Firefox */
 	box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* Standard */	
@@ -387,36 +391,44 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 
 /* Button Colors
    ========================================================================== */ 
-.btn-grey {
+.btn-grey,
+a.btn-grey {
 	background: #EEEEEE;
 }
 
-.btn-dark {
+.btn-dark,
+a.btn-dark {
 	background: #474949;
 }
 
-.btn-light-blue {
+.btn-light-blue,
+a.btn-light-blue {
 	background: #5BC0DE;
 }
 
-.btn-green {
+.btn-green,
+a.btn-green {
 	background: #5CB85C;
 }
 
-.btn-yellow {
+.btn-yellow,
+a.btn-yellow {
 	background: #F0AD4E;
 }
 
-.btn-red {
+.btn-red,
+a.btn-red {
 	background: #D9534F;
 }
 
-.btn-muted {
+.btn-muted,
+a.btn-muted {
 	opacity: 0.5;
 	cursor: default; 
 }
 
-.btn-link {
+.btn-link,
+a.btn-link {
 	background: transparent;
 }
 
@@ -440,7 +452,6 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 }
 
 .dropdown-btn ul {
-	display: none;
 	margin: 0;
 	list-style-type: none;
 	background: #F7F7F7;
@@ -563,7 +574,6 @@ ul.btn-group.radius li:last-child a {
 	border: 1px solid #CCCCCC;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	width: 240px; /* 260px without padding */
-	display: none;
 }
 
 /* Popover bottom */
@@ -593,7 +603,78 @@ ul.btn-group.radius li:last-child a {
 	bottom: auto;
 }
  
+/* Togglebox
+   ========================================================================== */  
+/**
+ * Example HTML:
+ *
+ * <dl class="toggle-box">
+ *  <dt class="toggle">
+ *   <span>Toggler <i class="icon-plus"></i></span>
+ *  </dt>
+ *  <dd class="content">This is the toggable content part.here u can insert everthing u want (nearly).</dd>
+ * </dl>
+ */
+  
+.toggle-box .toggle {
+	border: 1px solid #DDDDDD;
+}
  
+.toggle-box .toggle > span {
+	width: 100%;
+	display: block;
+	cursor: pointer;
+	padding: 0 10px;
+}
+
+.toggle-box .toggle i {
+	float: right;
+	padding-top: 5px;
+}
+
+.toggle-box .content {
+	background: #EDEDED;
+	padding: 10px;
+	border-bottom: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;	
+}
+ 
+/* Accordion
+   ========================================================================== */ 
+.accordion .toggle {
+	border-top: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+}
+
+.accordion .last {
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.accordion .toggle > span {
+	width: 100%;
+	display: block;
+	cursor: pointer;
+	padding: 0 10px;
+}
+
+.accordion .toggle i {
+	float: right;
+	padding-top: 5px;
+}
+
+.accordion .content {
+	background: #EDEDED;
+	padding: 10px;
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+}
+
+.accordion .content.last {
+	border-top: 0;
+}
  
 /* Labels
    ========================================================================== */  
@@ -745,18 +826,22 @@ a.blue-btn:hover {
 	opacity: 1; 
 }
 
-/* Alerts, Panels and Popovers
+/* Alerts, Panels, Toggles and Popovers
    ========================================================================== */
 
 .alert-box > :first-child,
 .panel > :first-child,
-.popover-content > :first-child {
+.popover-content > :first-child,
+.toggle-box .content > :first-child,
+.accordion .content > :first-child {
     margin-top: 0; 
 }
 
 .alert-box > :last-child,
 .panel > :last-child,
-.popover-content > :last-child {
+.popover-content > :last-child,
+.toggle-box .content > :last-child,
+.accordion .content > :last-child {
     margin-bottom: 0; 
 }  
 
