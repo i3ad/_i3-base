@@ -117,18 +117,12 @@
    /* http://wp.tutsplus.com/tutorials/theme-development/converting-wordpress-to-be-mobile-friendly/ */
 	function ie_js_enhancements(){
 		echo '
-		<!-- media-queries.js -->
+		<!-- Media-Queries / HTML5 -->
 		<!--[if lt IE 9]>
-			<script src="#"></script>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>  
-			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>  
+			<script src="'.get_stylesheet_directory_uri().'/inc/js/html5shiv.js"></script>  
+			<script src="'.get_stylesheet_directory_uri().'/inc/js/css3-mediaqueries.js"></script>  
 		<![endif]-->
-		
-		<!-- html5.js -->
-		<!--[if lt IE 9]>
-			<script src="'.get_stylesheet_directory_uri().'/inc/js/html5.js"></script>
-		<![endif]-->
-		
+				
 		<!-- FontAwesome for IE lower than 8 -->
 		<!--[if IE 8]>
 			<link rel="stylesheet" href="'.get_stylesheet_directory_uri().'/inc/font-awesome/css/font-awesome-ie7.min.css">

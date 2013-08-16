@@ -286,7 +286,15 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
-textarea {}
+textarea {
+	background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+	vertical-align: middle;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	color: #555555;
+	padding: 6px 12px;
+	font-size: 14px;
+}
 
 input[type="text"]:hover,
 input[type="password"]:hover,
@@ -301,7 +309,9 @@ input[type="search"]:hover,
 input[type="tel"]:hover,
 input[type="time"]:hover,
 input[type="url"]:hover,
-textarea:hover {}
+textarea:hover {
+	border-color: #66AFE9;
+}
 
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -316,7 +326,10 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="time"]:focus,
 input[type="url"]:focus,
-textarea:focus {}
+textarea:focus {
+	border-color: #66AFE9;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+}
 
 input[type="text"][disabled],
 input[type="password"][disabled],
@@ -334,8 +347,8 @@ input[type="url"][disabled],
 textarea[disabled] {}
 
 /* Mozilla dosen't style place holders by default */
-input:-moz-placeholder { color:#a9a9a9; }
-textarea:-moz-placeholder { color:#a9a9a9; }
+input:-moz-placeholder { color: #999999; }
+textarea:-moz-placeholder { color: #999999; }
 
 /* ==========================================================================
    $COMPONENTS
@@ -357,7 +370,8 @@ textarea:-moz-placeholder { color:#a9a9a9; }
  * </button>
  */
 .btn,
-a.btn {
+a.btn,
+button {
 	background: #428BCA;
 	border: 1px solid;
 	border-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.35);
@@ -369,6 +383,7 @@ a.btn {
 	-webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3); /* Add white inset shadow, WebKit */
     -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3); /* Add white inset shadow, Firefox */
 	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3); /* Add white inset shadow, Standart */
+	font-size: 14px;
 }
 
 .btn:hover,
@@ -1067,6 +1082,44 @@ a.blue-btn:hover {
 /* ==========================================================================
    $HEADER
    ========================================================================== */
+#site-header hgroup {
+	float: left;
+}
+
+#site-header #site-title,
+#site-header #site-description {
+	margin: 0;
+	font-weight: normal;
+}
+
+#site-header #site-title a {
+	color: #563D7C;
+	text-decoration: none;
+	font-size: 36px;
+}
+
+#site-header #site-description {
+	color: #5A5A5A;
+	font-size: 21px;
+}
+
+#site-header #searchform {
+	padding-top: 2em;
+	float: right;
+}
+
+#site-header #searchform label {
+	display: none;
+}
+
+#site-header #searchform input[type="search"] {
+	width: 100px;
+}
+
+#site-header #searchform input[type="search"]:focus,
+#site-header #searchform input[type="search"]:active {
+	width: 150px;
+}
    
 /* ==========================================================================
    $NAVIGATION
@@ -1077,6 +1130,36 @@ a.blue-btn:hover {
 
 .site-nav li {
     display: inline-block;
+	position: relative;
+}
+
+.site-nav li:hover > ul {
+	display: block;
+}
+
+.site-nav ul ul {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	z-index: 99;
+	background: #F7F5FA;
+}
+
+.site-nav ul ul li,
+.site-nav ul ul a {
+	width: 100%;
+	white-space: nowrap;
+}
+
+.site-nav ul ul ul {
+	top: 0;
+	left: 100%;
+}
+
+.site-nav ul ul ul li {
+	width: auto;
+	display: block;
 }
 
 #mobile-nav-container {
@@ -1104,8 +1187,50 @@ a.blue-btn:hover {
 	box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.5); 
 }
 
+#top-nav-container #site-title {
+	margin: 0;
+}
+
+#top-nav-container #site-title a {
+	padding: 10px 15px;
+	display: block;
+	text-decoration: none;
+	color: #777777;
+	/*font-size: 18px;
+	position: absolute;*/
+}
+
+#top-nav-container #site-title a:hover {
+	color: #555555;
+}
+
 /* main-nav
    ========================================================================== */
+#top-nav,
+#top-nav-container,
+#main-nav {
+	background: #F7F5FA;
+}
+
+#top-nav ul,
+#main-nav ul {
+	float: left;
+}
+
+#top-nav a,
+#main-nav a {
+	display: block;
+	color: #777777;
+	text-decoration: none;
+	padding: 10px 15px;
+}
+
+#top-nav a:hover,
+#main-nav a:hover {
+	background: #E7E7E7;
+	color: #555555;
+}
+   
 
 /* foot-nav
    ========================================================================== */

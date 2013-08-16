@@ -59,38 +59,50 @@
 
 <body <?php body_class(); ?>>
 
-	<div id="top-nav-container" class="row">
+	<div id="top-nav-container">
+	
+		<div class="row">
 
-		<h1 id="site-title" class="float-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' )); echo ' - '; echo esc_attr( get_bloginfo( 'description', 'display' )); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 id="site-title" class="float-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' )); echo ' - '; echo esc_attr( get_bloginfo( 'description', 'display' )); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-		<?php $top_nav = array(
-			'theme_location'  => 'top_nav',
-			'menu'            => '',
-			'container'       => 'nav',		// wrap <ul> in <nav> container
-			'container_class' => 'site-nav float-right',
-			'container_id'    => 'top-nav',
-			'menu_class'      => '', 		// remove the class "menu"
-			'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
-			'items_wrap'      => '<ul role="navigation">%3$s</ul>'
-		); 
-		wp_nav_menu( $top_nav ); ?><!-- /top-nav -->
-				
-		<a href="#" id="toggle-mobile-nav" class="float-right btn">
-			<?php _e('Navigation', '_i3-base'); ?>
-		</a>
+			<?php $top_nav = array(
+				'theme_location'  => 'top_nav',
+				'menu'            => '',
+				'container'       => 'nav',		// wrap <ul> in <nav> container
+				'container_class' => 'site-nav float-right',
+				'container_id'    => 'top-nav',
+				'menu_class'      => '', 		// remove the class "menu"
+				'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
+				'items_wrap'      => '<ul role="navigation">%3$s</ul>'
+			); 
+			wp_nav_menu( $top_nav ); ?><!-- /top-nav -->
+					
+			<button id="toggle-mobile-nav" class="float-right btn" type="submit">
+				<i class="icon-reorder"></i> <?php _e('Navigation', '_i3-base'); ?>
+			</button>
+			
+			<a href="#" class="btn">
+				Ahref
+			</a>
+			
+			<button type="submit" class="btn">
+				Button
+			</button>
+		
+		</div>
 
 	</div><!-- /top-nav-container -->
 
 	<div id="mobile-nav-container">
-		<a href="#" class="close btn">
+		<span class="close btn">
 			<?php _e('Close', '_i3-base'); ?>
-		</a>
+		</span>
 
 		<?php $mobile_nav = array(
 			'theme_location'  => 'mobile_nav',
 			'menu'            => '',
 			'container'       => 'nav',		// wrap <ul> in <nav> container
-			'container_class' => 'site-nav',
+			'container_class' => '',
 			'container_id'    => 'mobile-nav',
 			'menu_class'      => '', 		// remove the class "menu"
 			'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
@@ -111,7 +123,7 @@
 				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 			<?php endif; ?>
 		</hgroup>
-
+		
 		<?php get_search_form(); ?>
 	
 	</header><!-- /site-header -->
