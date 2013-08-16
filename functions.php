@@ -15,8 +15,8 @@
 /* ==========================================================================
    $INCLUDE FILES
    ========================================================================== */
-   // CPT Test
-   require_once('inc/cpt-custom_type.php'); // you can disable this if you like
+   // The Example Custom Post Type
+   require_once('inc/custom_type.php'); // you can disable this if you like
    
    // Shortcodes
    require_once('inc/shortcodes.php'); // Shortcode in here

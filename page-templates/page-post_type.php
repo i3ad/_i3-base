@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: CPT-Product Template
+Template Name: Custom-Type Template
 */
 get_header(); ?>
 
@@ -14,8 +14,8 @@ get_header(); ?>
 
 		<?php // WP_Query arguments
 			$args = array (
-				'post_type'              => 'cpt-product',
-				'post_status'            => 'published',
+				'post_type'              => 'custom_type',
+				'post_status'            => 'publish',
 				'posts_per_page'         => '-1'
 			);
 
@@ -25,7 +25,7 @@ get_header(); ?>
 		// The Loop
 		if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
-			<?php get_template_part( 'loop', 'custom_type-grid' ); ?>
+			<?php get_template_part( 'loop', 'custom_type' ); ?>
 
 		<?php endwhile; ?> 
 
