@@ -3,10 +3,6 @@
 	<footer id="site-footer" class="row" role="contentinfo">
 
 		<?php get_sidebar( 'footer' ); ?>
-        
-        <a href="#" id="to-top" class="float-right" <?php echo ( get_theme_mod( 'to_top' ) ) ? "" : "style='display:none;'" ?>>
-            <?php _e('to top', '_i3-base'); ?> <i class="icon-long-arrow-up"></i>
-        </a>
 
 		<?php $foot_nav = array(
 			'theme_location'  => 'foot_nav',
@@ -20,9 +16,14 @@
 			'depth'           => 1
 		); 
 		wp_nav_menu( $foot_nav ); ?><!-- /foot-nav -->
+        
+                <a href="#" id="to-top" class="float-right" <?php echo ( get_theme_mod( 'to_top' ) ) ? "" : "style='display:none;'" ?>>
+            <?php _e('to top', '_i3-base'); ?> <i class="icon-long-arrow-up"></i>
+        </a>
+
 
 		<div class="copyright float-left">&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></div>
-
+        
 	</footer><!-- /site-footer -->
 
  <?php wp_footer(); ?> 
