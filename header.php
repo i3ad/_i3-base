@@ -51,7 +51,7 @@
 	?>
 	<style>
 		body, select, input, textarea { color:  <?php echo $content_text_color; ?>; }
-		a, a:visited { color:  <?php echo $content_link_color; ?>; }
+		a { color:  <?php echo $content_link_color; ?>; }
 		a:hover, a:active, a:focus { color:  <?php echo $content_link_hover_color; ?>; }
 	</style>
 
@@ -128,16 +128,18 @@
 	
 	</header><!-- /site-header -->
 
-	<?php $main_nav = array(
-		'theme_location'  => 'main_nav',
-		'menu'            => '',
-		'container'       => 'nav',		// wrap <ul> in <nav> container
-		'container_class' => 'site-nav row',
-		'container_id'    => 'main-nav',
-		'menu_class'      => '', 		// remove the class "menu"
-		'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
-		'items_wrap'      => '<ul role="navigation">%3$s</ul>'
-	); 
-	wp_nav_menu( $main_nav ); ?><!-- /main-nav -->
+	<nav id="main-nav" class="site-nav row">
+		<?php $main_nav = array(
+			'theme_location'  => 'main_nav',
+			'menu'            => '',
+			'container'       => '',		// no <nav> wrapper
+			'container_class' => '',
+			'container_id'    => '',
+			'menu_class'      => '', 		// remove the class "menu"
+			'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
+			'items_wrap'      => '<ul role="navigation" class="float-left">%3$s</ul>'
+		); 
+		wp_nav_menu( $main_nav ); ?><!-- /main-nav -->
+	</nav>
 
 	<div id="content-container" class="row">
