@@ -1,4 +1,4 @@
-<div class="author-info">
+<div class="author-info panel">
 
 	<h4 class="author-title"><?php the_author_meta( 'display_name' );// Display authors name as set in profile ?></h4>					
 	

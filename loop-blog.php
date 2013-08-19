@@ -8,7 +8,7 @@
 						<?php _e('Categories: ', '_i3-base'); the_category(', '); ?>
 						<?php if ( comments_open() ) : 
 							echo '<span class="comments-links">';
-							comments_popup_link( __('No comments yet', '_i3-base'), __('1 comment', '_i3-base'), __('% comments', '_i3-base'), 'comments-link', __('Comments are off for this post', '_i3-base') );
+							comments_popup_link( __('<i class="icon-comment-alt icon-large"></i> 0', '_i3-base'), __('<i class="icon-comment icon-large"></i> 1', '_i3-base'), __('<i class="icon-comments icon-large"></i> %', '_i3-base'), 'comments-link', __('', '_i3-base') );
 							echo '</span>';
 						endif; // comments_open() ?>
 					</div><!-- /head-meta -->
