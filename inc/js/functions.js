@@ -137,6 +137,15 @@ $(document).ready(function(){
     });
 });
 
+// DropDown arrors
+// ==========================================================================
+$(document).ready(function() {
+
+    $('ul.sub-menu:not(ul.sub-menu ul.sub-menu)').prev('a').append('&nbsp;&nbsp;<i class="icon-caret-down icon-large"></i>');
+    $('ul.sub-menu ul.sub-menu').prev('a').append('&nbsp;&nbsp;<i class="icon-caret-right icon-large"></i>');
+
+});
+
 // Toggle-Box
 // ==========================================================================
 $(document).ready(function() {
