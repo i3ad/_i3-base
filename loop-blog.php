@@ -4,6 +4,10 @@
 					<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
 					<div class="entry-meta head-meta">
+						<?php _e('by ', '_i3-base'); ?>
+						<a class="author-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+							<?php the_author_meta( 'display_name' ); ?>
+						</a>
 						<time class="updated" datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i:s'); ?><?php the_time('T'); //This renders "YYYY-MM-DD hh:mm:ssTZD" ?>" pubdate><?php the_time(get_option('date_format')); //Date-format set in admin interface ?></time>
 						<?php _e('Categories: ', '_i3-base'); the_category(', '); ?>
 						<?php if ( comments_open() ) : 
@@ -21,7 +25,7 @@
 				</div><!-- /entry-content -->
 
 				<footer class="entry-footer entry-meta">						
-						<?php get_template_part( 'author', 'info' ); ?>	
+						<?php #get_template_part( 'author', 'info' ); ?>	
 
 						<?php the_tags( __('Tags: ', '_i3-base'), ', ', ''); ?>
 				</footer><!-- /entry-footer -->
