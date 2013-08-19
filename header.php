@@ -69,7 +69,7 @@
 				'theme_location'  => 'top_nav',
 				'menu'            => '',
 				'container'       => 'nav',		// wrap <ul> in <nav> container
-				'container_class' => 'site-nav float-right',
+				'container_class' => 'site-nav float-right hide-on-mobile',
 				'container_id'    => 'top-nav',
 				'menu_class'      => '', 		// remove the class "menu"
 				'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
@@ -77,10 +77,6 @@
 			); 
 			wp_nav_menu( $top_nav ); ?><!-- /top-nav -->
 					
-			<button id="toggle-mobile-nav" class="float-right btn" type="submit">
-				<i class="icon-reorder"></i> <?php _e('Navigation', '_i3-base'); ?>
-			</button>
-			
 			<a href="#" class="btn">
 				Ahref
 			</a>
@@ -137,9 +133,14 @@
 			'container_id'    => '',
 			'menu_class'      => '', 		// remove the class "menu"
 			'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
-			'items_wrap'      => '<ul role="navigation" class="float-left">%3$s</ul>'
+			'items_wrap'      => '<ul role="navigation" class="hide-on-mobile">%3$s</ul>'
 		); 
 		wp_nav_menu( $main_nav ); ?><!-- /main-nav -->
+
+		<button id="toggle-mobile-nav" class="float-right btn hide-on-desktop" type="submit">
+			<i class="icon-reorder"></i> <?php _e('Navigation', '_i3-base'); ?>
+		</button>
+
 	</nav>
 
 	<div id="content-container" class="row">

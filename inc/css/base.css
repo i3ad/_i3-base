@@ -78,6 +78,18 @@
   display: none!IMPORTANT; 
 }
 
+@media only screen {
+	.hide-on-desktop { display: block; }
+
+	.hide-on-mobile { display: none; }
+}
+
+@media only screen and (min-width: 48em) {
+	.hide-on-desktop { display: none!IMPORTANT; }
+
+	.hide-on-mobile { display: block; }
+}
+
 /* ==========================================================================
    $DEFAULTS
    ========================================================================== */

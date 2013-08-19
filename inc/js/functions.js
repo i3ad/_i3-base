@@ -141,8 +141,8 @@ $(document).ready(function(){
 // ==========================================================================
 $(document).ready(function() {
 
-    $('ul.sub-menu:not(ul.sub-menu ul.sub-menu)').prev('a').append('&nbsp;&nbsp;<i class="icon-caret-down icon-large"></i>');
-    $('ul.sub-menu ul.sub-menu').prev('a').append('&nbsp;&nbsp;<i class="icon-caret-right icon-large"></i>');
+    $('.site-nav ul.sub-menu:not(ul.sub-menu ul.sub-menu)').prev('a').append('&nbsp;&nbsp;<i class="icon-caret-down icon-large"></i>');
+    $('.site-nav ul.sub-menu ul.sub-menu').prev('a').append('&nbsp;&nbsp;<i class="icon-caret-right icon-large"></i>');
 
 });
 
