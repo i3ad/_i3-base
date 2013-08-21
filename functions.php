@@ -370,8 +370,8 @@
 		    'format' => '',
 		    'total' => $wp_query->max_num_pages,
 		    'current' => $current,
-		    'prev_text' => __('« Previous', '_i3-base'),
-		    'next_text' => __('Next »', '_i3-base'),
+		    'prev_text' => __('<i class="icon-caret-left"></i> Previous', '_i3-base'),
+		    'next_text' => __('Next <i class="icon-caret-right"></i>', '_i3-base'),
 		    'end_size' => 1,          // Show page 1 and the last page 
 		    'mid_size' => 3,          // Show 3 pages, left and right from the current page
 		    'show_all' => false,      // If set to True, then it will show all of the pages instead of a short list of the pages near the current page.
