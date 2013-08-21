@@ -16,6 +16,50 @@ get_header(); ?>
 		
 		<h3>HTML ELEMENT TEST</h3>
 		
+		<h4>Buttons</h4>
+		
+		<h5>Button Tag</h5>
+		
+		<button type="button" class="btn">Default</button>
+
+		<button type="button" class="btn grey">Grey</button>
+
+		<button type="button" class="btn dark">Dark</button>
+
+		<button type="button" class="btn blue">Blue</button>
+
+		<button type="button" class="btn green">Green</button>
+
+		<button type="button" class="btn yellow">Yellow</button>
+
+		<button type="button" class="btn red">Red</button>
+
+		<button type="button" class="btn disabled">Disabled</button>
+
+		<button type="button" class="btn link">Link</button>
+		
+		<h5>A Tag</h5>
+		
+		<a href="#" class="btn">Default</a>
+
+		<a href="#" class="btn grey">Grey</a>
+
+		<a href="#" class="btn dark">Dark</a>
+		
+		<a href="#" class="btn blue">Blue</a>
+
+		<a href="#" class="btn green">Green</a>
+
+		<a href="#" class="btn yellow">Yellow</a>
+
+		<a href="#" class="btn red">Red</a>
+
+		<a href="#" class="btn disabled">Disabled</a>
+
+		<a href="#" class="btn link">Link</a>
+
+		<hr/>
+		
 		<h4>Alert-Box</h4>
 		
 		<div class="alert-box">

@@ -137,12 +137,18 @@ $(document).ready(function(){
     });
 });
 
+// Disable elements with class .disabled
+// ==========================================================================
+$(document).ready(function() {
+	$('.disabled') .click(function(e) {e.preventDefault();});
+});
+
 // DropDown arrors
 // ==========================================================================
 $(document).ready(function() {
 
-    $('.site-nav ul.sub-menu:not(ul.sub-menu ul.sub-menu)').prev('a').append('&nbsp;&nbsp;<i class="icon-caret-down icon-large"></i>');
-    $('.site-nav ul.sub-menu ul.sub-menu').prev('a').append('&nbsp;&nbsp;<i class="icon-caret-right icon-large"></i>');
+    $('.site-nav ul.sub-menu:not(ul.sub-menu ul.sub-menu)').prev('a').append('&nbsp;&nbsp;<i class="icon-caret-down"></i>');
+    $('.site-nav ul.sub-menu ul.sub-menu').prev('a').append('&nbsp;&nbsp;<i class="icon-caret-right"></i>');
 
 });
 

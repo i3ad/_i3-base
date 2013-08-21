@@ -51,8 +51,8 @@
 	?>
 	<style>
 		body, select, input, textarea { color:  <?php echo $content_text_color; ?>; }
-		a { color:  <?php echo $content_link_color; ?>; }
-		a:hover, a:active, a:focus { color:  <?php echo $content_link_hover_color; ?>; }
+		a, .btn.link, a.btn.link { color:  <?php echo $content_link_color; ?>; }
+		a:hover, a:active, a:focus, .link:hover, .link:active, .link:focus, .btn.link:hover, .btn.link:active, .btn.link:focus, a.btn.link:hover, a.btn.link:active, a.btn.link:focus { color:  <?php echo $content_link_hover_color; ?>; }
 	</style>
 
 </head>
@@ -76,14 +76,6 @@
 				'items_wrap'      => '<ul role="navigation">%3$s</ul>'
 			); 
 			wp_nav_menu( $top_nav ); ?><!-- /top-nav -->
-					
-			<a href="#" class="btn">
-				Ahref
-			</a>
-			
-			<button type="submit" class="btn">
-				Button
-			</button>
 		
 		</div>
 

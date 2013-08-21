@@ -179,12 +179,12 @@
         );
         $colors[] = array(
             'slug'      =>'content_link_color', 
-            'default'   => '#03f',
+            'default'   => '#4285f4',
             'label'     => __('Content Link Color', '_i3-base')
         );
         $colors[] = array(
             'slug'      =>'content_link_hover_color', 
-            'default'   => '#69f',
+            'default'   => '#76a7fa',
             'label'     => __('Content Link Hover Color', '_i3-base')
         );
         foreach( $colors as $color ) {

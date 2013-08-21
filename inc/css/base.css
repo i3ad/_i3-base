@@ -165,14 +165,14 @@ h6 small {}
 .subheader {}
 
 a {
-	color: #03f; /* can be overridden by the theme-customizer */
+	color: #4285f4; /* can be overridden by the theme-customizer */
 } 
 
 a:active {}
 
 a:hover,
 a:focus {
-	color: #69f;
+	color: #76a7fa;
 }
 
 p {}
@@ -386,33 +386,40 @@ textarea:-moz-placeholder { color: #999999; }
 .btn,
 a.btn,
 button {
-	background: #428BCA;
+	font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	font-size: 14px;
+	line-height: 14px;
+	background: #ffffff;
+	color: #666666;
 	border: 1px solid;
-	border-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.35);
-	color: #ffffff;
+	border-color: rgba(0, 0, 0, 0.2);
 	display: inline-block;
 	text-align: center;
+	text-decoration: none;
 	padding: 0.5em 1.2em;
-	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3); /* Add white inset shadow, WebKit */
-    -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3); /* Add white inset shadow, Firefox */
-	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3); /* Add white inset shadow, Standart */
-	font-size: 14px;
+	/*text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);*/
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+	-webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3), 0 1px 0 rgba(0, 0, 0, 0.05); /* Add white inset shadow, WebKit */
+    -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3), 0 1px 0 rgba(0, 0, 0, 0.05); /* Add white inset shadow, Firefox */
+	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3), 0 1px 0 rgba(0, 0, 0, 0.05); /* Add white inset shadow, Standart */
 }
 
 .btn:hover,
-a.btn:hover {
-	background: #357EBD;
-}
-
+a.btn:hover,
 .btn:focus,
-a.btn:focus {
+a.btn:focus,
+button:hover,
+button:focus {
+	border-color: rgba(0, 0, 0, 0.3);
+	color: inherit;
 }
 
 .btn:active,
 .btn.pressed,
 a.btn:active,
-a.btn.pressed { /* Add inset shadow at press-in */
+a.btn.pressed,
+button:active,
+button.pressed { /* Add inset shadow at press-in */
 	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* WebKit */
 	-moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* Firefox */
 	box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* Standard */	
@@ -420,45 +427,149 @@ a.btn.pressed { /* Add inset shadow at press-in */
 
 /* Button Colors
    ========================================================================== */ 
-.btn-grey,
-a.btn-grey {
-	background: #EEEEEE;
-}
-
-.btn-dark,
-a.btn-dark {
-	background: #474949;
-}
-
-.btn-light-blue,
-a.btn-light-blue {
-	background: #5BC0DE;
-}
-
-.btn-green,
-a.btn-green {
-	background: #5CB85C;
-}
-
-.btn-yellow,
-a.btn-yellow {
-	background: #F0AD4E;
-}
-
-.btn-red,
-a.btn-red {
-	background: #D9534F;
-}
-
-.btn-muted,
-a.btn-muted {
-	opacity: 0.5;
-	cursor: default; 
-}
-
-.btn-link,
-a.btn-link {
+   
+/* Link color */
+.link,
+.btn.link,
+a.btn.link {
+	border: 0;
+	color: #4285F4; /* add to customizer */
+	text-shadow: none;
+	box-shadow: none;
 	background: transparent;
+}
+.link:hover,
+.link:avtive,
+.link:focus,
+.link.pressed,
+.btn.link:hover,
+.btn.link:active,
+.btn.link:focus,
+.btn.link.pressed,
+a.btn.link:hover,
+a.btn.link:active,
+a.btn.link:focus,
+a.btn.link.pressed {
+	color: #76A7FA; /* add to customizer */
+	box-shadow: none;
+	border: 0;
+}
+
+/* Blue color */ 
+.blue,
+.btn.blue,
+a.btn.blue {
+	color: #ffffff;
+	background: #4285f4;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+.blue:hover,
+.btn.blue:hover,
+a.btn.blue:hover {
+	color: #ffffff;
+	background: #76a7fa;
+}
+
+/* Red color */   
+.red,
+.btn.red,
+a.btn.red {
+	color: #ffffff;
+	background: #db4437;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+.red:hover,
+.btn.red:hover,
+a.btn.red:hover {
+	color: #ffffff;
+	background: #e57368;
+}
+
+/* Yellow color */ 
+.yellow, 
+.btn.yellow,
+a.btn.yellow {
+	color: #ffffff;
+	background: #f4b400;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+.yellow:hover,
+.btn.yellow:hover,
+a.btn.yellow:hover {
+	color: #ffffff;
+	background: #fbcb43;
+}
+
+/* Green color */
+.green,
+.btn.green,
+a.btn.green {
+	color: #ffffff;
+	background: #0f9d59;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+.green:hover,
+.btn.green:hover,
+a.btn.green:hover {
+	color: #ffffff;
+	background: #33b679;
+}
+
+/* Grey color */
+.grey,
+.btn.grey,
+a.btn.grey {
+	color: #666666;
+	background: #f2f2f2;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+	border: 1px solid #f2f2f2;
+	box-shadow: none;
+}
+.grey:hover,
+.btn.grey:hover,
+a.btn.grey:hover {
+	background: #E6E6E6;
+	color: #333333;
+	border: 1px solid #E6E6E6;
+}
+
+/* Dark color */
+.dark,
+.btn.dark,
+a.btn.dark {
+	color: #ffffff;
+	background: #666666;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+.dark:hover,
+.btn.dark:hover,
+a.btn.dark:hover {
+	color: #ffffff;
+	background: #808080;
+}
+
+/* Disabled color */
+.disabled,
+.disabled:hover,
+.disabled:focus,
+.disabled:active,
+.disabled.pressed,
+.btn.disabled,
+.btn.disabled:hover,
+.btn.disabled:focus,
+.btn.disabled:active,
+.btn.disabled.pressed,
+a.btn.disabled,
+a.btn.disabled:hover,
+a.btn.disabled:focus,
+a.btn.disabled:active,
+a.btn.disabbled.pressed {
+	color: #cccccc;
+	background: #f2f2f2;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+	border-color: rgba(0, 0, 0, 0.1);
+	cursor: default;
+	box-shadow: none;
 }
 
 /* Dropdown Buttons
@@ -1157,7 +1268,7 @@ a.blue-btn:hover {
 	left: 0;
 	top: 100%;
 	z-index: 99;
-	background: #F7F5FA;
+	background: #f2f2f2;
 }
 
 .site-nav ul ul li,
@@ -1206,16 +1317,16 @@ a.blue-btn:hover {
 }
 
 #top-nav-container #site-title a {
-	padding: 10px 15px;
+	padding: 6px 15px;
 	display: block;
 	text-decoration: none;
-	color: #777777;
-	/*font-size: 18px;
-	position: absolute;*/
+	color: #4d4d4d;
+	font-size: 18px;
+	/*position: absolute;*/
 }
 
 #top-nav-container #site-title a:hover {
-	color: #555555;
+	color: #333333;
 }
 
 /* main-nav
@@ -1223,7 +1334,7 @@ a.blue-btn:hover {
 #top-nav,
 #top-nav-container,
 #main-nav {
-	background: #F7F5FA;
+	background: #f2f2f2;
 }
 
 #top-nav ul,
@@ -1234,15 +1345,15 @@ a.blue-btn:hover {
 #top-nav a,
 #main-nav a {
 	display: block;
-	color: #777777;
+	color: #666666;
 	text-decoration: none;
 	padding: 10px 15px;
 }
 
 #top-nav a:hover,
 #main-nav a:hover {
-	background: #E7E7E7;
-	color: #555555;
+	background: #e6e6e6;
+	color: #333333;
 }
    
 
