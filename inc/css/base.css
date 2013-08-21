@@ -90,6 +90,24 @@
 	.hide-on-mobile { display: block; }
 }
 
+/* Radius styles
+   ========================================================================== */ 
+.radius,
+.toggle-box.radius .toggle { 
+	-webkit-border-radius: 0.3em;
+	border-radius: 0.3em;
+}
+
+/* Radius style for accordion */
+.accordion.radius dt.toggle:first-child {
+	-webkit-border-radius: 0.3em 0.3em 0 0;
+    border-radius: 0.3em 0.3em 0 0;
+}
+.accordion.radius dt.toggle.last {
+	-webkit-border-radius: 0 0 0.3em 0.3em;
+    border-radius: 0 0 0.3em 0.3em;
+}
+
 /* ==========================================================================
    $DEFAULTS
    ========================================================================== */
@@ -254,6 +272,43 @@ a img {
 
 a img:hover {}
 
+.alignleft {
+	float: left;
+	margin-right: 10px;
+}
+
+.alignright {
+	float: right;
+	margin-left: 10px;
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+
+.alignnone,
+.alignnone img {
+	max-width: 100%;
+	width: auto;
+	max-height: 100%;
+	height: auto;
+}
+
+.wp-caption {
+	background: #ffffff;
+	border: 1px solid #e6e6e6;
+	padding: 5px;
+	max-width: 100%;
+	margin-bottom: 1.25em;
+}
+
+.wp-caption-text {
+	margin-bottom: 0;
+	font-size: 12px;
+	color: #b2b2b2;
+}
+
 /**
  * Example HTML:
  *
@@ -271,7 +326,7 @@ a img:hover {}
 	background: #ffffff;
 	border: 1px solid #DDDDDD;
     display: inline-block;
-    padding: 4px;
+    padding: 5px;
     max-width: 100%;
 }
 

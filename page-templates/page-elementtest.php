@@ -20,7 +20,7 @@ get_header(); ?>
 		
 		<h5>Button Tag</h5>
 		
-		<button type="button" class="btn">Default</button>
+		<button type="button" class="btn radius">Default</button>
 
 		<button type="button" class="btn grey">Grey</button>
 
@@ -28,13 +28,13 @@ get_header(); ?>
 
 		<button type="button" class="btn blue">Blue</button>
 
-		<button type="button" class="btn green">Green</button>
+		<button type="button" class="btn green radius">Green</button>
 
 		<button type="button" class="btn yellow">Yellow</button>
 
 		<button type="button" class="btn red">Red</button>
 
-		<button type="button" class="btn disabled">Disabled</button>
+		<button type="button" class="btn disabled radius">Disabled</button>
 
 		<button type="button" class="btn link">Link</button>
 		
@@ -42,7 +42,7 @@ get_header(); ?>
 		
 		<a href="#" class="btn">Default</a>
 
-		<a href="#" class="btn grey">Grey</a>
+		<a href="#" class="btn grey radius">Grey</a>
 
 		<a href="#" class="btn dark">Dark</a>
 		
@@ -50,7 +50,7 @@ get_header(); ?>
 
 		<a href="#" class="btn green">Green</a>
 
-		<a href="#" class="btn yellow">Yellow</a>
+		<a href="#" class="btn yellow radius">Yellow</a>
 
 		<a href="#" class="btn red">Red</a>
 
@@ -86,19 +86,19 @@ get_header(); ?>
 		
 		<span class="label">12</span>
 		
-		<span class="label grey">grey</span>
+		<span class="label grey radius">grey</span>
 		
 		<span class="label dark">dark</span>
 		
 		<span class="label blue">blue</span>
 		
-		<span class="label green">green</span>
+		<span class="label green radius">green</span>
 		
 		<span class="label yellow">yellow</span>
 		
 		<span class="label red">red</span>
 		
-		<span class="label disabled">disabled</span>
+		<span class="label disabled radius">disabled</span>
 		
 		<span class="label link">link</span>
 		
@@ -106,7 +106,7 @@ get_header(); ?>
 		
 		<h4>Badges, Labels and Headings</h4>
 		
-		<h1>Heading 1 <span class="label green">green</span></h1>
+		<h1>Heading 1 <span class="label green radius">green</span></h1>
 		
 		<h1>Heading 1 <span class="badge green">12</span></h1>
 		
@@ -114,7 +114,7 @@ get_header(); ?>
 		
 		<h2>Heading 2 <span class="badge red">12</span></h2>
 		
-		<h3>Heading 3 <span class="label dark">dark</span></h3>
+		<h3>Heading 3 <span class="label dark radius">dark</span></h3>
 		
 		<h3>Heading 3 <span class="badge dark">12</span></h3>
 		
@@ -134,7 +134,7 @@ get_header(); ?>
 		
 		<h4>Alert-Box</h4>
 		
-		<div class="alert-box">
+		<div class="alert-box radius">
 			<strong>Warning!</strong>
 			Your content goes here
 			<span class="close"><i class="icon-remove"></i></span>
@@ -152,7 +152,7 @@ get_header(); ?>
 			<span class="close"><i class="icon-remove"></i></span>
 		</div>
 		
-		<div class="alert-box green">
+		<div class="alert-box green radius">
 			<strong>Warning!</strong>
 			Your content goes here
 			<span class="close"><i class="icon-remove"></i></span>
@@ -174,7 +174,7 @@ get_header(); ?>
 		
 		<h4>Panels</h4>
 		
-		<div class="panel">
+		<div class="panel radius">
 			<strong>Warning!</strong>
 			Your content goes here
 		</div>
@@ -189,7 +189,7 @@ get_header(); ?>
 			Your content goes here
 		</div>
 		
-		<div class="panel green">
+		<div class="panel green radius">
 			<strong>Warning!</strong>
 			Your content goes here
 		</div>
@@ -220,12 +220,12 @@ get_header(); ?>
 		<h5>Popover Bottom</h5>
 		
 		<div class="popover bottom">
-			<span class="popover-content">
+			<span class="popover-content radius">
 				<span class="arrow"><i class="icon-caret-down icon-large icon-rotate-180"></i></span>
 				<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 				<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 			</span>
-			<button type="button" class="btn">Popover Bottom</button>
+			<button type="button" class="btn radius">Popover Bottom</button>
 		</div>
 		
 		<h5>Popover Right</h5>
@@ -261,6 +261,11 @@ get_header(); ?>
 		  <dd class="content"><p>This is the toggable content part.here u can insert everthing u want (nearly).</p></dd>
 		</dl>
 		
+		<dl class="toggle-box radius">
+		  <dt class="toggle"><span>Toggler <i class="icon-plus"></i></span></dt>
+		  <dd class="content"><p>This is the toggable content part.here u can insert everthing u want (nearly).</p></dd>
+		</dl>
+		
 		<hr/>
 		
 		<h4>Accordion</h4>
@@ -280,7 +285,7 @@ get_header(); ?>
 		
 		<h4>Accordion</h4>
 		
-		<dl class="accordion">
+		<dl class="accordion radius">
 			<dt class="toggle"><span>Panel 1 <i class="icon-plus"></i></span></dt>
 			<dd class="content"><p>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</p></dd>
 
