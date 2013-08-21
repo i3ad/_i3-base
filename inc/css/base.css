@@ -429,7 +429,7 @@ button.pressed { /* Add inset shadow at press-in */
    ========================================================================== */ 
    
 /* Link color */
-.link,
+button.link,
 .btn.link,
 a.btn.link {
 	border: 0;
@@ -438,10 +438,10 @@ a.btn.link {
 	box-shadow: none;
 	background: transparent;
 }
-.link:hover,
-.link:avtive,
-.link:focus,
-.link.pressed,
+button.link:hover,
+button.link:avtive,
+button.link:focus,
+button.link.pressed,
 .btn.link:hover,
 .btn.link:active,
 .btn.link:focus,
@@ -456,14 +456,14 @@ a.btn.link.pressed {
 }
 
 /* Blue color */ 
-.blue,
+button.blue,
 .btn.blue,
 a.btn.blue {
 	color: #ffffff;
 	background: #4285f4;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
-.blue:hover,
+button.blue:hover,
 .btn.blue:hover,
 a.btn.blue:hover {
 	color: #ffffff;
@@ -471,14 +471,14 @@ a.btn.blue:hover {
 }
 
 /* Red color */   
-.red,
+button.red,
 .btn.red,
 a.btn.red {
 	color: #ffffff;
 	background: #db4437;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
-.red:hover,
+button.red:hover,
 .btn.red:hover,
 a.btn.red:hover {
 	color: #ffffff;
@@ -486,14 +486,14 @@ a.btn.red:hover {
 }
 
 /* Yellow color */ 
-.yellow, 
+button.yellow, 
 .btn.yellow,
 a.btn.yellow {
 	color: #ffffff;
 	background: #f4b400;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
-.yellow:hover,
+button.yellow:hover,
 .btn.yellow:hover,
 a.btn.yellow:hover {
 	color: #ffffff;
@@ -501,14 +501,14 @@ a.btn.yellow:hover {
 }
 
 /* Green color */
-.green,
+button.green,
 .btn.green,
 a.btn.green {
 	color: #ffffff;
 	background: #0f9d59;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
-.green:hover,
+button.green:hover,
 .btn.green:hover,
 a.btn.green:hover {
 	color: #ffffff;
@@ -516,7 +516,7 @@ a.btn.green:hover {
 }
 
 /* Grey color */
-.grey,
+button.grey,
 .btn.grey,
 a.btn.grey {
 	color: #666666;
@@ -525,7 +525,7 @@ a.btn.grey {
 	border: 1px solid #f2f2f2;
 	box-shadow: none;
 }
-.grey:hover,
+button.grey:hover,
 .btn.grey:hover,
 a.btn.grey:hover {
 	background: #E6E6E6;
@@ -534,14 +534,14 @@ a.btn.grey:hover {
 }
 
 /* Dark color */
-.dark,
+button.dark,
 .btn.dark,
 a.btn.dark {
 	color: #ffffff;
 	background: #666666;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
-.dark:hover,
+button.dark:hover,
 .btn.dark:hover,
 a.btn.dark:hover {
 	color: #ffffff;
@@ -549,11 +549,11 @@ a.btn.dark:hover {
 }
 
 /* Disabled color */
-.disabled,
-.disabled:hover,
-.disabled:focus,
-.disabled:active,
-.disabled.pressed,
+button.disabled,
+button.disabled:hover,
+button.disabled:focus,
+button.disabled:active,
+button.disabled.pressed,
 .btn.disabled,
 .btn.disabled:hover,
 .btn.disabled:focus,
@@ -827,13 +827,15 @@ ul.btn-group.radius li:last-child a {
  */
 .label {
 	display: inline-block;
-	background: #69a6cc;
+	background: #F2F2F2;
 	font-weight: bold;
-	font-size: 0.8em;
+	font-size: 12px;
+	line-height: 14px;
 	padding: 0.2em 0.4em;
 	white-space: nowrap;
-	color: #ffffff;
-	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	color: #999999;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+	vertical-align: middle;
 }
  
 /* Badges
@@ -846,88 +848,82 @@ ul.btn-group.radius li:last-child a {
  * </span>
  */
 .badge {
-	background: #69a6cc;
+	background: #F2F2F2;
 	font-weight: bold;
-	font-size: 0.8em;
-	line-height: 1em;
+	font-size: 12px;
+	line-height: 12px;
 	padding: 0.2em 0.4em;
 	white-space: nowrap;
 	-webkit-border-radius: 500px;
 	-moz-border-radius: 500px;
 	border-radius: 500px;
-	color: #ffffff;
-	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	color: #999999;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
 	vertical-align: middle;
 }
 
 /* Colors for Labels and Badges
    ========================================================================== */ 
-.muted-btn {
-	background: #EEEEEE;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	color: #D6D6D6;
-	cursor: default;
-	text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
-}
-.muted-btn:active {
-	-webkit-box-shadow: none; /* WebKit */
-	-moz-box-shadow: none; /* Firefox */
-	box-shadow: none; /* Standard */
-	color: #D6D6D6;
-}
-a.muted-btn:hover {
-	background: #EEEEEE;
-	color: #D6D6D6;
+.label.link,
+.label.link:hover,
+.badge.link,
+.badge.link:hover {
+	background: transparent;
+	color: #4285F4;
+	text-shadow: none;
 }
 
-.light-btn {
-	background: #999999;
-}
-a.light-btn:hover {
-	background: #898989;
+.label.grey,
+.badge.grey {
+	background: #ffffff;
+	color: #666666;
+	text-shadow: none;
+	border: 1px solid #B2B2B2;
 }
 
-.grey-btn {
+.label.dark,
+.badge.dark {
 	background: #666666;
-}
-a.grey-btn:hover {
-	background: #5c5c5c;
-}
-
-.dark-btn {
-	background: #333333;
-}
-a.dark-btn:hover {
-	background: #2e2e2e;
+	color: #ffffff;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
-.yellow-btn {
-    background: #ff9933;
-}
-a.yellow-btn:hover {
-    background: #e5892e;
-}
-
-.red-btn {
-    background: #bd2c00;
-}
-a.red-btn:hover {
-    background: #aa2800;
+.label.blue,
+.badge.blue {
+	background: #4285F4;
+	color: #ffffff;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
-.green-btn {
-    background: #6cc644;
-}
-a.green-btn:hover {
-    background: #61b23d;
+.label.green,
+.badge.green {
+	background: #0F9D59;
+	color: #ffffff;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
-.blue-btn {
-    background: #4183c4;
+.label.yellow,
+.badge.yellow {
+	background: #F4B400;
+	color: #ffffff;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
-a.blue-btn:hover {
-    background: #3a76b0;
+
+.label.red,
+.badge.red {
+	background: #DB4437;
+	color: #ffffff;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
+   
+.label.disabled,
+.badge.disabled {
+	background: #F2F2F2;
+	color: #CCCCCC;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+	cursor: default;
+	border: 1px solid #D9D9D9;
+}   
    
 /* Alerts
    ========================================================================== */
@@ -940,13 +936,13 @@ a.blue-btn:hover {
  * </div>
  */
 .alert-box {
-    border: 1px solid #DCDCDC;
+    border: 1px solid #e6e6e6;
 	display: block;
 	margin-bottom: 1.25em;
 	position: relative;
 	padding: 1em 2em 1em 1em;
 	background: #ffffff; 
-	color: #555555;
+	color: #666666;
 	line-height: normal;
 }
 
@@ -996,7 +992,9 @@ a.blue-btn:hover {
 .alert-box h5,
 .panel h5,
 .alert-box h6,
-.panel h6 {
+.panel h6,
+.alert-box a,
+.panel a {
 	color: inherit;
 }
    
@@ -1010,57 +1008,47 @@ a.blue-btn:hover {
  * </div>
  */
 .panel {
-	border: 1px solid #DCDCDC;
+	border: 1px solid #e6e6e6;
 	padding: 1em;
 	background: #ffffff; 
-	color: #555555; 
+	color: #666666; 
 }
 
 /* Colors for Alerts and Panels
    ========================================================================== */
-.muted-box {
-	border: 1px solid #EEEEEE!IMPORTANT;
-	color: #BBBBBB!IMPORTANT;
+.alert-box.grey,
+.panel.grey {
+	background: #F2F2F2;
+	border: 0;
+	color: #999999;
 }
 
-.light-grey-box {
-    background: #F7F7F7!IMPORTANT;
-    border: 1px solid #DCDCDC!IMPORTANT;
-}
-
-.grey-box {
-    background: #DCDCDC!IMPORTANT;
-    border: 1px solid #BBBBBB!IMPORTANT;
-}
-
-.dark-box {
-    background: #757575!IMPORTANT;
-    border: 1px solid #555555!IMPORTANT;
-	color: #ffffff!IMPORTANT;
-}
-
-.yellow-box {
-    background: #FCF8E3!IMPORTANT;
-    border: 1px solid #FBEED5!IMPORTANT;
+.alert-box.yellow,
+.panel.yellow {
+    background: #FCF8E3;
+    border: 1px solid #FBEED5;
     color: #C09853;
 }
 
-.red-box {
-    background: #F2DEDE!IMPORTANT;
-    border: 1px solid #EED3D7!IMPORTANT;
+.alert-box.red,
+.panel.red {
+    background: #F2DEDE;
+    border: 1px solid #EED3D7;
     color: #B94A48;
 }
 
-.green-box {
-    background: #DFF0D8!IMPORTANT;
-    border: 1px solid #D6E9C6!IMPORTANT;
+.alert-box.green,
+.panel.green {
+    background: #DFF0D8;
+    border: 1px solid #D6E9C6;
     color: #468847;
 }
 
-.blue-box {
-    background: #D9EDF7!IMPORTANT;
-    border: 1px solid #BCE8F1!IMPORTANT;
-    color: #3A87AD!IMPORTANT;
+.alert-box.blue,
+.panel.blue {
+    background: #D9EDF7;
+    border: 1px solid #BCE8F1;
+    color: #3A87AD;
 } 
 
 /* Breadcrumb

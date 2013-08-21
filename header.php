@@ -51,8 +51,8 @@
 	?>
 	<style>
 		body, select, input, textarea { color:  <?php echo $content_text_color; ?>; }
-		a, .btn.link, a.btn.link { color:  <?php echo $content_link_color; ?>; }
-		a:hover, a:active, a:focus, .link:hover, .link:active, .link:focus, .btn.link:hover, .btn.link:active, .btn.link:focus, a.btn.link:hover, a.btn.link:active, a.btn.link:focus { color:  <?php echo $content_link_hover_color; ?>; }
+		a, .btn.link, a.btn.link, .label.link, label.link:hover, .badge.link, .badge.link:hover { color:  <?php echo $content_link_color; ?>; }
+		a:hover, a:active, a:focus, button.link:hover, button.link:active, button.link:focus, .btn.link:hover, .btn.link:active, .btn.link:focus, a.btn.link:hover, a.btn.link:active, a.btn.link:focus { color:  <?php echo $content_link_hover_color; ?>; }
 	</style>
 
 </head>

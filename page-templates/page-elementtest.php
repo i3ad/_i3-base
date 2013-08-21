@@ -60,6 +60,78 @@ get_header(); ?>
 
 		<hr/>
 		
+		<h4>Badges</h4>
+		
+		<span class="badge">12</span>
+		
+		<span class="badge grey">12</span>
+		
+		<span class="badge dark">12</span>
+		
+		<span class="badge blue">12</span>
+		
+		<span class="badge green">12</span>
+		
+		<span class="badge yellow">12</span>
+		
+		<span class="badge red">12</span>
+		
+		<span class="badge disabled">12</span>
+		
+		<span class="badge link">12</span>
+		
+		<hr/>
+		
+		<h4>Labels</h4>
+		
+		<span class="label">12</span>
+		
+		<span class="label grey">grey</span>
+		
+		<span class="label dark">dark</span>
+		
+		<span class="label blue">blue</span>
+		
+		<span class="label green">green</span>
+		
+		<span class="label yellow">yellow</span>
+		
+		<span class="label red">red</span>
+		
+		<span class="label disabled">disabled</span>
+		
+		<span class="label link">link</span>
+		
+		<hr/>
+		
+		<h4>Badges, Labels and Headings</h4>
+		
+		<h1>Heading 1 <span class="label green">green</span></h1>
+		
+		<h1>Heading 1 <span class="badge green">12</span></h1>
+		
+		<h2>Heading 2 <span class="label red">red</span></h2>
+		
+		<h2>Heading 2 <span class="badge red">12</span></h2>
+		
+		<h3>Heading 3 <span class="label dark">dark</span></h3>
+		
+		<h3>Heading 3 <span class="badge dark">12</span></h3>
+		
+		<h4>Heading 4 <span class="label grey">grey</span></h4>
+		
+		<h4>Heading 4 <span class="badge grey">12</span></h4>
+		
+		<h5>Heading 5 <span class="label link">link</span></h5>
+		
+		<h5>Heading 5 <span class="badge link">12</span></h5>
+		
+		<h6>Heading 6 <span class="label">12</span></h6>
+		
+		<h6>Heading 6 <span class="badge">12</span></h6>
+		
+		<hr/>
+		
 		<h4>Alert-Box</h4>
 		
 		<div class="alert-box">
@@ -68,6 +140,70 @@ get_header(); ?>
 			<span class="close"><i class="icon-remove"></i></span>
 		</div>
 		
+		<div class="alert-box grey">
+			<strong>Warning!</strong>
+			Your content goes here
+			<span class="close"><i class="icon-remove"></i></span>
+		</div>
+				
+		<div class="alert-box blue">
+			<strong>Warning!</strong>
+			Your content goes here
+			<span class="close"><i class="icon-remove"></i></span>
+		</div>
+		
+		<div class="alert-box green">
+			<strong>Warning!</strong>
+			Your content goes here
+			<span class="close"><i class="icon-remove"></i></span>
+		</div>
+		
+		<div class="alert-box yellow">
+			<strong>Warning!</strong>
+			Your content goes here
+			<span class="close"><i class="icon-remove"></i></span>
+		</div>
+		
+		<div class="alert-box red">
+			<strong>Warning!</strong>
+			Your content goes here
+			<span class="close"><i class="icon-remove"></i></span>
+		</div>
+						
+		<hr/>
+		
+		<h4>Panels</h4>
+		
+		<div class="panel">
+			<strong>Warning!</strong>
+			Your content goes here
+		</div>
+		
+		<div class="panel grey">
+			<strong>Warning!</strong>
+			Your content goes here
+		</div>
+				
+		<div class="panel blue">
+			<strong>Warning!</strong>
+			Your content goes here
+		</div>
+		
+		<div class="panel green">
+			<strong>Warning!</strong>
+			Your content goes here
+		</div>
+		
+		<div class="panel yellow">
+			<strong>Warning!</strong>
+			Your content goes here
+		</div>
+		
+		<div class="panel red">
+			<strong>Warning!</strong>
+			Your content goes here
+		</div>
+						
 		<hr/>
 		
 		<h4>Popover</h4>
