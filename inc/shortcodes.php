@@ -22,9 +22,9 @@
 	
 /* Remove WP auto formatting in shortcodes IS THIS RIGHT ?
    ========================================================================== */
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 99);
-add_filter( 'the_content', 'shortcode_unautop',100 );
+	remove_filter( 'the_content', 'wpautop' );
+	add_filter( 'the_content', 'wpautop' , 99);
+	add_filter( 'the_content', 'shortcode_unautop',100 );
 
 
 /* ==========================================================================
@@ -38,7 +38,7 @@ function lead_shortcode( $atts , $content = null ) {
 add_shortcode( 'lead', 'lead_shortcode' );
 
 /* ==========================================================================
-   $DIVIDER
+   $DIVIDER Use: [hr], [divider]
    ========================================================================== */
 function hr_shortcode($atts, $content = null) {
 
@@ -53,7 +53,7 @@ function divider_shortcode($atts, $content = null) {
 add_shortcode( 'divider', 'divider_shortcode' );
 
 /* ==========================================================================
-   $BUTTON SHORTCODE
+   $BUTTON SHORTCODE Use: [button style="red" link="http://www.example.com/" target="_blank"]...[/button]
    ========================================================================== */
 function button_shortcode( $atts , $content = null ) {
 
@@ -108,7 +108,11 @@ function buttongrpitm_shortcode( $atts , $content = null ) {
 add_shortcode( 'button-group-item', 'buttongrpitm_shortcode' );
 	
 /* ==========================================================================
-   $DROPDOWN BUTTON SHORTCODE
+   $DROPDOWN BUTTON SHORTCODE 
+   
+   Use:	[dropdown-button style="red radius" text="Button-Text"]
+			[dropdown-item link="http://www.example.com/" seperator="true" target="_blank"]...[/dropdown-item]
+		[/dropdown-button]
    ========================================================================== */
 function dropdownbtn_shortcode( $atts , $content = null ) {
 
@@ -137,6 +141,10 @@ function dropdownitm_shortcode( $atts , $content = null ) {
 		), $atts )
 	);
 	
+	if ( $seperator == 'true' ) {
+		$seperator = "sep"; // If seperator is set true, add the class .sep
+	}
+	
 	// Code
 	return '<li class="' . $seperator . '"><a href="' . $link . '" target="' . $target . '">' . $content . '</a></li>';
 
@@ -144,7 +152,7 @@ function dropdownitm_shortcode( $atts , $content = null ) {
 add_shortcode( 'dropdown-item', 'dropdownitm_shortcode' );
 
 /* ==========================================================================
-   $TOGGLE BOX
+   $TOGGLE BOX Use: [togglebox text="Clickable heading"]...[/togglebox]
    ========================================================================== */
 function togglebox_shortcode( $atts , $content = null ) {
 
@@ -161,7 +169,7 @@ function togglebox_shortcode( $atts , $content = null ) {
 add_shortcode( 'togglebox', 'togglebox_shortcode' );
 
 /* ==========================================================================
-   $BADGES
+   $BADGES Use: [badge style="red"]...[/badge]
    ========================================================================== */
 function badge_shortcode( $atts , $content = null ) {
 
@@ -179,7 +187,7 @@ function badge_shortcode( $atts , $content = null ) {
 add_shortcode( 'badge', 'badge_shortcode' );
 
 /* ==========================================================================
-   $LABELS
+   $LABELS Use: [label style="red radius"]...[/label]
    ========================================================================== */
 function label_shortcode( $atts , $content = null ) {
 
@@ -197,7 +205,7 @@ function label_shortcode( $atts , $content = null ) {
 add_shortcode( 'label', 'label_shortcode' );
    
 /* ==========================================================================
-   $POPOVER SHORTCODE
+   $POPOVER SHORTCODE Use: [popover style="red radius" text="Button-Text" position="bottom"]...[/popover]
    ========================================================================== */
 function popover_shortcode( $atts , $content = null ) {
 
@@ -216,10 +224,8 @@ function popover_shortcode( $atts , $content = null ) {
 add_shortcode( 'popover', 'popover_shortcode' );
 	
 /* ==========================================================================
-   $ALERT SHORTCODE
+   $ALERT SHORTCODE Use: [alert style="red radius"]...[/alert]
    ========================================================================== 
-   Optional arguments:
-	- style: muted-box, light-grey-box, grey-box, dark-box, yellow-box, red-box, green-box, blue-box, custom-class, rounded
 */
 function alert_shortcode( $atts , $content = null ) {
 
@@ -237,10 +243,8 @@ function alert_shortcode( $atts , $content = null ) {
 add_shortcode( 'alert', 'alert_shortcode' );
    
 /* ==========================================================================
-   $PANEL SHORTCODE
+   $PANEL SHORTCODE Use: [panel style="red radius"]...[/panel]
    ========================================================================== 
-   Optional arguments:
-	- style: muted-box, light-grey-box, grey-box, dark-box, yellow-box, red-box, green-box, blue-box, custom-class, rounded
 */
 function panel_shortcode( $atts , $content = null ) {
 
@@ -256,5 +260,35 @@ function panel_shortcode( $atts , $content = null ) {
 
 }
 add_shortcode( 'panel', 'panel_shortcode' );
+
+/* ==========================================================================
+   $THUMBNAIL SHORTCODE Use: [thumbnail width="200px" link="http://www.example.com/" style="radius" title="the title attribute"] http://www.imagesource.com/image.jpg [/thumbnail]
+   ========================================================================== 
+*/
+function img_shortcode( $atts , $content = null ) {
+
+	// Attributes
+	extract( shortcode_atts(
+		array(
+			'width'		=> 'auto',
+			'height'	=> 'auto',
+			'link'		=> '',
+			'target'	=> '_blank',
+			'style'		=> '',
+			'title'		=> '',
+		), $atts )
+	);
+	
+	$output = '';
+	
+	// Code
+	if ( $link == '' )
+		$output .= '<div class="thumbnail"><img src="' . $content . '" width="' . $width . '" height="' . $height . '" title="' . $title . '" alt="' . $title . '"></div>';
+	else
+		$output .= '<a href="' . $link. '" target="' . $target . '" class="thumbnail ' .$style. '" title="' . $title . '" alt="' . $title . '"><img src="' . $content . '" width="' . $width . '" height="' . $height . '" title="' . $title . '" alt="' . $title . '"></a>';
+		
+	return $output;
+}
+add_shortcode( 'thumbnail', 'img_shortcode' );
 
 ;?>
