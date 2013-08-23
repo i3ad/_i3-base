@@ -42,7 +42,7 @@
 
 		<?php endwhile; ?>
 
-			<?php echo related_content(); ?><!-- /related content --> 
+			<?php #echo related_content(); ?><!-- /related content --> 
 
 			<?php single_post_navigation(); ?><!-- /single-post-navigation --> 
 
