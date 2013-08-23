@@ -27,6 +27,8 @@
 
 				<div class="entry-content clearfix">
 					<?php the_content(); ?>
+
+<?php wp_link_pages('before=<div class="page-links clearfix"><span class="head">'. __('Pages: ', '_i3-base') .'</span>&after=</div>&next_or_number=number&pagelink=<span class="item">%</span>'); ?>
 					<?php edit_post_link(); ?>
 				</div><!-- /entry-content -->
 
