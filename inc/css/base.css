@@ -150,7 +150,8 @@ blockquote,
 .toggle-box,
 .accordion,
 .entry-meta,
-.hentry {
+.hentry,
+.post-navigation {
 	margin-bottom: 1.25em;
 }
 
@@ -1322,6 +1323,12 @@ ul.btn-group.radius li:last-child a {
 .site-nav ul ul a {
 	width: 100%;
 	white-space: nowrap;
+	font-size: 13px;
+}
+
+.site-nav ul ul ul li,
+.site-nav ul ul ul a {
+	font-size: 12px;
 }
 
 .site-nav ul ul ul {
@@ -1439,6 +1446,26 @@ ul.btn-group.radius li:last-child a {
 	color: #333333;
 }
 
+/* Post navigation
+   ========================================================================== */
+
+.post-navigation a {
+	text-decoration: none;
+}
+
+.post-navigation a span {
+	text-decoration: none;
+	padding: 5px 10px;
+	background: #F2F2F2;
+	color: #666666;
+}
+
+.post-navigation a:hover span {
+	background: #E6E6E6;
+	color: #333333;
+}
+
+
 /* ==========================================================================
    $MAIN
    ========================================================================== */
@@ -1478,6 +1505,42 @@ ul.btn-group.radius li:last-child a {
 /* ==========================================================================
    $SIDEBAR
    ========================================================================== */
+.widget ul.menu {
+	background: #F2F2F2;
+}
+
+.widget ul.menu a {
+	color: #666666;
+	padding: 5px 10px;
+	text-decoration: none;
+	display: block;
+}
+
+.widget ul.menu a:hover {
+	background: #E6E6E6;
+	color: #333333;
+}
+
+.widget ul.menu ul {
+	margin: 0;
+}
+
+.widget ul.menu ul a {
+	padding: 5px 20px;
+	font-size: 13px;
+}
+
+.widget ul.menu ul ul a {
+	padding: 5px 30px;
+	font-size: 12px;
+}
+
+.widget_nav_menu .widgettitle {
+	background: #F2F2F2;
+	padding: 5px 10px;
+	margin: 0;
+	font-size: 14px;
+}
    
 /* ==========================================================================
    $FOOTER

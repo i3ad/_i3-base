@@ -33,7 +33,7 @@
 				<footer class="entry-footer entry-meta">
 						<?php get_template_part( 'author', 'info' ); ?>
 
-						<?php the_tags( __('Tags: ', '_i3-base'), ', ', ''); ?>
+						<?php the_tags( __('<i class="icon-tags"></i> ', '_i3-base'), ', ', ''); ?>
 				</footer><!-- /entry-footer -->
 
 			</article><!-- /post-<?php the_ID(); ?>  -->

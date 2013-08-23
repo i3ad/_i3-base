@@ -23,7 +23,7 @@
 				<footer class="entry-footer entry-meta">
 						<?php get_template_part( 'author', 'info' ); ?>
 
-						<?php echo get_the_term_list( $post->ID, 'custom_tag', __('Custom Tags: ', '_i3-base'), ', ', '' ); ?>
+						<?php echo get_the_term_list( $post->ID, 'custom_tag', __('<i class="icon-tags"></i> ', '_i3-base'), ', ', '' ); ?>
 				</footer><!-- /entry-footer -->
 
 			</article><!-- /post-<?php the_ID(); ?>  -->

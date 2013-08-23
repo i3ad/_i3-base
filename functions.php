@@ -354,10 +354,14 @@
 /* Single-post-navigation
    ========================================================================== */
 	function single_post_navigation() {
-		echo '<div class="post-navigation single-post-navigation">';
-		echo '	<div class="next-posts">'.next_post('% >', '', 'yes').'</div>';
-		echo '	<div class="prev-posts">'.previous_post('< %', '', 'yes').'</div>';
-		echo '</div>';
+        echo '<div class="post-navigation clearfix">';
+        echo    '<div class="post-previous float-left">';
+        echo        previous_post_link('%link', '<span title="'. __('Previous Post', '_i3-base') .'"><i class="icon-caret-left"></i> %title</span>');
+        echo    '</div>';
+        echo    '<div class="post-next float-right">';
+        echo        next_post_link('%link', '<span title="'. __('Next Post', '_i3-base') .'">%title <i class="icon-caret-right"></i></span>');
+        echo    '</div>';
+        echo '</div> <!-- /post-navigation -->';
 	}
 
 /* Pagination
