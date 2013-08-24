@@ -10,12 +10,17 @@
 					<h3 class="entry-title"><?php the_title(); ?></h3>
 
 					<div class="entry-meta head-meta">
-						<?php _e('by ', '_i3-base'); ?>
-						<a class="author-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-							<?php the_author_meta( 'display_name' ); ?>
-						</a>
-						<time class="updated" datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i:s'); ?><?php the_time('T'); //This renders "YYYY-MM-DD hh:mm:ssTZD" ?>" pubdate><?php the_time(get_option('date_format')); //Date-format set in admin interface ?></time>
-						<?php _e('Categories: '); the_category(', '); ?>
+						<span class="author" title="<?php _e('Author', '_i3-base'); ?>">
+							<i class="icon-user"></i>
+							<a class="author-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author_meta( 'display_name' ); ?></a>, 
+						</span>
+						<span class="date" title="<?php _e('Date', '_i3-base'); ?>">
+							<time class="updated" datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i:s'); ?><?php the_time('T'); //This renders "YYYY-MM-DD hh:mm:ssTZD" ?>" pubdate><i class="icon-time"></i> <?php the_time(get_option('date_format')); //Date-format set in admin interface ?>, </time>
+						</span>
+						<span class="category" title="<?php _e('Category', '_i3-base'); ?>">
+							<i class="icon-folder-close"></i>
+							<?php the_category(', '); ?>
+						</span>
 						<?php if ( comments_open() ) : 
 							echo '<span class="comments-links">';
 							comments_popup_link( __('<i class="icon-comment-alt icon-large"></i> 0', '_i3-base'), __('<i class="icon-comment icon-large"></i> 1', '_i3-base'), __('<i class="icon-comments icon-large"></i> %', '_i3-base'), 'comments-link', __('', '_i3-base') );
@@ -28,14 +33,14 @@
 				<div class="entry-content clearfix">
 					<?php the_content(); ?>
 
-<?php wp_link_pages('before=<div class="page-links clearfix"><span class="head">'. __('Pages: ', '_i3-base') .'</span>&after=</div>&next_or_number=number&pagelink=<span class="item">%</span>'); ?>
+					<?php wp_link_pages('before=<div class="page-links clearfix"><span class="head">'. __('Pages: ', '_i3-base') .'</span>&after=</div>&next_or_number=number&pagelink=<span class="item">%</span>'); ?>
 					<?php edit_post_link(); ?>
 				</div><!-- /entry-content -->
 
 				<footer class="entry-footer entry-meta">
 						<?php get_template_part( 'author', 'info' ); ?>
 
-						<?php the_tags( __('<i class="icon-tags"></i> ', '_i3-base'), ', ', ''); ?>
+						<span class="tags" title="<?php _e('Tags', '_i3-base'); ?>"><?php the_tags( __('<i class="icon-tags"></i> ', '_i3-base'), ', ', ''); ?></span>
 				</footer><!-- /entry-footer -->
 
 			</article><!-- /post-<?php the_ID(); ?>  -->

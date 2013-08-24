@@ -65,6 +65,8 @@
 
 			<h1 id="site-title" class="float-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' )); echo ' - '; echo esc_attr( get_bloginfo( 'description', 'display' )); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
+			<?php get_search_form(); ?>
+
 			<?php $top_nav = array(
 				'theme_location'  => 'top_nav',
 				'menu'            => '',
@@ -76,7 +78,7 @@
 				'items_wrap'      => '<ul role="navigation">%3$s</ul>'
 			); 
 			wp_nav_menu( $top_nav ); ?><!-- /top-nav -->
-		
+	
 		</div>
 
 	</div><!-- /top-nav-container -->

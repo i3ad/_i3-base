@@ -1296,6 +1296,42 @@ ul.btn-group.radius li:last-child a {
 #site-header #searchform input[type="search"]:active {
 	width: 150px;
 }
+
+#top-nav-container #searchform {
+	display: block;
+	float: right;
+	padding: 6px 10px;
+}
+
+#top-nav-container #searchform label {
+	display: none;
+}
+
+#top-nav-container #searchform input {
+	display: block;
+	float: left;
+	margin: 0;
+	
+	line-height: normal;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+}
+
+#top-nav-container #searchform input[type="search"] {
+	padding: 0 0.5em;
+	margin-right: -1px;
+	width: 100px;
+}
+
+#top-nav-container #searchform input[type="submit"] {
+	padding: 0 1em;
+}
+
+#top-nav-container #searchform input[type="search"]:focus,
+#top-nav-container #searchform input[type="search"]:active {
+	width: 150px;
+}
    
 /* ==========================================================================
    $NAVIGATION
@@ -1587,7 +1623,14 @@ ul.btn-group.radius li:last-child a {
 }
 
 #to-top {
-  
+	margin-left: 0.5em;
+	color: #666666;
+	text-decoration: none;
+	display: block;
+}
+
+#to-top:hover {
+	color: #333333;
 }
 
 /* footer-widgets
