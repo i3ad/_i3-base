@@ -2,16 +2,13 @@
 
 				<header class="entry-header">
 					<h3 class="entry-title">
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
 						<?php if ( is_sticky() ) {?>
-							<span class="subhead sticky-mark"><i class="icon-pushpin"></i></span>
+							<span class="subheader sticky-mark"><i class="icon-pushpin"></i></span>
 						<?php } ?>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h3>
 
-					<div class="entry-meta head-meta">
-						
-							
-						
+					<div class="entry-meta head-meta">			
 						<span class="author">
 							<?php _e('by ', '_i3-base'); ?>
 							<a class="author-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author_meta( 'display_name' ); ?></a>, 

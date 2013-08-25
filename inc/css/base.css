@@ -93,17 +93,17 @@
 /* Radius styles
    ========================================================================== */ 
 .radius,
-.toggle-box.radius .toggle { 
+.toggle-box.radius .toggle > span { 
 	-webkit-border-radius: 0.3em;
 	border-radius: 0.3em;
 }
 
 /* Radius style for accordion */
-.accordion.radius dt.toggle:first-child {
+.accordion.radius dt.toggle:first-child > span {
 	-webkit-border-radius: 0.3em 0.3em 0 0;
     border-radius: 0.3em 0.3em 0 0;
 }
-.accordion.radius dt.toggle.last {
+.accordion.radius dt.toggle.last > span {
 	-webkit-border-radius: 0 0 0.3em 0.3em;
     border-radius: 0 0 0.3em 0.3em;
 }
@@ -154,7 +154,11 @@ blockquote,
 .post-navigation,
 .page-links,
 #main-nav,
-.widget {
+.widget,
+#footer-widgets,
+.footer-content,
+#content-container,
+.tabbed {
 	margin-bottom: 1.25em;
 }
 
@@ -163,7 +167,10 @@ h2,
 h3,
 h4,
 h5,
-h6 {color: #222;}
+h6 {
+	color: #222;
+	margin-bottom: 1em;
+}
 
 h1 {font-size: 2em;}
 
@@ -184,7 +191,10 @@ h4 small,
 h5 small,
 h6 small {}
 
-.subheader {}
+.subheader {
+	color: #666666;
+	font-size: 90%;
+}
 
 a {
 	color: #4285f4; /* can be overridden by the theme-customizer */
@@ -301,7 +311,7 @@ a img:hover {}
 
 .wp-caption {
 	background: #ffffff;
-	border: 1px solid #e6e6e6;
+	border: 1px solid #E6E6E6;
 	padding: 5px;
 	max-width: 100%;
 	margin-bottom: 1.25em;
@@ -309,7 +319,7 @@ a img:hover {}
 
 .wp-caption-text {
 	margin-bottom: 0;
-	font-size: 12px;
+	font-style: italic;
 	color: #b2b2b2;
 }
 
@@ -653,7 +663,7 @@ a.btn.disabbled.pressed {
 .dropdown-btn ul {
 	margin: 0;
 	list-style-type: none;
-	background: #F7F7F7;
+	background: #F2F2F2;
 	border: 1px solid #DCDCDC;
 	z-index: 999;
 	position: absolute;
@@ -666,11 +676,12 @@ a.btn.disabbled.pressed {
 	display: block;
 	padding: 0.5em 1em;
 	font-size: 80%;
-	color: #555555;
+	color: #666666;
 }
 
 .dropdown-btn li a:hover {
-	background: #e3f4f9;
+	background: #E6E6E6;
+	color: #333333;
 }
 
 .dropdown-btn li.sep { /* Seperator */
@@ -820,14 +831,26 @@ ul.btn-group.radius li:last-child a {
  */
   
 .toggle-box .toggle {
-	border: 1px solid #DDDDDD;
+	
 }
  
 .toggle-box .toggle > span {
+	background: #F2F2F2;
+	color: #666666;
 	width: 100%;
 	display: block;
 	cursor: pointer;
-	padding: 0 10px;
+	padding: 10px;
+}
+
+.toggle-box .toggle > span:hover {
+	background: #E6E6E6;
+	color: #333333;
+}
+
+.toggle-box .toggle.toggle-current > span {
+	background: #E6E6E6;
+	color: #333333;
 }
 
 .toggle-box .toggle i {
@@ -836,30 +859,37 @@ ul.btn-group.radius li:last-child a {
 }
 
 .toggle-box .content {
-	background: #EDEDED;
+	background: #F2F2F2;
 	padding: 10px;
-	border-bottom: 1px solid #DDDDDD;
-	border-left: 1px solid #DDDDDD;
-	border-right: 1px solid #DDDDDD;	
+	
 }
  
 /* Accordion
    ========================================================================== */ 
 .accordion .toggle {
-	border-top: 1px solid #DDDDDD;
-	border-right: 1px solid #DDDDDD;
-	border-left: 1px solid #DDDDDD;
+
 }
 
 .accordion .last {
-	border-bottom: 1px solid #DDDDDD;
 }
 
 .accordion .toggle > span {
+	background: #F2F2F2;
+	color: #666666;
 	width: 100%;
 	display: block;
 	cursor: pointer;
-	padding: 0 10px;
+	padding: 10px;
+}
+
+.accordion .toggle > span:hover {
+	background: #E6E6E6;
+	color: #333333;
+}
+
+.accordion .toggle.toggle-current > span {
+	background: #E6E6E6;
+	color: #333333;
 }
 
 .accordion .toggle i {
@@ -868,15 +898,13 @@ ul.btn-group.radius li:last-child a {
 }
 
 .accordion .content {
-	background: #EDEDED;
+	background: #F2F2F2;;
 	padding: 10px;
-	border-top: 1px solid #DDDDDD;
-	border-left: 1px solid #DDDDDD;
-	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #E6E6E6;
 }
 
 .accordion .content.last {
-	border-top: 0;
+	border-bottom: 0;
 }
  
 /* Labels
@@ -1032,7 +1060,8 @@ ul.btn-group.radius li:last-child a {
 .panel > :first-child,
 .popover-content > :first-child,
 .toggle-box .content > :first-child,
-.accordion .content > :first-child {
+.accordion .content > :first-child,
+.tab-content > :first-child {
     margin-top: 0; 
 }
 
@@ -1040,7 +1069,8 @@ ul.btn-group.radius li:last-child a {
 .panel > :last-child,
 .popover-content > :last-child,
 .toggle-box .content > :last-child,
-.accordion .content > :last-child {
+.accordion .content > :last-child,
+.tab-content > :last-child {
     margin-bottom: 0; 
 }  
 
@@ -1144,64 +1174,34 @@ ul.btn-group.radius li:last-child a {
  * </div>
  */
 
-.tabbed {
-}
-
-/* List of tabs */.tabbed ul.tabs {
-	float: left;
-	display: inline;
-	width: 100%;
+.tabbed .tabs {
 	margin: 0;
-	padding: 0;
 }
 
-.tabbed ul.tabs li {
-	list-style: none;
-	float: left;
-	margin: 0;
-	padding: 0;
+.tabbed .tabs li {
+	display: inline-block;
 }
 
-.tabbed ul.tabs li a {
-	overflow: hidden;
+.tabbed .tabs a {
+	background: #F2F2F2;
+	color: #666666;
+	padding: 10px;
+	text-decoration: none;
 	display: block;
-	margin: 0 2px 0 0;
-	padding: 10px 12px;
-	cursor: pointer;
 }
 
-.tabbed ul.tabs li a:hover {
+.tabbed .tabs a:hover,
+.tabbed .tabs li.active a {
+	background: #E6E6E6;
+	color: #333333;	
 }
 
-/* The current selected tab */
-.tabbed ul.tabs li a.tab-current {
-	text-decoration: underline;
+.tabbed .tab-content {
+	padding: 10px;
+	background: #E6E6E6;
 }
 
-/* The content shown when a tab is selected */
-.tabbed div {
-	float: left;
-	display: block;
-	width: 100%;
-}
-
-/* Set the CSS to make sure the other tabs' content isn't shown other than the first */
-.tabbed div.t2, .tabbed div.t3, .tabbed div.t4 {
-	display: none;
-}
-
-/* Content for inside your tabs' divs */
-.tabbed div ul {
-}
-
-.tabbed div p {
-}
-
-.tabbed div div {
-}
-
-
-   
+ 
 /* Pricing tables
    ========================================================================== */
 /**
@@ -1258,6 +1258,10 @@ ul.btn-group.radius li:last-child a {
 /* ==========================================================================
    $HEADER
    ========================================================================== */
+#site-header {
+	padding: 1.25em 0;
+}
+
 #site-header hgroup {
 	float: left;
 }
@@ -1544,6 +1548,11 @@ ul.btn-group.radius li:last-child a {
 
 /* article
    ========================================================================== */
+.hentry {
+	padding-bottom: 1.25em;
+	border-bottom: 1px solid #E6E6E6;
+}
+
 .entry-content {
     position: relative;
 }
@@ -1577,6 +1586,11 @@ ul.btn-group.radius li:last-child a {
 /* ==========================================================================
    $SIDEBAR
    ========================================================================== */
+.widgettitle {
+	padding-bottom: 0.8em;
+	border-bottom: 1px solid #E6E6E6;
+}
+
 .widget ul.menu {
 	background: #F2F2F2;
 	margin: 0;
@@ -1620,6 +1634,12 @@ ul.btn-group.radius li:last-child a {
    ========================================================================== */
 #site-footer {
 
+}
+
+.footer-content {
+	color: #999999;
+	padding-top: 1.25em;
+	border-top: 1px solid #E6E6E6;
 }
 
 #to-top {

@@ -7,18 +7,24 @@
 			<article <?php post_class('hentry') ?> id="post-<?php the_ID(); ?>" role="article">
 
 				<header class="entry-header">
-					<h3 class="entry-title"><?php the_title(); ?></h3>
+					<h3 class="entry-title">
+						<?php if ( is_sticky() ) {?>
+							<span class="subheader sticky-mark"><i class="icon-pushpin"></i></span>
+						<?php } ?>
+						<?php the_title(); ?>
+					</h3>
 
-					<div class="entry-meta head-meta">
-						<span class="author" title="<?php _e('Author', '_i3-base'); ?>">
-							<i class="icon-user"></i>
+					<div class="entry-meta head-meta">			
+						<span class="author">
+							<?php _e('by ', '_i3-base'); ?>
 							<a class="author-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author_meta( 'display_name' ); ?></a>, 
 						</span>
-						<span class="date" title="<?php _e('Date', '_i3-base'); ?>">
-							<time class="updated" datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i:s'); ?><?php the_time('T'); //This renders "YYYY-MM-DD hh:mm:ssTZD" ?>" pubdate><i class="icon-time"></i> <?php the_time(get_option('date_format')); //Date-format set in admin interface ?>, </time>
+						<span class="date">
+							<?php _e('on ', '_i3-base'); ?>
+							<time class="updated" datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i:s'); ?><?php the_time('T'); //This renders "YYYY-MM-DD hh:mm:ssTZD" ?>" pubdate><?php the_time(get_option('date_format')); //Date-format set in admin interface ?>, </time>
 						</span>
-						<span class="category" title="<?php _e('Category', '_i3-base'); ?>">
-							<i class="icon-folder-close"></i>
+						<span class="category">
+							<?php _e('in ', '_i3-base'); ?>
 							<?php the_category(', '); ?>
 						</span>
 						<?php if ( comments_open() ) : 
@@ -30,6 +36,8 @@
 
 				</header><!-- /entry-header -->
 
+				</header><!-- /entry-header -->
+
 				<div class="entry-content clearfix">
 					<?php the_content(); ?>
 
@@ -38,9 +46,8 @@
 				</div><!-- /entry-content -->
 
 				<footer class="entry-footer entry-meta">
-						<?php get_template_part( 'author', 'info' ); ?>
-
-						<span class="tags" title="<?php _e('Tags', '_i3-base'); ?>"><?php the_tags( __('<i class="icon-tags"></i> ', '_i3-base'), ', ', ''); ?></span>
+					<span class="tags" title="<?php _e('Tags', '_i3-base'); ?>"><?php the_tags( __('<i class="icon-tags"></i> ', '_i3-base'), ', ', ''); ?></span>
+					<?php get_template_part( 'author', 'info' ); ?>
 				</footer><!-- /entry-footer -->
 
 			</article><!-- /post-<?php the_ID(); ?>  -->

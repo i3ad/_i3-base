@@ -15,6 +15,48 @@ get_header(); ?>
 		<hr/>
 		
 		<h3>HTML ELEMENT TEST</h3>
+
+<div class="tabbed clearfix">
+
+	<ul class="tabs">
+		<li><a href="#tab-1">This is Tab 1</a></li>
+		<li><a href="#tab-2">Tab Two</a></li>
+		<li><a href="#tab-3">Tab Three</a></li>
+		<li><a href="#tab-4">Tab Four</a></li>
+		<li><a href="#tabby5">Tab 5</a></li>
+	</ul>
+
+	<div class="tab-content" id="tab-1">
+		<h3>This is a really simple tabbed interface</h3>
+		<p><img src="http://papermashup.com/demos/jquery-gallery/images/t1.png" width="120" height="120" class="thumbs"/> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur enim. Nullam id ligula in nisl tincidunt feugiat. Curabitur eu magna porttitor ligula bibendum rhoncus. Etiam dignissim. Duis lobortis porta risus. Quisque velit metus, dignissim in, rhoncus at, congue quis, mi. Praesent vel lorem. Suspendisse ut dolor at justo tristique dapibus. Morbi erat mi, rutrum a, aliquam nec, mattis semper, leo. Maecenas blandit risus vitae quam. Vivamus ut odio. Pellentesque mollis arcu nec metus. Nullam bibendum scelerisque turpis. Aliquam erat volutpat. <br/>
+		<a href="http://feeds2.feedburner.com/AshleyFord-Papermashupcom">Subscribe to my feed here</a> </p>
+	</div>
+
+	<div class="tab-content" id="tab-2">
+		<h3>Tab 2</h3>
+		<p><img src="http://papermashup.com/demos/jquery-gallery/images/t2.png" width="120" height="120" class="thumbs"/> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur enim. Nullam id ligula in nisl tincidunt feugiat. Curabitur eu magna porttitor ligula bibendum rhoncus. Etiam dignissim. Duis lobortis porta risus. Quisque velit metus, dignissim in, rhoncus at, congue quis, mi. Praesent vel lorem. Suspendisse ut dolor at justo tristique dapibus. Morbi erat mi, rutrum a, aliquam nec <br/>
+		<a href="http://feeds2.feedburner.com/AshleyFord-Papermashupcom">Subscribe to my feed here</a></p>
+   </div>
+
+	<div class="tab-content" id="tab-3">
+		<h3>Tab 3</h3>
+		<p><img src="http://papermashup.com/demos/jquery-gallery/images/t3.png" width="120" height="120" class="thumbs"/> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur enim. Nullam id ligula in nisl tincidunt feugiat. Curabitur eu magna porttitor ligula bibendum rhoncus. Etiam dignissim. Duis lobortis porta risus. Quisque velit metus, dignissim in, rhoncus at, congue quis, mi. Praesent vel lorem. Suspendisse ut dolor at justo tristique dapibus. Morbi erat mi, rutrum a, aliquam nec, mattis semper, leo. Maecenas blandit risus vitae quam. Vivamus ut odio.<br/>
+		<a href="http://feeds2.feedburner.com/AshleyFord-Papermashupcom">Subscribe to my feed here</a></p>
+   </div>
+
+   <div class="tab-content" id="tab-4">
+		<h3>Tab 4</h3>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur enim. Nullam id ligula in nisl tincidunt feugiat. Curabitur eu magna porttitor ligula bibendum rhoncus. Etiam dignissim. Duis lobortis porta risus. Quisque velit metus, dignissim in, rhoncus at, congue quis, mi. Praesent vel lorem. Suspendisse ut dolor at justo tristique dapibus. Morbi erat mi, rutrum a, aliquam nec, mattis semper, leo. Maecenas blandit risus vitae quam. Vivamus ut odio. Pellentesque mollis arcu nec metus.<br/>
+		<a href="http://feeds2.feedburner.com/AshleyFord-Papermashupcom">Subscribe to my feed here</a></p>
+   </div>
+
+   <div class="tab-content" id="tabby5">
+		TABBY FEIF
+   </div>
+
+</div><!-- /tabs -->
+
+		<hr/>
 		
 		<h4>Buttons</h4>
 		
@@ -339,61 +381,7 @@ get_header(); ?>
 		<a href="#" class="btn btn-muted">Button</a>
 
 		<a href="#" class="btn btn-link">Button</a>
-
-		<hr/>
-		
-		<h4>Tabs</h4>
-		
-		<div class="tabbed clearfix">
-			<!-- The tabs -->
-			<ul class="tabs">
-			<li class="t1"><a class="t1 tab" title="<?php _e('Tab 1'); ?>"><?php _e('Tab 1'); ?></a></li>
-			<li class="t2"><a class="t2 tab" title="<?php _e('Tab 2'); ?>"><?php _e('Tab 2'); ?></a></li>
-			<li class="t3"><a class="t3 tab" title="<?php _e('Tab 3'); ?>"><?php _e('Tab 3'); ?></a></li>
-			<li class="t4"><a class="t4 tab" title="<?php _e('Tab 4'); ?>"><?php _e('Tab 4'); ?></a></li>
-			</ul>
-
-			<!-- tab 1 -->
-			<div class="t1">
-			<!-- Put what you want in here.  For the sake of this tutorial, we'll make a list.  -->
-			<ul>
-				<li>List item</li>
-				<li>List item</li>
-				<li>List item</li>
-				<li>List item</li>
-				<li>List item</li>
-			</ul>
-			</div>
-
-			<!-- tab 2 -->
-			<div class="t2">
-			<!-- Or, we could put a paragraph -->
-				<p>This is a paragraph about the jQuery tabs tutorial.</p>
-			</div>
-
-			<!-- tab 3 -->
-			<div class="t3">
-			<!-- Or, we could add a div -->
-				<div>Something needs to go in here!</div>
-			</div>
-
-			<!-- tab 4 -->
-			<div class="t4">
-			<!-- Why not put a few images in here? -->
-				<p>
-					<img src="image.gif" alt="Sample" />
-					<img src="image.gif" alt="Sample" />
-					<img src="image.gif" alt="Sample" />
-				</p>
-			</div>
-
-		</div><!-- tabbed -->
-
-
-
-		
-		
-
+	
 	</div><!-- /site-content -->
 		
 <?php get_footer(); ?>

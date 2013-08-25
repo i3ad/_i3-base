@@ -57,26 +57,29 @@ $(document).ready(function() {
 
 });
 
+// Tabs New
+$(document).ready(function() {
 
+    $('.tabbed').each(function () { 
+        $(this).find('div.tab-content').hide();
+        $(this).find('div.tab-content:first').show();
+        $(this).find('ul.tabs li:first').addClass('active');
+     
+        $('.tabbed ul.tabs li a').click(function(){
+           $('.tabbed ul.tabs li').removeClass('active');
+            $(this).parent().addClass('active');
+            var currentTab = $(this).attr('href');
+            $('.tabbed div.tab-content').hide();
+        $(currentTab).show();
+        return false;
+        });
 
+    });
+
+});
 // Tabs
 // http://justintadlock.com/archives/2007/11/07/how-to-create-tabs-using-jquery
-// ==========================================================================
-$(document).ready(function() {
-    // setting the tabs in the sidebar hide and show, setting the current tab
-        $('div.tabbed div').hide();
-        $('div.t1').show();
-        $('div.tabbed ul.tabs li.t1 a').addClass('tab-current');
 
-    	// sidebar tabs
-    	$('div.tabbed ul li a').click(function(){
-            var thisClass = this.className.slice(0,2);
-        	$('div.tabbed div').hide();
-        	$('div.' + thisClass).show();
-        	$('div.tabbed ul.tabs li a').removeClass('tab-current');
-        	$(this).addClass('tab-current');
-        });
-});
 
 // Navtest
 // ==========================================================================

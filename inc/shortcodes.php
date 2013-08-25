@@ -106,6 +106,55 @@ function buttongrpitm_shortcode( $atts , $content = null ) {
 
 }
 add_shortcode( 'button-group-item', 'buttongrpitm_shortcode' );
+
+/* ==========================================================================
+   $TABBED Use: 
+   ========================================================================== */
+function tabbed_shortcode( $atts , $content = null ) {
+
+	// Code
+	return '<div class="tabbed clearfix">' .do_shortcode($content). '</div>';
+
+}
+add_shortcode( 'tabbed', 'tabbed_shortcode' );
+
+function tab_item_ul_shortcode( $atts , $content = null ) {
+
+	// Code
+	return '<ul class="tabs">' .do_shortcode($content). '</ul>';
+
+}
+add_shortcode( 'tabs', 'tab_item_ul_shortcode' );
+
+function tab_item_shortcode( $atts , $content = null ) {
+
+	// Attributes
+	extract( shortcode_atts(
+		array(
+			'ident'	=> '',
+		), $atts )
+	);
+
+	// Code
+	return '<li><a href="#' .$ident. '">' .do_shortcode($content). '</a></li>';
+
+}
+add_shortcode( 'tab-item', 'tab_item_shortcode' );
+
+function tab_content_shortcode( $atts , $content = null ) {
+
+	// Attributes
+	extract( shortcode_atts(
+		array(
+			'ident'	=> '',
+		), $atts )
+	);
+
+	// Code
+	return '<div id="#' .$ident. '" class="tab-content clearfix">' .do_shortcode($content). '</div>';
+
+}
+add_shortcode( 'tab-content', 'tab_content_shortcode' );
 	
 /* ==========================================================================
    $DROPDOWN BUTTON SHORTCODE 
