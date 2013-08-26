@@ -31,9 +31,10 @@
 }
 
 .inner {
-	padding-left: 0.9375em;
-    padding-right: 0.9375em;
-	border: 1px solid #dddddd; /* just temp */
+	/*padding-left: 0.9375em;
+    padding-right: 0.9375em;*/
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 @media only screen {

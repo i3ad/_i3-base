@@ -4,7 +4,7 @@
 
 		<?php get_sidebar( 'footer' ); ?>
 
-		<div class="footer-content clearfix">
+		<div class="footer-content inner clearfix">
 
 			<div class="copyright float-left">&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></div>
 

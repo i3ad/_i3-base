@@ -102,19 +102,23 @@
 	</div>
 
 	<header id="site-header" class="row" role="header">
-
-		<hgroup>
-			<?php if ( get_theme_mod( 'custom_logo' ) ) : ?>
-				<div class="site-logo">
-			        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); echo " - "; echo esc_attr( get_bloginfo( 'description', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'custom_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
-			    </div>
-			<?php else : ?>
-				<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-			<?php endif; ?>
-		</hgroup>
 		
-		<?php get_search_form(); ?>
+		<div class="inner clearfix">
+
+			<hgroup>
+				<?php if ( get_theme_mod( 'custom_logo' ) ) : ?>
+					<div class="site-logo">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); echo " - "; echo esc_attr( get_bloginfo( 'description', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'custom_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+					</div>
+				<?php else : ?>
+					<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<?php endif; ?>
+			</hgroup>
+			
+			<?php get_search_form(); ?>
+			
+		</div>
 	
 	</header><!-- /site-header -->
 

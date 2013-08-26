@@ -47,8 +47,9 @@
 
 				<footer class="entry-footer entry-meta">
 					<span class="tags" title="<?php _e('Tags', '_i3-base'); ?>"><?php the_tags( __('<i class="icon-tags"></i> ', '_i3-base'), ', ', ''); ?></span>
-					<?php get_template_part( 'author', 'info' ); ?>
 				</footer><!-- /entry-footer -->
+				
+				<?php get_template_part( 'author', 'info' ); ?>
 
 			</article><!-- /post-<?php the_ID(); ?>  -->
 

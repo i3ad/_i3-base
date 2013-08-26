@@ -145,6 +145,7 @@ h6,
 p,
 ul,
 ol,
+dl,
 blockquote,
 .panel,
 .toggle-box,
@@ -159,7 +160,8 @@ blockquote,
 .footer-content,
 #content-container,
 .tabbed {
-	margin-bottom: 1.25em;
+	/*margin-bottom: 1.25em;*/
+	margin-bottom: 20px;
 }
 
 h1,
@@ -169,7 +171,7 @@ h4,
 h5,
 h6 {
 	color: #222;
-	margin-bottom: 1em;
+	
 }
 
 h1 {font-size: 2em;}
@@ -214,16 +216,27 @@ p {}
 	line-height: ;
 }
 
-ul,
-ol,
-dl {}
+.hentry ul {
+	list-style-position: outside;
+	list-style-type: disc;
+}
+
+.hentry ol {
+	list-style-position: outside;
+	list-style-type: decimal;
+}
+
+.hentry ul li,
+.hentry ol li {
+	margin-left: 20px;
+}
 
 ul li ul,
 ul li ol,
 ol li ul,
-ol li ol {}
-
-
+ol li ol {
+	margin: 0;
+}
 
 hr {
 	border: solid #dddddd;
@@ -234,7 +247,7 @@ hr {
 }
 
 mark {
-	background-color: #fcd700; 
+	background-color: #4285F4; 
 	color: #000; 
 }
 
@@ -265,12 +278,12 @@ blockquote p {
 
 /* Custom text-selection colors (remove any text shadows: http://twitter.com/miketaylr/status/12228805301) */
 ::-moz-selection{
-	background: #fcd700; 
+	background: #4285F4; 
 	color: #fff; 
 	text-shadow: none;
 }
 ::selection {
-	background: #fcd700; 
+	background: #4285F4; 
 	color: #fff; 
 	text-shadow: none;
 } 
@@ -320,7 +333,7 @@ a img:hover {}
 .wp-caption-text {
 	margin-bottom: 0;
 	font-style: italic;
-	color: #b2b2b2;
+	color: #999999;
 }
 
 /**
@@ -1253,6 +1266,19 @@ ul.btn-group.radius li:last-child a {
 
 .pricing-table .pt-button {
 	background-color: whitesmoke;
+}
+
+/* ==========================================================================
+   $SITE
+   ========================================================================== */
+#site-content,
+.widget {
+	padding-left: 10px;
+    padding-right: 10px;
+}
+
+.widget.widget_nav_menu {
+	padding: 0;
 }
 
 /* ==========================================================================
