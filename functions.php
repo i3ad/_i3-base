@@ -389,7 +389,24 @@
 	    echo paginate_links( $pagination );
 	    echo '</div><!-- /page-pagination -->';
     }
+	
+/* ==========================================================================
+   $POST META
+   ========================================================================== */
+	#function twentythirteen_entry_meta() {
+	#	if ( is_sticky() && is_home() && ! is_paged() )
+	#		echo '<span class="author">' . __( 'Sticky', 'twentythirteen' ) . '</span>';
 
+
+
+
+
+
+
+
+	#}
+	#endif;
+   
 /* ==========================================================================
    $MISC
    ========================================================================== */
@@ -413,7 +430,16 @@
 /* Remove WP meta generator
    ========================================================================== */
     remove_action('wp_head', 'wp_generator');
-	
+
+/* Switches default core markup for search form, comment form, and comments to output valid HTML5.
+   ========================================================================== */	
+	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
+
+/* Add Post-Formats
+   ========================================================================== */
+	add_theme_support( 'post-formats', array(
+		'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'
+	) );	
 
 
 
