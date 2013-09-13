@@ -1371,7 +1371,8 @@ ul.btn-group.radius li:last-child a {
 }
 
 .site-nav li {
-    display: inline-block;
+    display: block;
+	float: left;
 	position: relative;
 }
 
@@ -1393,6 +1394,7 @@ ul.btn-group.radius li:last-child a {
 	width: 100%;
 	white-space: nowrap;
 	font-size: 13px;
+	float: none;
 }
 
 .site-nav ul ul ul li,
@@ -1470,12 +1472,43 @@ ul.btn-group.radius li:last-child a {
 	display: block;
 	color: #666666;
 	text-decoration: none;
-	padding: 10px 15px;
+	padding: 0 15px;
+	line-height: 40px;
 }
+
+/*#top-nav a,
+#main-nav a {
+	display: block;
+	color: #666666;
+	text-decoration: none;
+	padding: 10px 15px;
+}*/
 
 #top-nav a:hover,
 #main-nav a:hover {
 	background: #e6e6e6;
+	color: #333333;
+}
+
+#top-nav li.current-menu-item > a,
+#top-nav li.current_page_item > a,
+#main-nav li.current-menu-item > a,
+#main-nav li.current_page_item > a,
+.widget ul.menu li.current-menu-item > a,
+.widget ul.menu li.current_page_item > a {
+	background: #e6e6e6;
+	color: #333333;
+}
+
+#top-nav li.current-page-ancestor > a,
+#top-nav li.current-menu-ancestor > a,
+#top-nav li.current-menu-parent > a,
+#main-nav li.current-page-ancestor > a,
+#main-nav li.current-menu-ancestor > a,
+#main-nav li.current-menu-parent > a,
+.widget ul.menu li.current-page-ancestor > a,
+.widget ul.menu li.current-menu-ancestor > a,
+.widget ul.menu li.current-menu-parent > a {
 	color: #333333;
 }
    

@@ -8,7 +8,37 @@
 	<meta name="description" content="<?php bloginfo('description'); ?>" />
 
 	<?php // Custom title script (http://perishablepress.com/how-to-generate-perfect-wordpress-title-tags-without-a-plugin/) ?>
-	<title><?php if (function_exists('is_tag') && is_tag()) { echo __('Tag Archive for &quot;', '_i3-base').$tag.'&quot; - '; } elseif (is_archive()) { wp_title(''); echo __(' Archive - ', '_i3-base'); } elseif (is_search()) { echo __('Search for &quot;', '_i3-base').wp_specialchars($s).'&quot; - '; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo ' - '; } elseif (is_404()) { echo __('Not Found - ', '_i3-base'); } if (is_home()) { bloginfo('name'); echo ' - '; bloginfo('description'); } else { bloginfo('name'); } ?></title>
+
+	<title>
+		<?php if (is_tag()) { // Tag archiv page
+				wp_title(''); echo __(' Archive - ', '_i3-base'); bloginfo('name');
+				
+			} elseif (is_archive()) { // Category archiv page
+				wp_title(''); echo __(' Archive - ', '_i3-base'); bloginfo('name');
+				
+			} elseif (is_search()) { // Search results page
+				echo __('Search for &quot;', '_i3-base').wp_specialchars($s).'&quot; - '; bloginfo('name');
+					
+			} elseif (is_404()) { // 404 error
+				echo __('Not Found - ', '_i3-base'); bloginfo('name');
+				
+			} elseif (is_single()) { // Single page
+				wp_title(''); echo ' - '; bloginfo('name');
+			
+			} elseif (is_front_page()) { // Overrides "Normal Page" for front-page
+				bloginfo('name'); echo ' - '; bloginfo('description');
+				
+			} elseif (is_home()) { // Blog page
+				wp_title(''); echo ' - '; bloginfo('name');
+				
+			} elseif (is_page()) { // Normal page
+				wp_title(''); echo ' - '; bloginfo('name');
+				
+			} else { // Fallback for everything other
+				bloginfo('name'); echo ' - '; bloginfo('description');
+		
+		} ?>
+	</title>
 
 	<?php // Import main stylesheets ?>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
