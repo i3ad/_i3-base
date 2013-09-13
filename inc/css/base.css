@@ -467,7 +467,8 @@ textarea:-moz-placeholder { color: #999999; }
  */
 .btn,
 a.btn,
-button {
+button,
+input[type="submit"] {
 	font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
 	font-size: 14px;
 	line-height: 14px;
@@ -491,7 +492,9 @@ a.btn:hover,
 .btn:focus,
 a.btn:focus,
 button:hover,
-button:focus {
+button:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
 	border-color: rgba(0, 0, 0, 0.3);
 	color: inherit;
 }
@@ -501,7 +504,8 @@ button:focus {
 a.btn:active,
 a.btn.pressed,
 button:active,
-button.pressed { /* Add inset shadow at press-in */
+button.pressed,
+input[type="submit"]:active { /* Add inset shadow at press-in */
 	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* WebKit */
 	-moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* Firefox */
 	box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2); /* Standard */	
@@ -1327,41 +1331,6 @@ ul.btn-group.radius li:last-child a {
 	width: 150px;
 }
 
-#top-nav-container #searchform {
-	display: block;
-	float: right;
-	padding: 6px 10px;
-}
-
-#top-nav-container #searchform label {
-	display: none;
-}
-
-#top-nav-container #searchform input {
-	display: block;
-	float: left;
-	margin: 0;
-	
-	line-height: normal;
-	font-size: 14px;
-	height: 30px;
-	line-height: 30px;
-}
-
-#top-nav-container #searchform input[type="search"] {
-	padding: 0 0.5em;
-	margin-right: -1px;
-	width: 100px;
-}
-
-#top-nav-container #searchform input[type="submit"] {
-	padding: 0 1em;
-}
-
-#top-nav-container #searchform input[type="search"]:focus,
-#top-nav-container #searchform input[type="search"]:active {
-	width: 150px;
-}
    
 /* ==========================================================================
    $NAVIGATION
@@ -1442,16 +1411,32 @@ ul.btn-group.radius li:last-child a {
 }
 
 #top-nav-container #site-title a {
-	padding: 6px 15px;
+	padding: 0 15px;
+	line-height: 40px;
 	display: block;
 	text-decoration: none;
 	color: #4d4d4d;
 	font-size: 18px;
-	/*position: absolute;*/
 }
 
 #top-nav-container #site-title a:hover {
 	color: #333333;
+}
+
+#top-nav-container .search-form {
+	display: block;
+	float: left;
+	line-height: 40px;
+}
+
+#top-nav-container input[type="search"],
+#top-nav-container input[type="submit"] {
+	padding: 0 10px;
+	height: 30px;
+}
+
+#top-nav-container .search-form .screen-reader-text {
+	display: none;
 }
 
 /* main-nav
@@ -1490,31 +1475,54 @@ ul.btn-group.radius li:last-child a {
 	color: #333333;
 }
 
+
+/* Not needed ?
 #top-nav li.current-menu-item > a,
-#top-nav li.current_page_item > a,
 #main-nav li.current-menu-item > a,
+.widget ul.menu li.current-menu-item > a {
+	background: #e6e6e6;
+	color: #333333;
+}*/
+
+#top-nav li.current_page_item > a,
 #main-nav li.current_page_item > a,
-.widget ul.menu li.current-menu-item > a,
-.widget ul.menu li.current_page_item > a {
+.widget ul.menu li.current_page_item > a { /* current active page */
 	background: #e6e6e6;
 	color: #333333;
 }
 
-#top-nav li.current-page-ancestor > a,
-#top-nav li.current-menu-ancestor > a,
-#top-nav li.current-menu-parent > a,
-#main-nav li.current-page-ancestor > a,
-#main-nav li.current-menu-ancestor > a,
-#main-nav li.current-menu-parent > a,
-.widget ul.menu li.current-page-ancestor > a,
-.widget ul.menu li.current-menu-ancestor > a,
-.widget ul.menu li.current-menu-parent > a {
+#top-nav li.current_page_parent > a,
+#main-nav li.current_page_parent > a,
+.widget ul.menu li.current_page_parent > a { /* when blog-page is active and on single ! BUT ALSO ON CPT */
 	color: #333333;
 }
-   
+
+/* Not needed ?
+#top-nav li.current-page-ancestor > a,
+#main-nav li.current-page-ancestor > a,
+.widget ul.menu li.current-page-ancestor > a {
+	color: #333333;
+}*/
+
+
+#top-nav li.current-menu-ancestor > a,
+#main-nav li.current-menu-ancestor > a,
+.widget ul.menu li.current-menu-ancestor > a { /* the ancestor (2 levels)from the current selection */
+	color: #333333;
+}
+
+#top-nav li.current-menu-parent > a,
+#main-nav li.current-menu-parent > a,
+.widget ul.menu li.current-menu-parent > a { /* the direct parent from the current selection */
+	color: #333333;
+}
 
 /* foot-nav
    ========================================================================== */
+#foot-nav.site-nav li {
+	margin-right: 10px;
+}   
+   
    
 /* Pagination
    ========================================================================== */

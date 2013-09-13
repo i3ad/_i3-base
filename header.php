@@ -7,10 +7,9 @@
 	<meta name="title" content="<?php bloginfo('name'); ?>">
 	<meta name="description" content="<?php bloginfo('description'); ?>" />
 
-	<?php // Custom title script (http://perishablepress.com/how-to-generate-perfect-wordpress-title-tags-without-a-plugin/) ?>
-
 	<title>
-		<?php if (is_tag()) { // Tag archiv page
+		<?php // Custom title script (http://perishablepress.com/how-to-generate-perfect-wordpress-title-tags-without-a-plugin/
+			if (is_tag()) { // Tag archiv page
 				wp_title(''); echo __(' Archive - ', '_i3-base'); bloginfo('name');
 				
 			} elseif (is_archive()) { // Category archiv page
@@ -36,7 +35,6 @@
 				
 			} else { // Fallback for everything other
 				bloginfo('name'); echo ' - '; bloginfo('description');
-		
 		} ?>
 	</title>
 
@@ -95,8 +93,6 @@
 
 			<h1 id="site-title" class="float-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' )); echo ' - '; echo esc_attr( get_bloginfo( 'description', 'display' )); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-			<?php get_search_form(); ?>
-
 			<?php $top_nav = array(
 				'theme_location'  => 'top_nav',
 				'menu'            => '',
@@ -108,6 +104,8 @@
 				'items_wrap'      => '<ul role="navigation">%3$s</ul>'
 			); 
 			wp_nav_menu( $top_nav ); ?><!-- /top-nav -->
+			
+			<?php get_search_form(); ?>
 	
 		</div>
 
