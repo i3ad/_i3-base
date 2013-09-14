@@ -8,8 +8,11 @@
 
 			<div class="copyright float-left">&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></div>
 
-			<a href="#" id="to-top" title="<?php _e('to top', '_i3-base'); ?>" class="float-right" <?php echo ( get_theme_mod( 'to_top' ) ) ? "" : "style='display:none;'" ?>>
-	            <span></span> <i class="icon-chevron-sign-up icon-large"></i>
+			<a href="#" id="to-top" title="<?php _e('to top', '_i3-base'); ?>" class="float-right" style="<?php echo ( get_theme_mod( 'to_top' ) ) ? "" : "display:none;" ?>">
+	            <span>
+	            	<?php echo get_theme_mod( 'top_text' ); ?>
+	            </span> 
+	            <i class="icon-chevron-sign-up icon-large"></i>
 	        </a>
 
 			<?php $foot_nav = array(

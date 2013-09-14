@@ -238,6 +238,23 @@
     }
     add_action('customize_register', 'custom_site_favicon');
 
+/* Add sticky-nav option
+   ========================================================================== */
+    function add_sticky_nav( $wp_customize ) {
+        
+        $wp_customize->add_setting( 'sticky_nav', array(
+            'default' => 0,
+        ) );
+
+        $wp_customize->add_control( 'sticky_nav', array(
+            'label'     => __( 'Make Top-Nav sticky? ', '_i3-base' ),
+            'type'      => 'checkbox',
+            'section'   => 'nav',    // Add this option to the default "Navigation" section
+            'priority'  => 1,
+        ) );
+    }
+    add_action('customize_register', 'add_sticky_nav');
+
 /* Add to top link
    ========================================================================== */
     function to_top_link( $wp_customize ) {
@@ -253,6 +270,21 @@
         ) );
     }
     add_action('customize_register', 'to_top_link');
+
+/* To top link text
+   ========================================================================== */
+    function to_top_text( $wp_customize ) {
+        
+        $wp_customize->add_setting( 'top_text', array(
+            'default' => '',
+        ) );
+
+        $wp_customize->add_control( 'top_text', array(
+            'label'     => __( 'Set "To Top" text ', '_i3-base' ),
+            'section'   => 'nav',    // Add this option to the default "Navigation" section
+        ) );
+    }
+    add_action('customize_register', 'to_top_text');
 
 /* ==========================================================================
    $REGISTER NAV MENUS

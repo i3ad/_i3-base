@@ -9,6 +9,7 @@
 
 	<title>
 		<?php // Custom title script (http://perishablepress.com/how-to-generate-perfect-wordpress-title-tags-without-a-plugin/
+
 			if (is_tag()) { // Tag archiv page
 				wp_title(''); echo __(' Archive - ', '_i3-base'); bloginfo('name');
 				
@@ -78,7 +79,8 @@
 		$content_link_hover_color = get_option('content_link_hover_color');
 	?>
 	<style>
-		body, select, input, textarea { color:  <?php echo $content_text_color; ?>; }
+		body {<?php echo ( get_theme_mod( 'sticky_nav' ) ) ? 'top: 40px;' : '' ?>}
+		body, select, input, textarea { color:  <?php echo $content_text_color; ?>;}
 		a, .btn.link, a.btn.link, .label.link, label.link:hover, .badge.link, .badge.link:hover { color:  <?php echo $content_link_color; ?>; }
 		a:hover, a:active, a:focus, button.link:hover, button.link:active, button.link:focus, .btn.link:hover, .btn.link:active, .btn.link:focus, a.btn.link:hover, a.btn.link:active, a.btn.link:focus { color:  <?php echo $content_link_hover_color; ?>; }
 	</style>
@@ -87,7 +89,7 @@
 
 <body <?php body_class(); ?>>
 
-	<div id="top-nav-container">
+	<div id="top-nav-container" class="<?php echo ( get_theme_mod( 'sticky_nav' ) ) ? "sticky-nav " : "" ?>">
 	
 		<div class="row">
 

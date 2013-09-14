@@ -1406,6 +1406,10 @@ ul.btn-group.radius li:last-child a {
 	box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.5); 
 }
 
+.admin-bar .sticky-nav {
+	top: 28px;
+}
+
 #top-nav-container #site-title {
 	margin: 0;
 }
@@ -1441,12 +1445,28 @@ ul.btn-group.radius li:last-child a {
 	display: none;
 }*/
 
+.widget_search .search_main {
+	width: 100%;
+}
+
+#top-nav-container .search_main {
+	margin-top: 5px;
+	width: 200px;
+}
+
+#top-nav-container .searchform {
+
+}
+
+#top-nav-container input.searchimg {
+}
+
 .search_main {
-display: inline-block;
+	display: inline-block;
+	height: 100%;
 }
 
 .searchform, #searchform {
-	background: #ffffff;
     position: relative;
     width: 100%;
 }
