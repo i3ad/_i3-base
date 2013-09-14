@@ -1423,6 +1423,8 @@ ul.btn-group.radius li:last-child a {
 	color: #333333;
 }
 
+/*
+
 #top-nav-container .search-form {
 	display: block;
 	float: left;
@@ -1437,7 +1439,41 @@ ul.btn-group.radius li:last-child a {
 
 #top-nav-container .search-form .screen-reader-text {
 	display: none;
+}*/
+
+.search_main {
+display: inline-block;
 }
+
+.searchform, #searchform {
+	background: #ffffff;
+    position: relative;
+    width: 100%;
+}
+
+.searchform input.s, #searchform input#s {
+    width: 100%;
+    position: relative;
+    padding: 6px 25px 6px 12px;
+    color: #999999;
+}
+
+.searchform input.s:focus, #searchform input#s:focus,
+.searchform input.s:active, #searchform input#s:active {
+	color: #555555;
+}
+
+.searchform input.searchimg {
+	position: absolute;
+	right: 0;
+	padding: 6px;
+	opacity: 0.5;
+}
+
+.searchform:hover input.searchimg {
+	opacity: 1.0;
+}
+
 
 /* main-nav
    ========================================================================== */
