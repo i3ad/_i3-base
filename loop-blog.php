@@ -3,63 +3,12 @@
 				<header class="entry-header">
 					<h3 class="entry-title">
 
-						<span class="subheader format-mark">
-							<?php if ( is_sticky() ) {
-								echo '<i class="icon-pushpin"></i>';
-							
-							} elseif ( has_post_format( 'image' )) {
-	  							echo '<i class="icon-picture"></i>';
-
-	  						} elseif ( has_post_format( 'gallery' )) {
-								echo '<i class="icon-eye-open"></i>';
-
-							} elseif ( has_post_format( 'audio' )) {
-								echo '<i class="icon-music"></i>';
-
-							} elseif ( has_post_format( 'video' )) {
-								echo '<i class="icon-film"></i>';
-
-							} elseif ( has_post_format( 'link' )) {
-								echo '<i class="icon-link"></i>';
-
-							} elseif ( has_post_format( 'quote' )) {
-								echo '<i class="icon-quote-left"></i>';
-
-							} elseif ( has_post_format( 'chat' )) {
-								echo '<i class="icon-comments-alt"></i>';
-
-							} elseif ( has_post_format( 'status' )) {
-								echo '<i class="icon-info"></i>';
-
-							} elseif ( has_post_format( 'aside' )) {
-								echo '<i class="icon-asterisk"></i>';
-
-							}; ?>
-						</span>
-
+						<?php get_template_part( 'template-parts/post', 'format' ); ?>
 
 						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h3>
 
-					<div class="entry-meta head-meta">			
-						<span class="author">
-							<?php _e('by ', '_i3-base'); ?>
-							<a class="author-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author_meta( 'display_name' ); ?></a>, 
-						</span>
-						<span class="date">
-							<?php _e('on ', '_i3-base'); ?>
-							<time class="updated" datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i:s'); ?><?php the_time('T'); //This renders "YYYY-MM-DD hh:mm:ssTZD" ?>" pubdate><?php the_time(get_option('date_format')); //Date-format set in admin interface ?>, </time>
-						</span>
-						<span class="category">
-							<?php _e('in ', '_i3-base'); ?>
-							<?php the_category(', '); ?>
-						</span>
-						<?php if ( comments_open() ) : 
-							echo '<span class="comments-links">';
-							comments_popup_link( __('<i class="icon-comment-alt icon-large"></i> 0', '_i3-base'), __('<i class="icon-comment icon-large"></i> 1', '_i3-base'), __('<i class="icon-comments icon-large"></i> %', '_i3-base'), 'comments-link', __('', '_i3-base') );
-							echo '</span>';
-						endif; // comments_open() ?>
-					</div><!-- /head-meta -->
+					<?php get_template_part( 'template-parts/head', 'meta' ); ?>
 
 				</header><!-- /entry-header -->
 
@@ -68,10 +17,10 @@
                     <?php edit_post_link(); ?>
 				</div><!-- /entry-content -->
 
-				<footer class="entry-footer entry-meta">						
-						<?php #get_template_part( 'author', 'info' ); ?>	
+				<footer class="entry-footer entry-meta foot-meta">						
+						<?php #get_template_part( 'template-parts/author', 'info' ); ?>	
 
-						<span class="tags" title="<?php _e('Tags', '_i3-base'); ?>"><?php the_tags( __('<i class="icon-tags"></i> ', '_i3-base'), ', ', ''); ?></span>
+						<?php get_template_part( 'template-parts/foot', 'meta' ); ?>
 				</footer><!-- /entry-footer -->
 
 			</article><!-- /post-<?php the_ID(); ?>  -->

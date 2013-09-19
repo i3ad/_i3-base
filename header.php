@@ -99,7 +99,7 @@
 				'theme_location'  => 'top_nav',
 				'menu'            => '',
 				'container'       => 'nav',		// wrap <ul> in <nav> container
-				'container_class' => 'site-nav float-right hide-on-mobile',
+				'container_class' => 'site-nav float-left hide-on-mobile',
 				'container_id'    => 'top-nav',
 				'menu_class'      => '', 		// remove the class "menu"
 				'fallback_cb'     => '', 		// dont fallback on "wp_page_menu"
@@ -164,6 +164,8 @@
 			'items_wrap'      => '<ul role="navigation" class="hide-on-mobile">%3$s</ul>'
 		); 
 		wp_nav_menu( $main_nav ); ?><!-- /main-nav -->
+
+		<?php get_search_form(); ?>
 
 		<button id="toggle-mobile-nav" class="float-right btn hide-on-desktop" type="submit">
 			<i class="icon-reorder"></i> <?php _e('Navigation', '_i3-base'); ?>

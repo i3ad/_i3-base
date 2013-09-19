@@ -1406,6 +1406,7 @@ ul.btn-group.radius li:last-child a {
 	box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.5); 
 }
 
+/* push sticky-nav down when admin-bar is displayed */
 .admin-bar .sticky-nav {
 	top: 28px;
 }
@@ -1427,38 +1428,28 @@ ul.btn-group.radius li:last-child a {
 	color: #333333;
 }
 
-/*
-
-#top-nav-container .search-form {
-	display: block;
-	float: left;
-	line-height: 40px;
-}
-
-#top-nav-container input[type="search"],
-#top-nav-container input[type="submit"] {
-	padding: 0 10px;
-	height: 30px;
-}
-
-#top-nav-container .search-form .screen-reader-text {
-	display: none;
-}*/
 
 .widget_search .search_main {
 	width: 100%;
 }
 
-#top-nav-container .search_main {
-	margin-top: 5px;
-	width: 200px;
+#site-header .search_main {
+	float: right;
 }
 
-#top-nav-container .searchform {
-
+#top-nav-container .search_main,
+#main-nav .search_main {
+	height: 40px;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
-#top-nav-container input.searchimg {
+#top-nav-container .searchform,
+#main-nav .searchform {
+	margin-top: 6px;
+	vertical-align: middle;
+	
 }
 
 .search_main {
@@ -1474,7 +1465,7 @@ ul.btn-group.radius li:last-child a {
 .searchform input.s, #searchform input#s {
     width: 100%;
     position: relative;
-    padding: 6px 25px 6px 12px;
+    padding: 8px 25px 4px 12px;
     color: #999999;
 }
 
