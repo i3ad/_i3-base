@@ -77,6 +77,7 @@
         wp_register_style( 'reset', get_stylesheet_directory_uri() . '/inc/css/reset.css', array(), '1.0', 'all' );
         wp_register_style( 'base', get_stylesheet_directory_uri() . '/inc/css/base.css', array(), '1.0', 'all' );
         wp_register_style( 'grid', get_stylesheet_directory_uri() . '/inc/css/grid.css', array(), '1.0', 'all' );
+        wp_register_style( 'woo', get_stylesheet_directory_uri() . '/inc/css/woo.css', array(), '1.0', 'all' );
         //wp_register_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:300,800'); // Bring in Open Sans from Google fonts
         wp_register_style( 'fontawesome', get_stylesheet_directory_uri() . '/inc/font-awesome/css/font-awesome.min.css', array(), '1.0', 'all' );
         	
@@ -84,6 +85,7 @@
         wp_enqueue_style( 'reset' );
         wp_enqueue_style( 'base' );
         wp_enqueue_style( 'grid' );
+        wp_enqueue_style( 'woo' ); // WooCommerce styling, can be disabled
         //wp_enqueue_style( 'open-sans' );
         wp_enqueue_style( 'fontawesome' );
     }

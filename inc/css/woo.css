@@ -1,0 +1,101 @@
+/*
+   ==========================================================================
+   WOOCOMMERCE STYLING
+   =========================================================================
+
+   TABLE OF CONTENTS
+   ==========================================================================
+
+	$GENEREL-WOO - General woo-styling, buttons, messages, tabs, tables 
+	$GENEREL-PRODUCT - buttons, labels, badges, alerts, panels, breadcrumbs
+	$SINGLE-PRODUCT - body, typo, images, forms
+	$SHOP-SITE - site name, logo,
+	$CART - top-nav, main-nav, side-nav, sub-nav, foot-nav
+	$CHECKOUT - articles, pages
+	$WIDGETS - articles, pages
+
+/* ==========================================================================
+   $GENEREL-WOO
+   ========================================================================== */
+
+/* Breadcrumbs
+   ========================================================================== */
+.woocommerce-breadcrumb {}
+
+.woocommerce-breadcrumb a {}
+
+/* Buttons
+   ========================================================================== */
+.woocommerce a.button.alt,
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt, 
+.woocommerce #respond input#submit.alt, 
+.woocommerce #content input.button.alt, 
+.woocommerce-page a.button.alt, 
+.woocommerce-page button.button.alt, 
+.woocommerce-page input.button.alt, 
+.woocommerce-page #respond input#submit.alt, 
+.woocommerce-page #content input.button.alt {}
+
+/* Messages
+   ========================================================================== */
+.woocommerce-message {}
+
+.woocommerce-info {}
+
+
+
+
+/* ==========================================================================
+   $GENEREL-PRODUCT
+   ========================================================================== */
+
+/* ==========================================================================
+   $SINGLE-PRODUCT
+   ========================================================================== */
+
+/* Description
+   ========================================================================== */
+
+/* Reviews
+   ========================================================================== */
+
+
+/* Lightbox
+   ========================================================================== */
+div.pp_overlay {} /* overlay background */
+
+div.pp_woocommerce .pp_content_container {}
+
+div.pp_woocommerce div.ppt {} /* overlay title/caption */
+
+a.pp_previous {}
+
+a.pp_next {}
+
+div.pp_woocommerce a.pp_expand, 
+div.pp_woocommerce a.pp_contract {}
+
+div.pp_woocommerce .pp_close {}
+
+div.pp_woocommerce .pp_nav {}
+
+div.pp_woocommerce .pp_arrow_previous {}
+
+div.pp_woocommerce .pp_arrow_next {}
+
+/* ==========================================================================
+   $SHOP-SITE
+   ========================================================================== */
+
+/* ==========================================================================
+   $CART
+   ========================================================================== */
+
+/* ==========================================================================
+   $CHECKOUT
+   ========================================================================== */
+
+/* ==========================================================================
+   $WIDGETS
+   ========================================================================== */
