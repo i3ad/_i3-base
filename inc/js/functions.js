@@ -49,6 +49,26 @@ $(document).ready(function(){
 
 
 $(document).ready(function() {
+
+
+$('ul.view_toggle li').on('click',function(e) {
+    
+    if ($(this).hasClass('grid_view')) {
+        $(this).addClass('pressed');
+        $('.hentry').removeClass('list_view').addClass('grid_view');
+    }
+    else if($(this).hasClass('list_view')) {
+        $(this).addClass('pressed');
+        $('.hentry').removeClass('grid_view').addClass('list_view');
+    }
+});
+
+
+
+});
+
+
+$(document).ready(function() {
    
     $('a#to-top').click(function(){
         $('html, body').animate({scrollTop:0}, 'fast');
