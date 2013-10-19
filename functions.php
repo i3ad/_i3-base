@@ -11,6 +11,58 @@
     $POST / PAGE NAVIGATION - page-navigation, single-post-navigation
     $MISC - excerpt, editor-styles, etc
 */
+if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+    function is_woocommerce_activated() {
+        if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
+    }
+}
+function woocommerce_upsell_display( $posts_per_page = 4, $columns = 2, $orderby = 'rand' ) {
+woocommerce_get_template( 'single-product/up-sells.php', array(
+'posts_per_page' => $posts_per_page,
+'orderby' => $orderby,
+'columns' => $columns
+) );
+}
+function woo_related_products_limit() {
+  global $product;
+    
+    $args = array(
+        'post_type'             => 'product',
+        'no_found_rows'         => 1,
+        'posts_per_page'        => 4,
+        'ignore_sticky_posts'   => 1,
+        'orderby'               => $orderby,
+        'post__in'              => $related,
+        'post__not_in'          => array($product->id)
+    );
+    return $args;
+}
+add_filter( 'woocommerce_related_products_args', 'woo_related_products_limit' );
+add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
+function jk_woocommerce_breadcrumbs() {
+    return array(
+            'delimiter'   => ' &#47; ',
+            'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb">',
+            'wrap_after'  => '</nav>',
+            'before'      => '',
+            'after'       => '',
+            'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+        );
+}
+// Ensure cart contents update when products are added to the cart via AJAX (place the following in functions.php)
+add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
+
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+
+    global $woocommerce;
+   
+    ob_start(); ?>
+        <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+    <?php $fragments['a.cart-contents'] = ob_get_clean();
+    
+    return $fragments;
+    
+}
 
 /* ==========================================================================
    $INCLUDE FILES
