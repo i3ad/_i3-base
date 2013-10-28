@@ -262,6 +262,50 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
     }
     add_action( 'customize_register', 'custom_text_colors' );
 
+/* Custom typo options
+   ========================================================================== */
+    function custom_site_typo( $wp_customize ) {
+        
+        $wp_customize->add_section( 'custom_site_typo' , array(
+		    'title'      => __( 'Typographie', '_i3-base' ),
+		    'description'=> __( 'Add some bla bla here.', '_i3-base'),
+		    'priority'   => 30,
+		));
+
+		$wp_customize->add_setting('txt_font_family', array(
+            'default' => 'left',
+        ));
+
+		$wp_customize->add_control('txt_font_family', array(
+			'label'      => __('Font Face', '_i3-base'),
+			'section'    => 'custom_site_typo',
+			'settings'   => 'txt_font_family',
+			'type'       => 'select',
+			'choices'    => array(
+				'left'   => 'Left',
+				'right'  => 'Right',
+			),
+		));
+
+		$wp_customize->add_setting('heading_font_family', array(
+			'default' => 'right',
+		));
+
+		$wp_customize->add_control('heading_font_family', array(
+			'label'      => __('Heading Font Face', '_i3-base'),
+			'section'    => 'custom_site_typo',
+			'settings'   => 'heading_font_family',
+			'type'       => 'select',
+			'choices'    => array(
+				'left'   => 'Left',
+				'right'  => 'Right',
+			),
+		));
+
+
+    }
+    add_action('customize_register', 'custom_site_typo');   
+
 /* Add custom site logo
    ========================================================================== */
     function custom_site_logo( $wp_customize ) {
